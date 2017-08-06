@@ -1,0 +1,49 @@
+##PSF zshrc.local
+
+
+#{{{ Aliases & functions
+#Start VNC Server
+
+alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
+
+alias Si="sudo -i"
+alias -g S="sudo "
+
+#Verbose rm, cp, mv, ln
+alias rm="rm -vI"
+alias cp="cp -v"
+alias mv="mv -v"
+alias ln="ln -v"
+
+## global aliases
+alias -g '...'='../..'
+alias -g '....'='../../..'
+alias -g L='|less'
+alias -g LL='|& less -r'
+alias -g Hl=' --help |& less -r'
+alias -g V='| vim -'
+
+function T () {
+if [ -z "$TMUX" ];then
+   ~/Misc/bin/tmuxSelect
+fi
+}
+
+
+#}}}
+
+#{{{ Options
+setopt auto_cd
+cdpath=($HOME $HOME/Misc $HOME/Misc/bin $HOME/Other /run/media/psfarch)
+
+#}}}
+
+
+#{{{ Startup
+
+
+script=~/Misc/bin/tmuxSelect
+type $script &>/dev/null && $script
+
+
+#}}}
