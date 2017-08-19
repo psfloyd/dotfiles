@@ -15,4 +15,4 @@ set mouse=a
 
 
 " Source vim plugins
-source .dotfiles/vim-plugins
+source ~/.dotfiles/vim-plugins
