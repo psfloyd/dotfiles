@@ -1,0 +1,23 @@
+h
+?
+copy 
+cd /e
+pushd /etc/systemd/system/
+cd /etc/systemd/system/
+paste 
+mkdir 
+mkdir Season 07
+[1;2A[1;2A[1;2A
+help 
+cut 
+open_with ark
+open_with arc
+cut
+paste
+help k
+bulkrename 
+delete
+git
+!git
+
+open_with 

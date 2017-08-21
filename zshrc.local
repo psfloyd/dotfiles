@@ -1,5 +1,12 @@
 ##PSF zshrc.local
 
+#{{{
+#source .zshenv
+source ~/.zshenv
+
+#}}}
+
+
 #{{{ Aliases & functions
 #Start VNC Server
 
@@ -28,6 +35,15 @@ if [ -z "$TMUX" ];then
 fi
 }
 
+##config file aliases
+alias cfv='vim ~/.vimrc'
+alias cfz='vim ~/.zshrc.local'
+alias cft='vim ~/.tmux.conf'
+alias cfb='vim ~/.bashrc'
+alias cfd='cd ~/.dotfiles'
+
+##cd aliases
+alias cb='cd ~/Misc/bin'
 
 #}}}
 
