@@ -37,13 +37,22 @@ fi
 
 ##config file aliases
 alias cfv='vim ~/.vimrc'
+alias cfvp='vim ~/.dotfiles/vim-plugins'
 alias cfz='vim ~/.zshrc.local'
 alias cft='vim ~/.tmux.conf'
 alias cfb='vim ~/.bashrc'
 alias cfd='cd ~/.dotfiles'
 
+alias srcz='source ~/.zshrc.local'
+
 ##cd aliases
 alias cb='cd ~/Misc/bin'
+
+##Git aliases
+
+alias gS='git status'
+alias gA='git add .'
+alias -g gC='git commit -m '
 
 #}}}
 

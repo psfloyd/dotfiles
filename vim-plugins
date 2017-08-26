@@ -1,30 +1,82 @@
-" from vundle install page
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" vim: set syntax=vim:
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Make sure you use single quotes
 
 
+" NerdTree
+Plug 'scrooloose/nerdtree'
+
+" Open NERDTree on startup
+" autocmd vimenter * NERDTree
+
+
+" NerdCommenter
+Plug 'scrooloose/nerdcommenter'
 
 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" surround - change "souroundings" 
+Plug 'tpope/vim-surround'
 
+
+""""""""" Latex """"""""
+
+" Vim-Latex
+" Plug 'vim-latex/vim-latex'
+
+
+""OR
+
+
+
+
+" vimtex
+Plug 'lervag/vimtex'
+
+
+" latex preview
+" Plug 'ying17zi/vim-live-latex-preview'
+
+
+" Snippets
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+
+
+
+" Ale for linting/completion
+" Plug 'w0rp/ale'
+Plug 'neomake/neomake'
+
+
+
+
+
+" Initialize plugin system
+call plug#end()

@@ -15,9 +15,21 @@ open_with arc
 cut
 paste
 help k
-bulkrename 
-delete
 git
 !git
-
+shell ls
+cd 
+display_help 
+rename Screenshot from 2017-08-18 18-10-06.png
+rename Other
+shell zsh
+shell 
+find 
+help
+open_with 
 open_with 
+delete
+open_with 1
+bulkrename 
+search 
+
