@@ -52,6 +52,7 @@ alias cb='cd ~/Misc/bin'
 
 alias gS='git status'
 alias gA='git add .'
+alias gP='git push origin master'
 alias -g gC='git commit -m '
 
 #}}}
