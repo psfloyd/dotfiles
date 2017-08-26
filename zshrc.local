@@ -46,7 +46,8 @@ alias cfd='cd ~/.dotfiles'
 alias srcz='source ~/.zshrc.local'
 
 ##cd aliases
-alias cb='cd ~/Misc/bin'
+alias cdb='cd ~/Misc/bin'
+alias cdU='cd ~/Documents/Google\ Drive/UNI'
 
 ##Git aliases
 
