@@ -10,6 +10,13 @@ call plug#begin('~/.vim/plugged')
 " NerdTree
 Plug 'scrooloose/nerdtree'
 
+silent! nmap <C-n> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeFind<CR>
+
+let g:NERDTreeMapActivateNode="<F3>"
+let g:NERDTreeMapPreview="<F4>" 
+let g:NERDTreeShowBookmarks=1 
+
 " Open NERDTree on startup
 " autocmd vimenter * NERDTree
 
@@ -24,6 +31,9 @@ Plug 'tpope/vim-surround'
 
 
 """"""""" Latex """"""""
+ let g:tex_flavor='latex' "Fix indentation
+
+
 
 " Vim-Latex
 " Plug 'vim-latex/vim-latex'
@@ -36,9 +46,9 @@ Plug 'tpope/vim-surround'
 
 " vimtex
 Plug 'lervag/vimtex'
+let g:vimtex_indent_enabled=0
 
-
-" latex preview
+" latex preview - Instalado por AUR
 " Plug 'ying17zi/vim-live-latex-preview'
 
 
@@ -48,24 +58,12 @@ Plug 'Shougo/neosnippet-snippets'
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <Tab><Tab>     <Plug>(neosnippet_expand_or_jump)
+smap <Tab><Tab>     <Plug>(neosnippet_expand_or_jump)
+xmap <Tab><Tab>     <Plug>(neosnippet_expand_target)
 
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" Load my snippets
+let g:neosnippet#snippets_directory='~/.vim/mySnippets'
 
 
 

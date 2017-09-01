@@ -1,0 +1,37 @@
+#!/bin/bash
+## PSF
+
+
+# {{{ Locations
+# Backup Cache Location
+backupLoc=/run/media/psfarch/External\ Backup/Other\ Backups/Pacman\ Cache/
+
+
+# Cache Folder
+cacheLoc=/var/cache/pacman/pkg/
+#}}}
+
+
+# {{{ Startup & Conditions
+
+# Do nothing if no drive is found
+if [ ! -d "${backupLoc}" ]; then
+    echo "Drive not found."
+    exit
+fi
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as sudo"
+  exit
+fi
+
+rsyncCommand="rsync -r -t -v --progress -s "
+#}}}
+
+
+
+
+echo "Backing up Pacman Cache"
+eval "$rsyncCommand" \""$cacheLoc"\" \""$backupLoc"\"
+
+

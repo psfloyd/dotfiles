@@ -1,0 +1,31 @@
+#!/bin/sh
+export PATH=$PATH:/usr/local/bin
+
+# abort if we're already inside a TMUX session
+[ "$TMUX" == "" ] || exit 0
+
+# present menu for user to choose which workspace to open
+PS3="Please choose your session: "
+options=( $(basename "$SHELL" | tr '[:lower:]' '[:upper:]') "New Session" $(tmux list-sessions -F "#S") )
+echo "Available sessions"
+echo "------------------"
+echo " "
+select opt in "${options[@]}"
+do
+    case $opt in
+        $(basename "$SHELL" | tr '[:lower:]' '[:upper:]'))
+            #$(basename "$SHELL") --login
+	    clear
+            break;;
+        "New Session")
+            read -p "Enter new session name[main]: " SESSION_NAME
+            [[ -z "$SESSION_NAME" ]] && SESSION_NAME="main"
+            tmux new -s "$SESSION_NAME"
+            break
+            ;;
+        *)
+            tmux attach-session -t $opt
+            break
+            ;;
+    esac
+done

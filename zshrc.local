@@ -12,14 +12,19 @@ source ~/.zshenv
 
 alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
 
+#Basic Aliases
 alias Si="sudo -i"
 alias -g S="sudo "
+mkcd() { mkdir -vp $1 && cd $1 ;}
+alias sdn="sudo shutdown now"
+
 
 #Verbose rm, cp, mv, ln
 alias rm="rm -vI"
 alias cp="cp -v"
 alias mv="mv -v"
 alias ln="ln -v"
+
 
 ## global aliases
 alias -g '...'='../..'
@@ -41,13 +46,19 @@ alias cfvp='vim ~/.dotfiles/vim-plugins'
 alias cfz='vim ~/.zshrc.local'
 alias cft='vim ~/.tmux.conf'
 alias cfb='vim ~/.bashrc'
-alias cfd='cd ~/.dotfiles'
+alias cfr='vim ~/.config/ranger/rc.conf'
+alias cfi='vim ~/.config/i3/config'
 
 alias srcz='source ~/.zshrc.local'
 
+#mvtd() {mv $1 ~/.dotfiles/ && ln -s ~/.dotfiles/$1 .}
 ##cd aliases
-alias cdb='cd ~/Misc/bin'
+alias cdb='cd ~/.dotfiles/bin'
+alias cdd='cd ~/.dotfiles'
+
 alias cdU='cd ~/Documents/Google\ Drive/UNI'
+
+alias cdW='cd ~/Work'
 
 ##Git aliases
 
@@ -60,16 +71,16 @@ alias -g gC='git commit -m '
 
 #{{{ Options
 setopt auto_cd
-cdpath=($HOME $HOME/Misc $HOME/Misc/bin $HOME/Other /run/media/psfarch)
+cdpath=($HOME $HOME/.dotfiles /run/media/psfarch)
 
 #}}}
 
 
 #{{{ Startup
 
-
-script=~/Misc/bin/tmuxSelect
-type $script &>/dev/null && $script
+# Start tmux select at startup
+#script=~/Misc/bin/tmuxSelect
+#type $script &>/dev/null && $script
 
 
 #}}}
