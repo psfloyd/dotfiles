@@ -42,5 +42,3 @@ command! SrcVrc source ~/.vimrc
 
 
 
-
-
