@@ -1,2 +1,0 @@
-# dotfiles
-Various config files
