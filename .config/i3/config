@@ -67,14 +67,22 @@ set $lilbak --no-startup-id mpc seek -10
 set $bigbak --no-startup-id mpc seek -120
 set $beg --no-startup-id mpc seek 0%
 
-#For PULSEAUDIO/PAMIXER
-set $inc --no-startup-id pamixer --allow-boost -i 5
-set $biginc --no-startup-id pamixer --allow-boost -i 15
-set $dec --no-startup-id pamixer --allow-boost -d 5
-set $bigdec --no-startup-id pamixer --allow-boost -d 15
-set $mute --no-startup-id pamixer --allow-boost -t
-set $micmute --no-startup-id pamixer --allow-boost -t
-set $truemute --no-startup-id pamixer -m
+#FOR ALSA/AMIXER
+set $inc --no-startup-id amixer sset Master 2%+
+set $biginc --no-startup-id amixer sset Master 5%+
+set $dec --no-startup-id amixer sset Master 2%-
+set $bigdec --no-startup-id amixer sset Master 5%-
+set $mute --no-startup-id amixer sset Master toggle
+set $truemute --no-startup-id amixer sset Master mute
+
+##For PULSEAUDIO/PAMIXER
+#set $inc --no-startup-id pamixer --allow-boost -i 5
+#set $biginc --no-startup-id pamixer --allow-boost -i 15
+#set $dec --no-startup-id pamixer --allow-boost -d 5
+#set $bigdec --no-startup-id pamixer --allow-boost -d 15
+#set $mute --no-startup-id pamixer --allow-boost -t
+#set $micmute --no-startup-id pamixer --allow-boost -t
+#set $truemute --no-startup-id pamixer -m
 # }}}
 
 ###---Dropdown/Scratchpad Windows---###{{{
@@ -87,6 +95,31 @@ for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
 # }}}
 
+##---Modes--###{{{
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# }}}
+
 ###---Basic Bindings---###{{{
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return 	exec $term -e tmux
@@ -95,10 +128,10 @@ bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
 
 bindsym $mod+Escape		workspace prev
-bindsym $mod+Shift+Escape 	exec i3-msg exit
+#bindsym $mod+Shift+Escape 	exec i3-msg exit
 
 bindsym $mod+BackSpace		exec $flash
-bindsym $mod+Shift+BackSpace	exec sudo reboot
+#bindsym $mod+Shift+BackSpace	exec sudo reboot
 
 bindsym $mod+grave		exec $flash
 #bindsym $mod+asciitilde
@@ -168,7 +201,7 @@ bindsym $mod+z			gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
 bindsym $mod+x			exec --no-startup-id ~/.config/i3/lock.sh
-bindsym $mod+Shift+x		exec sudo shutdown -h now
+bindsym $mod+Shift+x		mode "mode_system"
 
 #bindsym $mod+c			
 #bindsym $mod+Shift+c
@@ -333,7 +366,7 @@ bindsym XF86PowerOff		exec sudo shutdown -h now
 #bindsym XF86Cut		exec 
 #bindsym XF86MenuKB		exec 
 #bindsym XF86Calculator		exec 
-bindsym XF86Sleep		exec sudo systemctl suspend
+bindsym XF86Sleep		exec systemctl suspend
 #bindsym XF86WakeUp		exec 
 bindsym XF86Explorer		exec $term -e ranger
 #bindsym XF86Send		exec 
