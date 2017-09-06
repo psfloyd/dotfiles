@@ -6,9 +6,11 @@ set nocompatible              " be iMproved, required
 " number on the side
 set number
 set relativenumber
+
 set so=10
 set foldmethod=marker
 filetype plugin on
+colorscheme desert
 
 " syntax highlight
 syntax enable

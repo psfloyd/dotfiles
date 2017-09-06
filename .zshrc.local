@@ -42,7 +42,7 @@ fi
 
 ##config file aliases
 alias cfv="vim ~/.vimrc"
-alias cfvp="vim ~/.dotfiles/vim-plugins"
+alias cfvp="vim ~/.config/others/vim-plugins"
 alias cfz="vim ~/.zshrc.local"
 alias cft="vim ~/.tmux.conf"
 alias cfb="vim ~/.bashrc"
@@ -53,8 +53,8 @@ alias srcz="source ~/.zshrc.local"
 
 #mvtd() {mv $1 ~/.dotfiles/ && ln -s ~/.dotfiles/$1 .}
 ##cd aliases
-alias cdb="cd ~/.dotfiles/bin"
-alias cdd="cd ~/.dotfiles"
+alias cdb="cd ~/Misc/bin"
+alias cdc="cd ~/.config"
 
 alias cdU="cd ~/Documents/Google\ Drive/UNI"
 
@@ -65,13 +65,14 @@ alias cdW="cd ~/Work"
 alias gS="git status"
 alias gA="git add . && git status"
 alias gP="git push origin master"
-alias -g gC="git commit -m "
+alias -g gC="git commit -m"
+alias gCT="git commit -m '$( date +'%F--%R')'"
 
-#}}}
+# )}}
 
 #{{{ Options
 setopt auto_cd
-cdpath=($HOME $HOME/.dotfiles /run/media/psfarch)
+cdpath=($HOME /run/media/psfarch)
 
 #}}}
 

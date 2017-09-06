@@ -25,6 +25,8 @@ let g:NERDTreeShowBookmarks=1
 Plug 'scrooloose/nerdcommenter'
 
 
+" i3 syntax
+Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 
 " surround - change "souroundings" 
 Plug 'tpope/vim-surround'
