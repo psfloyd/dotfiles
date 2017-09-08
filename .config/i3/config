@@ -17,6 +17,7 @@ set $mod Mod4
 set $term urxvt
 set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 set $browser chromium
+set $tmux ~/Misc/bin/tmuxSelect
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -101,7 +102,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -name dropdown -e tmux
+exec --no-startup-id $term -name dropdown -e tmux new-session -s Bgp
 # }}}
 
 ##---Modes--###{{{
@@ -134,7 +135,7 @@ mode "$mode_layout" {
 
 ###---Basic Bindings---###{{{
 bindsym $mod+Return 		exec $term
-bindsym $mod+Shift+Return 	exec $term -e tmux
+bindsym $mod+Shift+Return 	exec $term -e $tmux
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
@@ -149,6 +150,10 @@ bindsym $mod+grave		exec $flash
 #bindsym $mod+asciitilde
 #STOP/HIDE EVERYTHING:
 bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
+
+bindsym $mod+comma	 	focus parent
+bindsym $mod+period	 	focus child
+
 # }}}
 
 ###---Letter Key Bindings---###{{{
@@ -286,21 +291,17 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [class="Blender"] move to workspace $ws6
-#for_window [class="Firefox"] move to workspace $ws2
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
-for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
-for_window [window_role="tr-main"] move to workspace $ws8
-for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
+for_window [class="Chromium"] move to workspace $ws2
+#for_window [title="GIMP Startup"] move workspace $ws5
+#for_window [class="Gimp"] move workspace $ws5
+#for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
+#for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
+#for_window [window_role="tr-main"] move to workspace $ws8
+#for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 
-workspace $ws6 gaps inner 0
-workspace $ws6 gaps outer 0
-workspace $ws5 gaps inner 0
-workspace $ws5 gaps outer 0
-workspace $ws8 gaps inner 0
-workspace $ws8 gaps outer 0
+workspace $ws2 gaps inner 0
+workspace $ws2 gaps outer 0
+#workspace $ws2 layout stacked
 # }}}
 
 ###---Function Buttons---###{{{
@@ -320,15 +321,15 @@ bindsym F11		fullscreen toggle
 #bindsym $mod+F1		exec --no-startup-id mupdf ~/.config/Scripts/i3_guide.md.pdf
 #bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 bindsym $mod+F3		exec --no-startup-id arandr
-bindsym $mod+F4		exec --no-startup-id sudo zzz
+#bindsym $mod+F4		exec --no-startup-d sudo zzz
 bindsym $mod+F5		exec --no-startup-id sudo sv restart NetworkManager
 bindsym $mod+F6		exec --no-startup-id urxvt -e transmission-remote-cli
 bindsym $mod+F7		exec transset -a --dec .15
 bindsym $mod+F8		exec transset -a --inc .15
-bindsym $mod+F9		exec --no-startup-id sudo mount -a
-bindsym $mod+F10	exec --no-startup-id ~/.config/Scripts/screen.sh l ;; exec --no-startup-id ~/.config/polybar/launch.sh
-bindsym $mod+F11	exec --no-startup-id ~/.config/Scripts/screen.sh v ;; exec --no-startup-id ~/.config/polybar/launch.sh
-bindsym $mod+F12	exec --no-startup-id ~/.config/Scripts/screen.sh d ;; exec --no-startup-id ~/.config/polybar/launch.sh
+#bindsym $mod+F9		exec --no-startup-id sudo mount -a
+#bindsym $mod+F10	exec --no-startup-id ~/.config/Scripts/screen.sh l ;; exec --no-startup-id ~/.config/polybar/launch.sh
+#bindsym $mod+F11	exec --no-startup-id ~/.config/Scripts/screen.sh v ;; exec --no-startup-id ~/.config/polybar/launch.sh
+#bindsym $mod+F12	exec --no-startup-id ~/.config/Scripts/screen.sh d ;; exec --no-startup-id ~/.config/polybar/launch.sh
 # }}}
 
 ###---Arrow Keys---###{{{
@@ -371,7 +372,7 @@ bindsym Shift+Print 		exec --no-startup-id scrot -u
 bindsym XF86AudioMute		exec $mute
 bindsym XF86AudioLowerVolume	exec $dec
 bindsym XF86AudioRaiseVolume	exec $inc
-bindsym XF86PowerOff		exec sudo shutdown -h now
+bindsym XF86PowerOff		exec $shutdown
 #bindsym XF86Copy		exec 
 #bindsym XF86Open		exec 
 #bindsym XF86Paste		exec 
@@ -445,5 +446,4 @@ bindsym XF86Documents		exec $term -e ranger ~/Documents
 #bindsym XF86Battery		exec 
 #bindsym XF86Bluetooth		exec 
 bindsym XF86WLAN		exec --no-startup-id sudo sv restart NetworkManager
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # }}}
