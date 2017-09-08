@@ -88,9 +88,10 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option cap
 #exec_always --no-startup-id xmodmap -e 'keycode 127 = SUPER_R'
 #bindsym menu	exec --no-startup-id xmodmap -e 'keycode 127 = SUPER_R'
 #unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutteR
+exec --no-startup-id unclutter
 #Touchpad bindings
-#
+exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
+
 
 
 # }}}
