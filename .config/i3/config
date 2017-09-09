@@ -92,9 +92,6 @@ bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 exec --no-startup-id unclutter
 #Touchpad bindings
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
-
-
-
 # }}}
 
 ###---Dropdown/Scratchpad Windows---###{{{
@@ -104,7 +101,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -name dropdown -e tmux new-session -s Bgp
+exec_always --no-startup-id $term -name dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
 # }}}
 
 ##---Modes--###{{{
@@ -219,8 +216,8 @@ bindsym $mod+Shift+l		move right 30
 bindsym $mod+z			gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec $lock
-bindsym $mod+Shift+x		mode "$mode_system"
+bindsym $mod+x	        	mode "$mode_system"
+bindsym $mod+Shift+x		exec $lock
 
 bindsym $mod+c			mode "$mode_layout"
 #bindsym $mod+Shift+c
