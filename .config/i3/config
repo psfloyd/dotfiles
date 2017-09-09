@@ -1,3 +1,4 @@
+
 # vim: filetype=i3
 
 #Based on Luke Smith's i3-gaps configuration file.
@@ -85,8 +86,8 @@ exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #remap menu button to super:
-#exec_always --no-startup-id xmodmap -e 'keycode 127 = SUPER_R'
-#bindsym menu	exec --no-startup-id xmodmap -e 'keycode 127 = SUPER_R'
+exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
+bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 #unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 #Touchpad bindings
