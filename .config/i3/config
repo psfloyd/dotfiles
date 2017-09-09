@@ -14,7 +14,9 @@ for_window [class="^.*"] border pixel 0
 gaps inner 15
 gaps outer 15
 font pango:hack 9
+
 set $mod Mod4
+set $mod1 Mod1
 set $term urxvt
 set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 set $browser chromium
@@ -83,7 +85,7 @@ exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
 #exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
-exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space 300
+exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space 600
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #remap menu button to super:
@@ -190,7 +192,7 @@ bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
 bindsym $mod+p			exec $pause
 bindsym $mod+Shift+p		exec mypaint
 
-bindsym $mod+a			[instance="math"] scratchpad show; move position center
+#bindsym $mod+a			[instance="math"] scratchpad show; move position center
 bindsym $mod+Shift+a		exec $term -e alsamixer
 
 bindsym $mod+s			gaps inner current plus 5
@@ -348,9 +350,14 @@ bindsym $mod+Shift+Right 	move right
 # }}}
 
 ###---Media Keys---###{{{
+#Control keys
+#bindsym $mod2+z			exec $music 
+#bindsym $mod2+a			exec $prev 
+#bindsym $mod2+d			exec $next 
+#bindsym $mod2+x			exec $truepause 
 
 #Volume keys
-BINDSYM $mod+plus		exec $inc
+bindsym $mod+plus		exec $inc
 bindsym $mod+Shift+plus		exec $biginc
 bindsym $mod+minus 		exec $dec
 bindsym $mod+Shift+minus	exec $bigdec

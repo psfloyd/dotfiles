@@ -40,14 +40,6 @@ if [ -z "$TMUX" ];then
 fi
 }
 
-##config file aliases
-alias cfv="vim ~/.vimrc"
-alias cfvp="vim ~/.config/others/vim-plugins"
-alias cfz="vim ~/.zshrc.local"
-alias cft="vim ~/.tmux.conf"
-alias cfb="vim ~/.bashrc"
-alias cfr="vim ~/.config/ranger/rc.conf"
-alias cfi="vim ~/.config/i3/config"
 
 alias srcz="source ~/.zshrc.local"
 
@@ -63,7 +55,8 @@ alias cdW="cd ~/Work"
 ##Git aliases
 
 alias gS="git status"
-alias gA="git add . && git status"
+alias gA="git add -A && git status"
+alias gD="git diff"
 alias gP="git push origin master"
 alias -g gC="git commit -m"
 alias gCT="git commit -m '$( date +'%F--%R')'"
@@ -85,3 +78,14 @@ cdpath=($HOME /run/media/psfarch)
 
 
 #}}}
+
+
+
+##config file aliases
+alias cfv="vim ~/.vimrc"
+#alias cfvp="vim ~/.config/others/vim-plugins"
+alias cfz="vim ~/.zshrc.local"
+alias cft="vim ~/.tmux.conf"
+alias cfb="vim ~/.bashrc"
+alias cfr="vim ~/.config/ranger/rc.conf"
+alias cfi="vim ~/.config/i3/config"
