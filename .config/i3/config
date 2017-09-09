@@ -82,7 +82,8 @@ exec --no-startup-id compton
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
-exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+#exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space 300
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #remap menu button to super:
@@ -92,6 +93,8 @@ bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 exec --no-startup-id unclutter
 #Touchpad bindings
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
+#Run grive in the background to sync Google Drive
+exec --no-startup-id bash ~/.config/Scripts/grive-loop.sh
 # }}}
 
 ###---Dropdown/Scratchpad Windows---###{{{
@@ -101,7 +104,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec_always --no-startup-id $term -name dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
+exec --no-startup-id $term -name dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
 # }}}
 
 ##---Modes--###{{{
