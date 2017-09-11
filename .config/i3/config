@@ -24,6 +24,11 @@ set $tmux ~/Misc/bin/tmuxSelect
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+#Touchpad On/Off
+set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
+set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
+
 # }}}
 
 ###---Power Definitions---###{{{
@@ -431,8 +436,8 @@ bindsym XF86Reload		restart
 #bindsym XF86Launch9		exec 
 bindsym XF86AudioMicMute	exec $micmute
 #bindsym XF86TouchpadToggle	exec 
-bindsym XF86TouchpadOn		exec --no-startup-id exec synclient TouchpadOff=0
-bindsym XF86TouchpadOff		exec --no-startup-id exec synclient TouchpadOff=1
+bindsym XF86TouchpadOn		exec $touchon
+bindsym XF86TouchpadOff		exec $touchoff
 bindsym XF86Suspend		exec $lock
 bindsym XF86Close		kill
 bindsym XF86WebCam		exec mpv /dev/video0
@@ -443,8 +448,8 @@ bindsym XF86Messenger		exec $term -e weechat
 #bindsym XF86Finance		exec 
 #bindsym XF86Game		exec 
 #bindsym XF86Shop		exec $browser https://ebay.com
-bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 1
-bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 1
+bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 3
+bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 3
 bindsym XF86AudioMedia		exec $music
 bindsym XF86Display		exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec 
