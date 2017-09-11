@@ -1,0 +1,52 @@
+# vim: set filetype=sh:
+#{{{ Aliases & functions
+#Start VNC Server
+
+alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
+
+#Basic Aliases
+alias Si="sudo -i"
+alias -g S="sudo "
+mkcd() { mkdir -vp $1 && cd $1 ;}
+alias sdn="sudo shutdown now"
+
+
+#Verbose rm, cp, mv, ln
+alias rm="rm -vI"
+alias cp="cp -v"
+alias mv="mv -v"
+alias ln="ln -v"
+
+
+## global aliases
+alias -g "..."="../.."
+alias -g "...."="../../.."
+alias -g L="|less"
+alias -g LL="|& less -r"
+alias -g Hl=" --help |& less -r"
+alias -g V="| vim -"
+
+function T () {
+if [ -z "$TMUX" ];then
+   ~/Misc/bin/tmuxSelect
+fi
+}
+
+
+alias srcz="source ~/.zshrc.local"
+
+##Git aliases
+
+alias gS="git status"
+alias -g gA="git add"
+alias -g gAf="git add -f"
+alias gAa="git add -A && git status"
+alias gD="git diff"
+alias gP="git push origin master"
+alias -g gC="git commit -m"
+alias gCT="git commit -m '$( date +'%F--%R')'"
+alias -g gB="git branch"
+
+# }}}
+
+# Config and Cd Aliases(added by .config/Scripts/shortcuts.py)

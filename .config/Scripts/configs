@@ -1,0 +1,12 @@
+cfb	~/.config/Scripts/bashrc.base
+cfs	~/.config/Scripts/status.sh
+cfz	~~/.config/Scripts/zshrc.local.base
+cfv	~/.vimrc
+cfvp	~/.config/Scripts/vim-plugins
+cfr	~/.config/ranger/rc.conf.base
+cfi	~/.config/i3/config
+cff	~/.config/Scripts/folders
+cfc	~/.config/Scripts/configs
+cfT	~/.tmux.conf
+cfp	~/.config/polybar/config
+cfd	~/.Xdefaults
