@@ -34,6 +34,7 @@ fi
 
 
 alias srcz="source ~/.zshrc.local"
+alias srca="source ~/.aliases_sh"
 
 ##Git aliases
 
@@ -46,6 +47,10 @@ alias gP="git push origin master"
 alias -g gC="git commit -m"
 alias gCT="git commit -m '$( date +'%F--%R')'"
 alias -g gB="git branch"
+
+##Function Aliases
+alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
+
 
 # }}}
 

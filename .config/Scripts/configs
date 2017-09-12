@@ -1,4 +1,4 @@
-cfa	~/.config/Script/aliases_sh.base
+cfa	~/.config/Scripts/aliases_sh.base
 cfv	~/.vimrc
 cfvp	~/.config/Scripts/vim-plugins
 cfr	~/.config/ranger/rc.conf.base

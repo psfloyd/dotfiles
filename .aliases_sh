@@ -34,6 +34,7 @@ fi
 
 
 alias srcz="source ~/.zshrc.local"
+alias srca="source ~/.aliases_sh"
 
 ##Git aliases
 
@@ -46,6 +47,10 @@ alias gP="git push origin master"
 alias -g gC="git commit -m"
 alias gCT="git commit -m '$( date +'%F--%R')'"
 alias -g gB="git branch"
+
+##Function Aliases
+alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
+
 
 # }}}
 
@@ -69,7 +74,7 @@ alias cdr="cd / && ls -a"
 # }}}
 
 # Config Aliases{{{
-alias cfa="vim ~/.config/Script/aliases_sh.base"
+alias cfa="vim ~/.config/Scripts/aliases_sh.base"
 alias cfv="vim ~/.vimrc"
 alias cfvp="vim ~/.config/Scripts/vim-plugins"
 alias cfr="vim ~/.config/ranger/rc.conf.base"
