@@ -1,6 +1,4 @@
-cfb	~/.config/Scripts/bashrc.base
-cfs	~/.config/Scripts/status.sh
-cfz	~~/.config/Scripts/zshrc.local.base
+cfa	~/.config/Script/aliases_sh.base
 cfv	~/.vimrc
 cfvp	~/.config/Scripts/vim-plugins
 cfr	~/.config/ranger/rc.conf.base

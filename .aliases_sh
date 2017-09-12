@@ -50,3 +50,34 @@ alias -g gB="git branch"
 # }}}
 
 # Config and Cd Aliases(added by .config/Scripts/shortcuts.py)
+# cd Aliases{{{
+alias cdh="cd ~ && ls -a"
+alias cdd="cd ~/Documents && ls -a"
+alias cdU="cd ~/Documents/Google\ Drive/UNI && ls -a"
+alias cdUa="cd ~/Documents/Google\ Drive/UNI/Z\ Archivo && ls -a"
+alias cdW="cd ~/Work && ls -a"
+alias cdD="cd ~/Downloads && ls -a"
+alias cdp="cd ~/Media/Pictures && ls -a"
+alias cdv="cd ~/Media/Videos && ls -a"
+alias cdm="cd ~/Media/Music && ls -a"
+alias cdM="cd ~/Media/Movies && ls -a"
+alias cds="cd ~/Media/Series && ls -a"
+alias cdc="cd ~/.config && ls -a"
+alias cdS="cd ~/.config/Scripts && ls -a"
+alias cd/="cd / && ls -a"
+alias cdr="cd / && ls -a"
+# }}}
+
+# Config Aliases{{{
+alias cfa="vim ~/.config/Script/aliases_sh.base"
+alias cfv="vim ~/.vimrc"
+alias cfvp="vim ~/.config/Scripts/vim-plugins"
+alias cfr="vim ~/.config/ranger/rc.conf.base"
+alias cfi="vim ~/.config/i3/config"
+alias cff="vim ~/.config/Scripts/folders"
+alias cfc="vim ~/.config/Scripts/configs"
+alias cfT="vim ~/.tmux.conf"
+alias cfp="vim ~/.config/polybar/config"
+alias cfd="vim ~/.Xdefaults"
+# }}}
+
