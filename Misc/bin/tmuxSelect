@@ -14,7 +14,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         $(basename "$SHELL" | tr '[:lower:]' '[:upper:]'))
-            #$(basename "$SHELL") --login
+	    $(basename "$SHELL") --login
 	    clear
             break;;
         "New Session")

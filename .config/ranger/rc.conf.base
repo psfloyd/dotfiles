@@ -326,12 +326,14 @@ map zf    console filter%space
 
 
 # Bookmarks
+unmap m<any>
+unmap m<bg>
 map `<any>  enter_bookmark %any
 map '<any>  enter_bookmark %any
-map mm<any>  set_bookmark %any
+map mz<any>  set_bookmark %any
 map um<any> unset_bookmark %any
 
-map m<bg>   draw_bookmarks
+map mz<bg>   draw_bookmarks
 copymap m<bg>  um<bg> `<bg> '<bg>
 
 

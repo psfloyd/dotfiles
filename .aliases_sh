@@ -58,7 +58,7 @@ alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 # cd Aliases{{{
 alias cdh="cd ~ && ls -a"
 alias cdd="cd ~/Documents && ls -a"
-alias cdU="cd ~/Documents/Google\ Drive/UNI && ls -a"
+alias cdUu="cd ~/Documents/Google\ Drive/UNI && ls -a"
 alias cdUa="cd ~/Documents/Google\ Drive/UNI/Z\ Archivo && ls -a"
 alias cdW="cd ~/Work && ls -a"
 alias cdD="cd ~/Downloads && ls -a"
@@ -69,7 +69,7 @@ alias cdM="cd ~/Media/Movies && ls -a"
 alias cds="cd ~/Media/Series && ls -a"
 alias cdc="cd ~/.config && ls -a"
 alias cdS="cd ~/.config/Scripts && ls -a"
-alias cd/="cd / && ls -a"
+alias cdb="cd ~/Misc/bin && ls -a"
 alias cdr="cd / && ls -a"
 # }}}
 
