@@ -83,7 +83,7 @@ exec --no-startup-id nm-applet
 #Composite manager:
 exec --no-startup-id compton
 #Refresh bash/ranger shortcuts:
-#exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Try to load VGA screen if available:
 #exec --no-startup-id ~/.config/Scripts/screen.sh v
 #Launch Polybar where appropriate:
