@@ -8,3 +8,4 @@ cfc	~/.config/Scripts/configs
 cfT	~/.tmux.conf
 cfp	~/.config/polybar/config
 cfd	~/.Xdefaults
+cfnm	~/.ncmpcpp/config

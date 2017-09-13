@@ -86,5 +86,6 @@ alias cfc="vim ~/.config/Scripts/configs"
 alias cfT="vim ~/.tmux.conf"
 alias cfp="vim ~/.config/polybar/config"
 alias cfd="vim ~/.Xdefaults"
+alias cfnm="vim ~/.ncmpcpp/config"
 # }}}
 
