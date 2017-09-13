@@ -12,11 +12,13 @@ alias sdn="sudo shutdown now"
 
 
 #Verbose rm, cp, mv, ln
-alias rm="rm -vI"
+alias rm="rm -vi"
 alias cp="cp -v"
 alias mv="mv -v"
 alias ln="ln -v"
 
+#ls aliases
+alias l1="ls -1"
 
 ## global aliases
 alias -g "..."="../.."
