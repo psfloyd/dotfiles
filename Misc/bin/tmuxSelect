@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/bin
 
 # present menu for user to choose which workspace to open
 PS3="Please choose your session: "
-options=( $(basename "$SHELL" | tr '[:lower:]' '[:upper:]') "New Session" $(tmux list-sessions -F "#S") )
+options=( "New Session" $(basename "$SHELL" | tr '[:lower:]' '[:upper:]') $(tmux list-sessions -F "#S") )
 echo "Available sessions"
 echo "------------------"
 echo " "
