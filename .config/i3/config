@@ -43,7 +43,8 @@ set $shutdown --no-startup-id systemctl poweroff
 ##For mpc:
 set $music urxvt -e ncmpcpp
 set $pause --no-startup-id mpc toggle
-set $trupause --no-startup-id mpc pause
+set $truepause --no-startup-id mpc pause
+set $stop --no-startup-id mpc stop
 set $next --no-startup-id mpc next
 set $prev --no-startup-id mpc prev
 set $lilfor --no-startup-id mpc seek +10
@@ -357,10 +358,12 @@ bindsym $mod+Shift+Right 	move right
 #Control keys
 bindsym $mod1+z			exec $music 
 bindsym $mod1+a			exec $prev 
+bindsym $mod1+s			exec $pause 
 bindsym $mod1+d			exec $next 
-bindsym $mod1+x			exec $truepause 
+bindsym $mod1+x			exec $stop 
 
 #Volume keys
+
 bindsym $mod1+plus		exec $inc
 bindsym $mod1+Shift+plus	exec $biginc
 bindsym $mod1+minus 		exec $dec
@@ -412,7 +415,7 @@ bindsym XF86MyComputer		exec $term -e ranger
 bindsym XF86AudioNext		exec $next
 bindsym XF86AudioPlay		exec $pause
 bindsym XF86AudioPrev		exec $prev
-bindsym XF86AudioStop		exec $pause
+bindsym XF86AudioStop		exec $stop
 bindsym XF86AudioRecord		exec $audio
 bindsym XF86AudioRewind		exec $lilbak
 bindsym XF86AudioForward	exec $lilfor
