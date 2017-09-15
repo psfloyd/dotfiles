@@ -24,6 +24,16 @@ set $tmux ~/Misc/bin/tmuxSelect
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# }}}
+
+###---Power/Touchpad/Screen Definitions---###{{{
+set $lock --no-startup-id bash ~/.config/i3/lock.sh
+set $logout --no-startup-id i3-msg exit
+set $suspend --no-startup-id bash ~/.config/i3/lock.sh && systemctl suspend
+set $hibernate --no-startup-id bash ~/.config/i3/lock.sh && systemctl hibernate
+set $reboot --no-startup-id systemctl reboot
+set $shutdown --no-startup-id systemctl poweroff
+
 #Touchpad On/Off
 set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
 set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
@@ -35,21 +45,13 @@ set $screendual --no-startup-id ~/.config/Scripts/screen.sh d
 
 # }}}
 
-###---Power Definitions---###{{{
-set $lock --no-startup-id bash ~/.config/i3/lock.sh
-set $logout --no-startup-id i3-msg exit
-set $suspend --no-startup-id bash ~/.config/i3/lock.sh && systemctl suspend
-set $hibernate --no-startup-id bash ~/.config/i3/lock.sh && systemctl hibernate
-set $reboot --no-startup-id systemctl reboot
-set $shutdown --no-startup-id systemctl poweroff
-# }}}
-
 ###---Audio and Music Definitions---###{{{
 ##For mpc:
 set $music urxvt -e ncmpcpp
 set $pause --no-startup-id mpc toggle
 set $truepause --no-startup-id mpc pause
-set $stop --no-startup-id mpc stop
+set $stop --no-startup-id mpc clear
+set $crop --no-startup-id mpc crop
 set $next --no-startup-id mpc next
 set $prev --no-startup-id mpc prev
 set $lilfor --no-startup-id mpc seek +10
@@ -378,6 +380,7 @@ bindsym $mod1+a			exec $prev
 bindsym $mod1+s			exec $pause 
 bindsym $mod1+d			exec $next 
 bindsym $mod1+x			exec $stop 
+bindsym $mod1+c			exec $crop 
 
 #Volume keys
 
