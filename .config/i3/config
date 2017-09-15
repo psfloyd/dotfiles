@@ -28,6 +28,11 @@ floating_modifier $mod
 set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
 set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
 
+#Screen Script
+set $screenlap --no-startup-id ~/.config/Scripts/screen.sh l
+set $screenext  --no-startup-id ~/.config/Scripts/screen.sh e
+set $screendual --no-startup-id ~/.config/Scripts/screen.sh d
+
 # }}}
 
 ###---Power Definitions---###{{{
@@ -115,7 +120,7 @@ exec --no-startup-id $term -name dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
 # }}}
 
 ##---Modes--###{{{
-set $mode_system System (l) lock, (o) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+set $mode_system System: (l) lock, (o) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 mode "$mode_system" {
     bindsym l exec $lock, mode "default"
     bindsym o exec $logout, mode "default"
@@ -129,12 +134,23 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-set $mode_layout Layout (s) stacked, (t) tabbed, (v) splitv, (h) splith
+set $mode_layout Layout: (s) stacked, (t) tabbed, (v) splitv, (h) splith
 mode "$mode_layout" {
     bindsym s layout stacking, mode "default"
     bindsym t layout tabbed, mode "default"
     bindsym v layout splitv, mode "default"
     bindsym h layout splith, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_screen Screen: (l) Laptop, (e) External, (d) Dual 
+mode "$mode_screen" {
+    bindsym l exec $screenlap, mode "default"
+    bindsym e exec $screenext, mode "default"
+    bindsym d exec $screendual, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -330,13 +346,14 @@ bindsym F11		fullscreen toggle
 #bindsym F12
 
 #bindsym $mod+F1		exec --no-startup-id mupdf ~/.config/Scripts/i3_guide.md.pdf
-#bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
-bindsym $mod+F3		exec --no-startup-id arandr
-#bindsym $mod+F4		exec --no-startup-d sudo zzz
-bindsym $mod+F5		exec --no-startup-id sudo sv restart NetworkManager
+bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+bindsym $mod+F3		mode "$mode_screen"	
+bindsym $mod+Shift+F3	exec --no-startup-id arandr
+#bindsym $mod+F4
+#bindsym $mod+F5		
 bindsym $mod+F6		exec --no-startup-id urxvt -e transmission-remote-cli
-bindsym $mod+F7		exec transset -a --dec .15
-bindsym $mod+F8		exec transset -a --inc .15
+bindsym $mod+F7		exec transset-df -a --dec .15
+bindsym $mod+F8		exec transset-df -a --inc .15
 #bindsym $mod+F9		exec --no-startup-id sudo mount -a
 #bindsym $mod+F10	exec --no-startup-id ~/.config/Scripts/screen.sh l ;; exec --no-startup-id ~/.config/polybar/launch.sh
 #bindsym $mod+F11	exec --no-startup-id ~/.config/Scripts/screen.sh v ;; exec --no-startup-id ~/.config/polybar/launch.sh
@@ -453,7 +470,7 @@ bindsym XF86Messenger		exec $term -e weechat
 bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 3
 bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 3
 bindsym XF86AudioMedia		exec $music
-bindsym XF86Display		exec --no-startup-id arandr
+#bindsym XF86Display		exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec 
 bindsym XF86KbdBrightnessDown	exec --no-startup-id xbacklight -dec 1
 bindsym XF86KbdBrightnessUp	exec --no-startup-id xbacklight -inc 1
@@ -463,5 +480,5 @@ bindsym XF86KbdBrightnessUp	exec --no-startup-id xbacklight -inc 1
 bindsym XF86Documents		exec $term -e ranger ~/Documents
 #bindsym XF86Battery		exec 
 #bindsym XF86Bluetooth		exec 
-bindsym XF86WLAN		exec --no-startup-id sudo sv restart NetworkManager
+#bindsym XF86WLAN		exec 
 # }}}
