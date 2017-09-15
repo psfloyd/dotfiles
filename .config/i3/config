@@ -94,7 +94,7 @@ exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
-exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+exec --no-startup-id feh --bg-scale ~/.config/wall
 exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space 600
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
