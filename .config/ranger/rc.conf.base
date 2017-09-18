@@ -528,5 +528,5 @@ map vc shell ~/.config/Scripts/concatenate.sh %s
 
 map x shell chmod -x %s
 
-#MOVEMENT
+#cd and config movements
 

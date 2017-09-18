@@ -1,12 +1,13 @@
 h	~
 d	~/Documents
-Uu	~/Documents/Google\ Drive/UNI
-Ua	~/Documents/Google\ Drive/UNI/Z\ Archivo
+Uu	~/Documents/Google Drive/UNI
+Ua	~/Documents/Google Drive/UNI/Z Archivo
 W	~/Work
 D	~/Downloads
 p	~/Media/Pictures
 v	~/Media/Videos
-m	~/Media/Music
+mf	~/Media/Music
+ml	~/Media/Music/Music Library
 M	~/Media/Movies
 s	~/Media/Series
 c	~/.config
