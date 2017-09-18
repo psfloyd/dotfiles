@@ -515,18 +515,18 @@ map <C-l> fzf_locate
 
 #Work folder
 
-map WK shell mkdir ~/Work -p && cd ~/Work
-map WAD shell rm -rf ~/Work
+#map WK shell mkdir ~/Work -p && cd ~/Work
+#map WAD shell rm -rf ~/Work
 
 #Printing
 
-map p1s shell lpr -o sides=one-sided %f
-map p2s shell lpr -o sides=two-sided-long-edge %f
+#map p1s shell lpr -o sides=one-sided %f
+#map p2s shell lpr -o sides=two-sided-long-edge %f
 
 #Videos
-map vc shell ~/.config/Scripts/concatenate.sh %s
+#map vc shell ~/.config/Scripts/concatenate.sh %s
 
-map x shell chmod -x %s
+#map x shell chmod -x %s
 
 #cd and config movements
 
