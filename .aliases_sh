@@ -57,6 +57,7 @@ alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 # }}}
 
 # Config and Cd Aliases(added by .config/Scripts/shortcuts.py)
+
 # cd Aliases{{{
 alias cdh="cd ~ && ls -a"
 alias cdd="cd ~/Documents && ls -a"

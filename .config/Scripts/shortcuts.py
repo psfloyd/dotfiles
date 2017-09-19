@@ -22,10 +22,11 @@ with open(".config/Scripts/folders") as fold:
         # Adds the qutebrowser downloads commands:
         # qute+="set storage download-directory "+line[1]+" ;; hint links download\n\t;"+line[0]+"\n"
         #Adds the ranger go, tab, move and yank commands:
+        line1Nospace = line[1].replace(" ", "\ ")
         rang+=("map g"+line[0]+" cd "+line[1]+"\n")
         rang+=("map t"+line[0]+" chain tab_new; cd "+line[1]+"\n")
-        rang+=("map m"+line[0]+" shell mv %s \'"+line[1]+"\'\n")
-        rang+=("map Y"+line[0]+" shell cp -r %s \'"+line[1]+"\'\n")
+        rang+=("map m"+line[0]+" shell mv %s "+line1Nospace +"\n")
+        rang+=("map Y"+line[0]+" shell cp -r %s "+line1Nospace+"\n")
         #Adds the alsh shortcuts:
         alsh+=("alias cd"+line[0]+"=\"cd "+line[1]+" && ls -a\"\n")
 
