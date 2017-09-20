@@ -5,7 +5,7 @@ cfr	~/.config/ranger/rc.conf.base
 cfi	~/.config/i3/config
 cff	~/.config/Scripts/folders
 cfc	~/.config/Scripts/configs
+cft	~/.config/termite/config
 cfT	~/.tmux.conf
 cfp	~/.config/polybar/config
-cfd	~/.Xdefaults
 cfnm	~/.ncmpcpp/config

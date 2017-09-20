@@ -16,7 +16,7 @@ font pango:hack 9
 
 set $mod Mod4
 set $mod1 Mod1
-set $term urxvt
+set $term termite
 set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 set $browser chromium
 set $tmux ~/Misc/bin/tmuxSelect
@@ -47,7 +47,7 @@ set $screendual --no-startup-id ~/.config/Scripts/screen.sh d
 
 ###---Audio and Music Definitions---###{{{
 ##For mpc:
-set $music urxvt -e ncmpcpp
+set $music termite -e ncmpcpp
 set $pause --no-startup-id mpc toggle
 set $truepause --no-startup-id mpc pause
 set $stop --no-startup-id mpc clear
@@ -104,7 +104,7 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option cap
 exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 #unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
+exec --no-startup-id unclutter -grab
 #Touchpad bindings
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
 #Run grive in the background to sync Google Drive
@@ -251,7 +251,7 @@ bindsym $mod+Shift+x		exec $lock
 bindsym $mod+c			mode "$mode_layout"
 #bindsym $mod+Shift+c
 
-#bindsym $mod+v			exec urxvt -e ncmpcpp -s visualizer
+#bindsym $mod+v			
 #bindsym $mod+Shift+v
 
 #bindsym $mod+b			exec $prev
@@ -353,7 +353,7 @@ bindsym $mod+F3		mode "$mode_screen"
 bindsym $mod+Shift+F3	exec --no-startup-id arandr
 #bindsym $mod+F4
 #bindsym $mod+F5		
-bindsym $mod+F6		exec --no-startup-id urxvt -e transmission-remote-cli
+bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 bindsym $mod+F7		exec transset-df -a --dec .15
 bindsym $mod+F8		exec transset-df -a --inc .15
 #bindsym $mod+F9		exec --no-startup-id sudo mount -a
@@ -419,6 +419,7 @@ bindsym XF86PowerOff		exec $shutdown
 #bindsym XF86Calculator		exec 
 bindsym XF86Sleep		exec $suspend
 #bindsym XF86WakeUp		exec 
+
 bindsym XF86Explorer		exec $term -e ranger
 #bindsym XF86Send		exec 
 #bindsym XF86Xfer		exec 
@@ -463,8 +464,8 @@ bindsym XF86TouchpadOff		exec $touchoff
 bindsym XF86Suspend		exec $lock
 bindsym XF86Close		kill
 bindsym XF86WebCam		exec mpv /dev/video0
-bindsym XF86Mail		exec $term -e mutt
-bindsym XF86Messenger		exec $term -e weechat
+#bindsym XF86Mail		exec $term -e mutt
+#bindsym XF86Messenger		exec $term -e weechat
 #bindsym XF86Search		exec $browser https://duckduckgo.com
 #bindsym XF86Go			exec 
 #bindsym XF86Finance		exec 
