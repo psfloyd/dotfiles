@@ -35,20 +35,27 @@ fi
 }
 
 
-alias srcz="source ~/.zshrc.local"
-alias srca="source ~/.aliases_sh"
+alias srcz="source ~/.zshrc.local && source ~/.aliases_sh"
 
 ##Git aliases
 
-alias gS="git status"
-alias -g gA="git add"
-alias -g gAf="git add -f"
-alias gAa="git add -A && git status"
-alias gD="git diff"
-alias gP="git push origin master"
-alias -g gC="git commit -m"
-alias gCT="git commit -m '$( date +'%F--%R')'"
-alias -g gB="git branch"
+alias gs="git status"
+alias gss="git status -s"
+
+alias -g ga="git add"
+alias -g gaf="git add -f"
+alias gaa="git add -A && git status"
+
+alias gd="git diff"
+
+alias -g gp="git push "
+alias gpom="git push origin master"
+
+alias -g gcm="git commit -m"
+alias gcmt="git commit -m '$( date +'%F--%R')'"
+
+alias -g gb="git branch"
+alias -g gco="git checkout"
 
 ##Function Aliases
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
