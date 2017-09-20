@@ -118,7 +118,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -name dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
+exec --no-startup-id $term -title dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
 # }}}
 
 ##---Modes--###{{{
