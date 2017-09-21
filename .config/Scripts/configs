@@ -9,4 +9,4 @@ cft	~/.config/termite/config
 cfT	~/.tmux.conf
 cfp	~/.config/polybar/config
 cfR	~/.config/rofi/config
-cfnm	~/.ncmpcpp/config
+cfnm	~/.config/ncmpcpp/config

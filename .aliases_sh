@@ -97,6 +97,6 @@ alias cft="vim ~/.config/termite/config"
 alias cfT="vim ~/.tmux.conf"
 alias cfp="vim ~/.config/polybar/config"
 alias cfR="vim ~/.config/rofi/config"
-alias cfnm="vim ~/.ncmpcpp/config"
+alias cfnm="vim ~/.config/ncmpcpp/config"
 # }}}
 
