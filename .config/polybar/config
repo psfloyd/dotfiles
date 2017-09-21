@@ -1,4 +1,3 @@
-; vim:ft=dosini
 ;=====================================================
 ;
 ;   To learn more about how to configure Polybar
@@ -10,7 +9,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000
+background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -18,12 +17,9 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-col = #00f
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-;monitor = ${env:MONITOR}
-monitor = ${env:MONITOR:LVDS-1}
 width = 100%
 height = 24
 ;offset-x = 1%
@@ -46,13 +42,14 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = mono:pixelsize=11;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=11;1
+font-0 = "Wuncon Siji:pixelsize=20;1"
+font-1 = DejaVuSans:pixelsize=11;1
+;font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
+;font-2 = FontAwesome:pixelsize=10;1
 
-modules-left = i3 mpd
-#modules-center = mpd
-modules-right = home filesystem volume wlan eth battery temperature date powermenu
+modules-left = i3
+modules-center = 
+modules-right = mpd home filesystem volume memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -78,7 +75,8 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+;format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -109,6 +107,7 @@ mount-0 = /home
 label-mounted = %{F#0a81f5}~%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
 [module/bspwm]
 type = internal/bspwm
 
@@ -164,24 +163,20 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song> <label-time> <toggle>
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-;icon-prev = 
-;icon-stop = 
-;icon-play = 
-;icon-pause = 
-;icon-next = 
-icon-prev = <-
-icon-stop = X
-icon-play-prefix = #f00
-icon-play = (Paused)
-icon-pause = 
-icon-next = ->
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-;bar-progress-width = 45
-;bar-progress-indicator = |
-;bar-progress-fill = -
-;bar-progress-empty = -
+;Font Awesome
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause = 
+;icon-next = 
 
 label-song-maxlen = 70
 label-song-ellipsis = true
@@ -211,6 +206,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
+;format-prefix = " "
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
@@ -231,7 +227,6 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-;format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
@@ -249,11 +244,10 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp2s0
 interval = 3.0
 
-format-connected-underline = #5ab738
-;format-connected-underline = #55aa55
+format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -268,18 +262,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-;date = " %a, %b %d, %Y"
-;date-alt = " %a, %b %d, %Y at %I:%M%p"
-date = " %Y-%m-%d"
+date =
+date-alt = " %Y-%m-%d"
 
-;time = " at %I:%M%p"
-;time-alt = %H:%M:%S
-time = %H:%M:%S
+time = %H:%M
+time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #407ee7
-;format-underline = #0a6cf5
+format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -315,16 +306,12 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-;battery = BAT0
-;adapter = ADP1
 full-at = 98
 
-format-charging = Charging... <label-charging>
-#format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <label-discharging> 
-#format-discharging = <ramp-capacity> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
@@ -348,8 +335,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f22c40
-;format-underline = #f50a4d
+format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -365,9 +351,11 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
+expand-right = true
+
 format-spacing = 1
 
-label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
@@ -400,3 +388,4 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+; vim:ft=dosini

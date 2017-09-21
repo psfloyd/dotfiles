@@ -50,7 +50,7 @@ set $screendual --no-startup-id ~/.config/Scripts/screen.sh d
 set $music termite -e ncmpcpp
 set $pause --no-startup-id mpc toggle
 set $truepause --no-startup-id mpc pause
-set $stop --no-startup-id mpc clear
+set $stop --no-startup-id mpc stop
 set $crop --no-startup-id mpc crop
 set $next --no-startup-id mpc next
 set $prev --no-startup-id mpc prev
