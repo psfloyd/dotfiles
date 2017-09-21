@@ -115,10 +115,10 @@ exec --no-startup-id bash ~/.config/Scripts/grive-loop.sh
 #First I have a tmux window used for background scripts.
 #I'll later bind this to mod+u.
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] resize set 825 500
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -title dropdown -e bash ~/.config/Scripts/tmuxBgp.sh
+exec --no-startup-id $term --name dropdown -e 'tmux new-session -A -s Bgp'
 # }}}
 
 ##---Modes--###{{{
@@ -200,7 +200,7 @@ bindsym $mod+Shift+r		restart
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-#bindsym $mod+y			exec $term -e calcurse 
+bindsym $mod+y			exec --no-startup-id $term --name dropdown -e 'tmux new-session -A -s Bgp'
 bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
 
 bindsym $mod+u			[instance="dropdown"] scratchpad show; move position center
