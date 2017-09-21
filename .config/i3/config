@@ -97,14 +97,14 @@ exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
 exec --no-startup-id feh --bg-scale ~/.config/wall
-exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space 600
+exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space/ 600
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #remap menu button to super:
 exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 #unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter -grab
+exec --no-startup-id unclutter -noevents
 #Touchpad bindings
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
 #Run grive in the background to sync Google Drive
