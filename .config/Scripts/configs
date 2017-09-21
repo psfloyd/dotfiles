@@ -8,4 +8,5 @@ cfc	~/.config/Scripts/configs
 cft	~/.config/termite/config
 cfT	~/.tmux.conf
 cfp	~/.config/polybar/config
+cfR	~/.config/rofi/config
 cfnm	~/.ncmpcpp/config
