@@ -20,6 +20,7 @@ set $term termite
 set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 set $browser chromium
 set $tmux ~/Misc/bin/tmuxSelect
+set $execsh bash ~/.config/i3/exec.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -119,6 +120,11 @@ for_window [instance="dropdown"] resize set 825 500
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term --name dropdown -e 'tmux new-session -A -s Bgp'
+
+#ncmpcpp in the background for fast music
+for_window [instance="ncmpcppw"] fullscreen enable
+for_window [instance="ncmpcppw"] move scratchpad
+exec --no-startup-id $term --name ncmpcppw -e 'ncmpcpp'
 # }}}
 
 ##---Modes--###{{{
@@ -154,6 +160,16 @@ mode "$mode_screen" {
     bindsym e exec $screenext, mode "default"
     bindsym d exec $screendual, mode "default"
 
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "music" {
+    bindsym $mod+q			kill, mode "default"
+    bindsym $mod+Shift+q		kill, mode "default"
+    bindsym $mod1+z kill, mode "default"
+    
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -200,10 +216,10 @@ bindsym $mod+Shift+r		restart
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-bindsym $mod+y			exec --no-startup-id $term --name dropdown -e 'tmux new-session -A -s Bgp'
+#bindsym $mod+y			
 bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
 
-bindsym $mod+u			[instance="dropdown"] scratchpad show; move position center
+bindsym $mod+u			exec $execsh tmux
 bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
 
 bindsym $mod+i 			exec $term -e htop
@@ -260,7 +276,7 @@ bindsym $mod+c			mode "$mode_layout"
 #bindsym $mod+n			exec $next
 #bindsym $mod+Shift+n
 
-#bindsym $mod+m 			exec $music
+bindsym $mod+m 			mode "$mode_music"
 bindsym $mod+Shift+m		exec $mute
 # }}}
 
@@ -375,7 +391,7 @@ bindsym $mod+Shift+Right 	move right
 
 ###---Media Keys---###{{{
 #Control keys
-bindsym $mod1+z			exec $music 
+bindsym $mod1+z			exec $execsh music
 bindsym $mod1+a			exec $prev 
 bindsym $mod1+s			exec $pause 
 bindsym $mod1+d			exec $next 
@@ -472,7 +488,9 @@ bindsym XF86WebCam		exec mpv /dev/video0
 #bindsym XF86Game		exec 
 #bindsym XF86Shop		exec $browser https://ebay.com
 bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 3
+bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 1
 bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 3
+bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 1
 bindsym XF86AudioMedia		exec $music
 #bindsym XF86Display		exec --no-startup-id arandr
 #bindsym XF86KbdLightOnOff	exec 
