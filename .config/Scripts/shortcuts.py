@@ -25,10 +25,10 @@ with open(".config/Scripts/folders") as fold:
         line1Nospace = line[1].replace(" ", "\ ")
         rang+=("map g"+line[0]+" cd "+line[1]+"\n")
         rang+=("map t"+line[0]+" chain tab_new; cd "+line[1]+"\n")
-        rang+=("map m"+line[0]+" shell mv %s "+line1Nospace +"\n")
+        rang+=("map m"+line[0]+" shell mv %s "+line1Nospace+"\n")
         rang+=("map Y"+line[0]+" shell cp -r %s "+line1Nospace+"\n")
         #Adds the alsh shortcuts:
-        alsh+=("alias cd"+line[0]+"=\"cd "+line[1]+" && ls -a\"\n")
+        alsh+=("alias cd"+line[0]+"=\"cd "+line1Nospace+" && ls -a\"\n")
 
 rang+=("# }}}"+"\n"+"\n")
 alsh+=("# }}}"+"\n"+"\n")
