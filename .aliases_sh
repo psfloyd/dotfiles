@@ -83,6 +83,7 @@ alias cdc="cd ~/.config && ls -a"
 alias cdS="cd ~/.config/Scripts && ls -a"
 alias cdb="cd ~/Misc/bin && ls -a"
 alias cdr="cd / && ls -a"
+alias cdi="cd ~/.config/i3 && ls -a"
 # }}}
 
 # Config Aliases{{{
