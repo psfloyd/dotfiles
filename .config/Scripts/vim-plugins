@@ -31,6 +31,9 @@ Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 " surround - change "souroundings" 
 Plug 'tpope/vim-surround'
 
+" Git Wrapper
+Plug 'tpope/vim-fugitive'
+
 
 """"""""" Latex """"""""
  let g:tex_flavor='latex' "Fix indentation
@@ -51,8 +54,7 @@ Plug 'lervag/vimtex'
 let g:vimtex_indent_enabled=0
 
 " latex preview - Instalado por AUR
-" Plug 'ying17zi/vim-live-latex-preview'
-
+ "Plug 'ying17zi/vim-live-latex-preview'
 
 " Snippets
 Plug 'Shougo/neosnippet'
