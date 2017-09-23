@@ -46,11 +46,11 @@ module-margin-right = 2
 font-0 = "Wuncon Siji:pixelsize=20;1"
 font-1 = DejaVuSans:pixelsize=11;1
 ;font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
-font-2 = FontAwesome:pixelsize=10;1
+font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3 mpd 
 modules-center = 
-modules-right = pkg wlan eth battery volume date powermenu
+modules-right = pkg pkg-upd wlan eth battery volume date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -164,7 +164,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <label-song>  
+format-online = <icon-prev> <toggle> <icon-stop> <icon-next> <label-song>  
 
 icon-prev = 
 icon-stop = 
@@ -385,8 +385,29 @@ format = <label>
 ;format-underline = #dc322f
 label = "%output:0:30%"
 exec = .config/polybar/pkg.sh
+click-left = echo left %counter%
 exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 
+[module/pkg-upd]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.foreground-alt2}
+label-close = 
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = AUR
+menu-0-0-exec = ~/.config/polybar/pkg-upd.sh aur
+menu-0-1 = Sys
+menu-0-1-exec = ~/.config/polybar/pkg-upd.sh sys
+menu-0-2 = All
+menu-0-2-exec = ~/.config/polybar/pkg-upd.sh all
 
 [settings]
 screenchange-reload = true
