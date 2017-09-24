@@ -34,6 +34,9 @@ compton)
 		compton &
 	fi
 	;;
+rofi)
+	rofi -modi "drun,run,window" -show drun
+	;;
 *)
 	exit
 esac
