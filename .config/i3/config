@@ -89,6 +89,8 @@ set $truemute --no-startup-id amixer sset Master mute
 # }}}
 
 ###---Starting External Scripts---###{{{
+#Automount USB devices
+exec --no-startup-id udiskie -s -m smart
 #Music player daemon:
 exec --no-startup-id mpd
 #Torrent daemon:
