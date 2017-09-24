@@ -31,7 +31,7 @@ compton)
 	if [ `pgrep compton` ]; then
 		killall compton
 	else
-		compton &
+		compton --config ~/.config/compton/compton.conf -b
 	fi
 	;;
 rofi)
