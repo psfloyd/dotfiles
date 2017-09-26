@@ -226,10 +226,10 @@ bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
 bindsym $mod+i 			exec $term -e htop
 bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
 
-#bindsym $mod+o			exec --no-startup-id $beg
+bindsym $mod+o			workspace prev
 bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
 
-#bindsym $mod+p			exec $pause
+bindsym $mod+p			workspace next
 bindsym $mod+Shift+p		exec mypaint
 
 #bindsym $mod+a			[instance="math"] scratchpad show; move position center
