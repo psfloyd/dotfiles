@@ -48,7 +48,7 @@ alias gs="git status -s"
 
 alias -g ga="git add"
 alias -g gaf="git add -f"
-alias gaa="git add -A && git status"
+alias gaa="git add -A && git status -s"
 
 alias gd="git diff"
 
