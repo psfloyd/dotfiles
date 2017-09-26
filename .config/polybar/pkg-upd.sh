@@ -4,13 +4,13 @@ tmuxSes=Bgp
 
 case "$1" in
 	sys)
-		cmd="pacaur -Syru ; read"
+		cmd="sudo pacmatic -Syu; read"
 		;;
 	aur)
 		cmd="pacaur -Sau ; read"
 		;;
 	all)
-		cmd="pacaur -Syu ; read"
+		cmd="archupdate.sh ; read"
 		;;
 	*)
 		exit
