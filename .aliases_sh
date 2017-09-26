@@ -1,4 +1,5 @@
 # vim: set filetype=sh:
+
 #{{{ Aliases & functions
 #Start VNC Server
 
@@ -12,7 +13,9 @@ alias sdn="sudo shutdown now"
 
 
 #Verbose rm, cp, mv, ln
-alias rm="rm -vi"
+alias rm="echo 'You should use trash-cli(rt). Or rmm for real rm'"
+alias rmm="rm -vi"
+alias rt="trash-put"
 alias cp="cp -v"
 alias mv="mv -v"
 alias ln="ln -v"
@@ -40,8 +43,8 @@ alias srcz="source ~/.zshrc.local && source ~/.aliases_sh"
 
 ##Git aliases
 
-alias gs="git status"
-alias gss="git status -s"
+alias gss="git status"
+alias gs="git status -s"
 
 alias -g ga="git add"
 alias -g gaf="git add -f"
@@ -88,6 +91,7 @@ alias cdi="cd ~/.config/i3 && ls -a"
 
 # Config Aliases{{{
 alias cfa="vim ~/.config/Scripts/aliases_sh.base"
+alias cfz="vim ~/.zshrc.local"
 alias cfv="vim ~/.vimrc"
 alias cfvp="vim ~/.config/Scripts/vim-plugins"
 alias cfr="vim ~/.config/ranger/rc.conf.base"
