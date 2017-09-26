@@ -1,6 +1,7 @@
 #!/bin/bash
 
 term=termite
+browser=chromium
 
 case "$1" in
 
@@ -48,6 +49,13 @@ i3lock)#{{{
 	mpc pause
 	i3lock -e -i /tmp/screen.png
 	;;#}}}
+
+#browser)#{{{
+	#i3-msg '--'\
+	#workspace "Browser" \; \
+	#exec --no-startup-id $browser \; \
+	#layout tabbed	
+	#;;#}}}
 
 *)#{{{
 	exit#}}}
