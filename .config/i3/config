@@ -37,9 +37,9 @@ floating_modifier $mod
 # }}}
 
 ###---Power/Touchpad/Screen Definitions---###{{{
-set $lock --no-startup-id bash ~/.config/i3/lock.sh
+set $lock --no-startup-id bash ~/.config/i3/exec.sh i3lock
 set $logout --no-startup-id i3-msg exit
-set $suspend --no-startup-id bash ~/.config/i3/lock.sh && systemctl suspend
+set $suspend --no-startup-id bash ~/.config/i3/exec.sh i3lock && systemctl suspend
 set $hibernate --no-startup-id bash ~/.config/i3/lock.sh && systemctl hibernate
 set $reboot --no-startup-id systemctl reboot
 set $shutdown --no-startup-id systemctl poweroff
@@ -99,19 +99,15 @@ exec --no-startup-id mpd
 exec --no-startup-id transmission-daemon
 #Wifi applet:
 exec --no-startup-id nm-applet
-#Mount other drives:
-#exec --no-startup-id sudo mount -a
 #Composite manager:
 exec $execsh compton
 #Refresh bash/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
-#Try to load VGA screen if available:
-#exec --no-startup-id ~/.config/Scripts/screen.sh v
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
 exec --no-startup-id feh --bg-scale ~/.config/wall
-exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/Fondos/Real\ Space/ 600
+exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
 #remaps the caps lock button to escape and uses the us international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #remap menu button to super:
@@ -123,6 +119,8 @@ exec --no-startup-id unclutter -noevents
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
 #Run grive in the background to sync Google Drive
 exec --no-startup-id bash ~/.config/Scripts/grive-loop.sh
+#Clear trash folder older than 30 days
+exec --no-startup-id trash-empty 30
 # }}}
 
 ###---Dropdown/Scratchpad Windows---###{{{
