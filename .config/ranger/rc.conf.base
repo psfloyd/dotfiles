@@ -469,7 +469,7 @@ tmap <ESC> taskview_close
 copytmap <ESC> q Q w <C-c>
 
 #TRASH
-map Ttl shell trash-list; read
+map Ttl shell trash-list | less
 map Ttr shell trash-restore
 map Tte console shell trash-empty 30
 

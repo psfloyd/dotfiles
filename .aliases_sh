@@ -15,7 +15,11 @@ alias sdn="sudo shutdown now"
 #Verbose rm, cp, mv, ln
 alias rm="echo 'You should use trash-cli(rt). Or rmm for real rm'"
 alias rmm="rm -vi"
+
 alias rt="trash-put"
+alias trr="trash-restore"
+alias trl="trash-list"
+
 alias cp="cp -v"
 alias mv="mv -v"
 alias ln="ln -v"
