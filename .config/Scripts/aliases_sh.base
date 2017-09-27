@@ -44,7 +44,7 @@ alias -g ga="git add"
 alias -g gaf="git add -f"
 alias gaa="git add -A && git status -s"
 
-alias gdif="git diff"
+alias gdi="git diff"
 
 alias -g gp="git push "
 alias gpom="git push origin master"
