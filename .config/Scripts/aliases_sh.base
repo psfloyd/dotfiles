@@ -1,17 +1,14 @@
 # vim: set filetype=sh:
 
-#{{{ Aliases & functions
-#Start VNC Server
-
-alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
-
-#Basic Aliases
+#Basic Aliases#{{{
 alias Si="sudo -i"
 alias -g S="sudo "
 mkcd() { mkdir -vp $1 && cd $1 ;}
+gd() { cd $1 && ls ;}
 alias sdn="sudo shutdown now"
+#}}}
 
-
+#System command aliases#{{{
 #Verbose rm, cp, mv, ln
 alias rm="echo 'You should use trash-cli(rt). Or rmm for real rm'"
 alias rmm="\rm -vi"
@@ -36,16 +33,9 @@ alias -g Hl=" --help |& less -r"
 alias -g V="| vim -"
 alias -g G="| grep "
 
-function T () {
-if [ -z "$TMUX" ];then
-   ~/Misc/bin/tmuxSelect
-fi
-}
+#}}}
 
-
-alias srcz="source ~/.zshrc.local && source ~/.aliases_sh"
-
-##Git aliases
+##Git aliases#{{{
 
 alias gss="git status"
 alias gs="git status -s"
@@ -54,7 +44,7 @@ alias -g ga="git add"
 alias -g gaf="git add -f"
 alias gaa="git add -A && git status -s"
 
-alias gd="git diff"
+alias gdif="git diff"
 
 alias -g gp="git push "
 alias gpom="git push origin master"
@@ -64,12 +54,22 @@ alias gcmt="git commit -m '$( date +'%F--%R')'"
 
 alias -g gb="git branch"
 alias -g gco="git checkout"
+#}}}
 
-##Function Aliases
+##Misc#{{{
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 
+alias srcz="source ~/.zshrc.local && source ~/.aliases_sh"
 
-# }}}
+alias rng="ranger ."
 
-# Config and Cd Aliases(added by .config/Scripts/shortcuts.py)
+function T () {
+if [ -z "$TMUX" ];then
+   ~/Misc/bin/tmuxSelect
+fi
+}
 
+#Start VNC Server
+alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
+
+#}}}
