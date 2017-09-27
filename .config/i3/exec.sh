@@ -57,6 +57,11 @@ i3lock)#{{{
 	#layout tabbed	
 	#;;#}}}
 
+ranger)#{{{
+	export RANGER_LOAD_DEFAULT_RC=FALSE
+	$term -e ranger
+	;;#}}}
+
 *)#{{{
 	exit#}}}
 
