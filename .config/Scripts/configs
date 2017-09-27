@@ -1,3 +1,4 @@
+cfs	~/.config/Scripts/shortcuts.py
 cfa	~/.config/Scripts/aliases_sh.base
 cfz	~/.zshrc.local
 cfv	~/.vimrc

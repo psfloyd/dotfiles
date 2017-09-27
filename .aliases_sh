@@ -97,6 +97,7 @@ alias gdi="cd ~/.config/i3 && ls "
 #}}}
 
 #config aliases{{{
+alias cfs="vim ~/.config/Scripts/shortcuts.py"
 alias cfa="vim ~/.config/Scripts/aliases_sh.base"
 alias cfz="vim ~/.zshrc.local"
 alias cfv="vim ~/.vimrc"
