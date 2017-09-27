@@ -1,3 +1,4 @@
+u	/run/media/$USER
 h	~
 d	~/Documents
 Uu	~/Documents/Google Drive/UNI
@@ -13,5 +14,4 @@ s	~/Media/Series
 c	~/.config
 S	~/.config/Scripts
 b	~/Misc/bin
-r	/
 i	~/.config/i3
