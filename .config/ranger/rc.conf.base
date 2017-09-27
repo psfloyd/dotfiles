@@ -1,5 +1,6 @@
 ###SETTINGS###{{{
 set viewmode miller
+#set viewmode multipane
 
 set column_ratios 1,3,4
 #set hidden_filter ^\.|\.(?:pyc|pyo|bak|swp)$|^lost\+found$|^__(py)?cache__$
@@ -168,7 +169,7 @@ map <F4> edit
 map <F5> copy
 map <F6> cut
 map <F7> console mkdir%space
-map <F8> console shell trash %s
+map <F8> console shell trash-put '%s'
 map <F10> exit
 
 
@@ -177,12 +178,12 @@ map <F10> exit
 #map <DOWN>     move down=1
 #map <LEFT>     move left=1
 #map <RIGHT>    move right=1
-#map <HOME>     move to=0
+map <HOME>     move to=0
 map <END>      move to=-1
 map <PAGEDOWN> move down=1   pages=True
 map <PAGEUP>   move up=1     pages=True
 map <CR>       move right=1
-map <DELETE>   console shell trash %s
+map <DELETE>   console shell trash-put '%s'
 map <INSERT>   console touch%space
 
 
@@ -279,10 +280,11 @@ map pL paste_symlink relative=True
 map phl paste_hardlink
 map pht paste_hardlinked_subtree
 
-map dD console shell trash %s
+map dD shell trash-put '%s'
 map dR console delete
-map D console shell trash %s
+map D console shell trash-put '%s'
 map mkd console mkdir%space
+map mkf console touch%space
 
 map dd cut
 map ud uncut
@@ -360,11 +362,11 @@ map zf    console filter%space
 # Bookmarks
 map `<any>  enter_bookmark %any
 map '<any>  enter_bookmark %any
-map mz<any>  set_bookmark %any
-map um<any> unset_bookmark %any
+map bms<any>  set_bookmark %any
+map bmu<any> unset_bookmark %any
 
-map mz<bg>   draw_bookmarks
-copymap mz<bg> um<bg> `<bg> '<bg>
+map bms<bg>   draw_bookmarks
+copymap bms<bg> bmu<bg> `<bg> '<bg>
 
 # Generate all the chmod bindings with some python help:
 eval for arg in "rwxXst": cmd("map +u{0} shell -f chmod u+{0} %s".format(arg))
