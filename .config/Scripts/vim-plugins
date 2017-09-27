@@ -32,7 +32,10 @@ Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-surround'
 
 " Git Wrapper
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
+
+" Tabular, align text
+"Plug 'godlygeek/tabular'
 
 
 """"""""" Latex """"""""
