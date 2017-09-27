@@ -34,7 +34,7 @@ with open(".config/Scripts/folders") as fold:
         rang+=("map m"+line[0]+" shell mv %s "+line1Nospace+"\n")
         rang+=("map Y"+line[0]+" shell cp -r %s "+line1Nospace+"\n")
         #Adds the alsh shortcuts:
-        alsh+=("alias gd"+line[0]+"=\"cd "+line1Nospace+" && ls \"\n")
+        alsh+=("alias cd"+line[0]+"=\"cd "+line1Nospace+" && ls \"\n")
 
 rang+=("#}}}"+"\n"+"\n")
 alsh+=("#}}}"+"\n"+"\n")
