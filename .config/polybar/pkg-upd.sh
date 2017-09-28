@@ -10,7 +10,7 @@ case "$1" in
 		cmd="pacaur -Sau ; read"
 		;;
 	all)
-		cmd="archupdate.sh ; read"
+		cmd="archupdate.sh"
 		;;
 	*)
 		exit
