@@ -2,6 +2,7 @@
 
 term=termite
 browser=chromium
+scshotFold=~
 
 case "$1" in
 
@@ -60,6 +61,17 @@ i3lock)#{{{
 ranger)#{{{
 	export RANGER_LOAD_DEFAULT_RC=FALSE
 	$term -e ranger
+	;;#}}}
+
+screenshot)#{{{
+	case "$2" in
+	area)
+		import $scshotFold/Screenshot_$(date -Iseconds).png&
+		;;
+	*)
+		import -window root $scshotFold/Screenshot_$(date -Iseconds).png
+		;;
+	esac
 	;;#}}}
 
 *)#{{{

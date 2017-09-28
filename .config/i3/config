@@ -418,8 +418,8 @@ bindsym $mod1+Shift+bracketright exec $bigfor
 
 #Print screen takes a screenshot.
 #With shift, it takes one only of the given window.
-bindsym Print 			exec --no-startup-id scrot
-bindsym Shift+Print 		exec --no-startup-id scrot -u
+bindsym Print --release			exec --no-startup-id $execsh screenshot
+bindsym Shift+Print --release		exec --no-startup-id $execsh screenshot area
 # }}}
 
 ###---Extra XF86 Keys---###{{{
