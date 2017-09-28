@@ -99,6 +99,8 @@ exec --no-startup-id mpd
 exec --no-startup-id transmission-daemon
 #Wifi applet:
 exec --no-startup-id nm-applet
+#Bluetooth applet:
+exec --no-startup-id blueman-applet
 #Composite manager:
 exec $execsh compton
 #Refresh zsh/ranger shortcuts:
