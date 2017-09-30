@@ -48,11 +48,6 @@ set $shutdown --no-startup-id systemctl poweroff
 set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
 set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
 
-#Screen Script
-set $screenlap --no-startup-id ~/.config/Scripts/screen.sh l;; exec --no-startup-id ~/.config/polybar/launch.sh
-set $screenext  --no-startup-id ~/.config/Scripts/screen.sh e;; exec --no-startup-id ~/.config/polybar/launch.sh
-set $screendual --no-startup-id ~/.config/Scripts/screen.sh d;; exec --no-startup-id ~/.config/polybar/launch.sh
-
 # }}}
 
 ###---Audio and Music Definitions---###{{{
@@ -168,9 +163,9 @@ mode "$mode_layout" {
 
 set $mode_screen Screen: (l) Laptop, (e) External, (d) Dual 
 mode "$mode_screen" {
-    bindsym l exec $screenlap, mode "default"
-    bindsym e exec $screenext, mode "default"
-    bindsym d exec $screendual, mode "default"
+    bindsym l exec $execsh screen_mode l, mode "default"
+    bindsym e exec $execsh screen_mode e, mode "default"
+    bindsym d exec $execsh screen_mode d, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

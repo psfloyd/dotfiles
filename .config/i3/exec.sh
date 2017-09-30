@@ -66,12 +66,17 @@ ranger)#{{{
 screenshot)#{{{
 	case "$2" in
 	area)
-		import $scshotFold/Screenshot_$(date -Iseconds).png&
+		import $scshotFold/Screenshot_$(date -Iseconds).png
 		;;
 	*)
 		import -window root $scshotFold/Screenshot_$(date -Iseconds).png
 		;;
 	esac
+	;;#}}}
+
+screen_mode)#{{{
+	~/.config/Scripts/screen.sh $2
+	~/.config/polybar/launch.sh $3
 	;;#}}}
 
 *)#{{{

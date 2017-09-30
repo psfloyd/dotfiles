@@ -16,11 +16,12 @@ elif [[ $(xrandr -q | grep VGA1\ con) ]]; then
 else echo "No HDMI/VGA input detected."
 fi ;}
 
+
 dual() { xrandr --output LVDS1 --auto --primary --output $extdisp --auto --right-of LVDS1 ;}
 
-laptop() { xrandr --output LVDS1 --auto --output $extdisp --off ;}
+laptop() { xrandr --output LVDS1 --auto --primary --output $extdisp --off ;}
 
-ext() { xrandr --output $extdisp --auto --output LVDS1 --off ;}
+ext() { xrandr --output $extdisp --auto --primary --output LVDS1 --off ;}
 
 #mirror() { xrandr --addmode $extdisp $lapres && xrandr --output LVDS1 --mode $lapres --output $extdisp --mode $lapres ;}
 
