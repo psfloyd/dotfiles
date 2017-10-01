@@ -116,7 +116,8 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option cap
 exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 #unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b#Touchpad bindings
+exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b
+#Touchpad bindings
 exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
 #Run grive in the background to sync Google Drive
 exec --no-startup-id bash ~/.config/Scripts/grive-loop.sh
