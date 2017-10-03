@@ -1,8 +1,6 @@
 # vim: filetype=i3
 
 #Based on Luke Smith's i3-gaps configuration file.
-#Me: http://lukesmith.xyz
-#YouTube: https://youtube.com/c/LukeSmithxyz
 #Github: https://github.com/LukeSmithxyz
 
 
@@ -162,11 +160,18 @@ mode "$mode_layout" {
     bindsym Escape mode "default"
 }
 
-set $mode_screen Screen: (l) Laptop, (e) External, (d) Dual 
+set $mode_screen Screen(Uppercase->Force 1080): (l) Laptop, (e) External, (d) Dual, (n) Dual(no bar in Ext)
 mode "$mode_screen" {
     bindsym l exec $execsh screen_mode l, mode "default"
     bindsym e exec $execsh screen_mode e, mode "default"
     bindsym d exec $execsh screen_mode d, mode "default"
+    bindsym n exec $execsh screen_mode d prionly, mode "default"
+
+    #Bodge for forcing 1080
+    bindsym Shift+l exec $execsh screen_mode l foo 1080, mode "default"
+    bindsym Shift+e exec $execsh screen_mode e foo 1080, mode "default"
+    bindsym Shift+d exec $execsh screen_mode d foo 1080, mode "default"
+    bindsym Shift+n exec $execsh screen_mode d onlyLap 1080, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

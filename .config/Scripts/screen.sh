@@ -7,12 +7,10 @@
 
 extdisp=""
 
-main() { if [[ $(xrandr -q | grep HDMI1\ con) ]]; then
+selectExt() { if [[ $(xrandr -q | grep HDMI1\ con) ]]; then
 	extdisp="HDMI1"	
-	param $1
 elif [[ $(xrandr -q | grep VGA1\ con) ]]; then
 	extdisp="VGA1"	
-	param $1
 else echo "No HDMI/VGA input detected."
 fi ;}
 
@@ -28,8 +26,28 @@ ext() { xrandr --output $extdisp --auto --primary --output LVDS1 --off ;}
 param() {
 case $1 in
 	d) dual ;;
-	e) ext ;;
 	l) laptop ;;
-	*) echo -e "Invalid parameter. Add one of the following:\n\"d\" for dualscreen laptop and VGA.\n\"l\" for laptop only\n\"v\" for VGA only." ;;
+	e) ext ;;
+	*) echo -e "Invalid parameter. Add one of the following:\n\"d\" for dualscreen.\n\"l\" for laptop only\n\"v\" for External only." ;;
 esac ;}
-main $1
+
+paramforce() {
+case $1 in
+	d)  xrandr --output LVDS1 --auto --primary --output $extdisp --mode 1920x1080 --right-of LVDS1 ;;
+	e)  xrandr --output $extdisp --mode 1920x1080 --primary --output LVDS1 --off ;;
+	l) laptop ;;
+	*) echo -e "Invalid parameter. Add one of the following:\n\"d\" for dualscreen.\n\"l\" for laptop only\n\"v\" for External only." ;;
+esac ;}
+
+
+selectExt
+
+#Bodge for forcing 1080#{{{
+if [ $2=='1080' ]; then
+	echo "Forced 1080."
+	paramforce $1
+	exit
+fi
+#}}}
+
+param $1
