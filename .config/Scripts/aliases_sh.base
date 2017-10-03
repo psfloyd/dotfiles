@@ -11,7 +11,7 @@ alias sdn="sudo shutdown now"
 #System command aliases#{{{
 #Verbose rm, cp, mv, ln
 alias rm="echo 'You should use trash-cli(rt). Or rmm for real rm'"
-alias rmm="\rm -vi"
+alias rmm="\rm -vI"
 
 alias rt="trash-put"
 alias trr="trash-restore"
