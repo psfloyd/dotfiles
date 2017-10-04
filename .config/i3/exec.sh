@@ -69,7 +69,10 @@ screenshot)#{{{
 		import $scshotFold/Screenshot_$(date -Iseconds).png
 		;;
 	*)
-		import -window root $scshotFold/Screenshot_$(date -Iseconds).png
+		mkdir /tmp/execsh_scshot.lock\
+		&& import -window root $scshotFold/Screenshot_$(date -Iseconds).png ;\
+		sleep 1s;\
+		rm -rf  /tmp/execsh_scshot.lock		
 		;;
 	esac
 	;;#}}}
