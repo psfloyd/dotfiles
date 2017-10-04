@@ -187,7 +187,7 @@ bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
 
 bindsym $mod+Escape		workspace prev
-#bindsym $mod+Shift+Escape 	exec i3-msg exit
+bindsym $mod+Shift+Escape 	workspace next
 
 bindsym $mod+BackSpace		exec $flash
 #bindsym $mod+Shift+BackSpace	exec sudo reboot
