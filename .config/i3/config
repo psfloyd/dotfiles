@@ -363,7 +363,7 @@ workspace $ws10 gaps outer 0
 #bindsym F8
 #bindsym F9
 #bindsym F10
-bindsym F11		fullscreen toggle
+#bindsym F11		fullscreen toggle
 #bindsym F12
 
 #bindsym $mod+F1	
