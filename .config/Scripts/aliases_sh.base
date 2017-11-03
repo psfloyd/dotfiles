@@ -59,7 +59,7 @@ alias -g gco="git checkout"
 ##Misc#{{{
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 
-alias srcz="source ~/.zshrc.local && source ~/.aliases_sh"
+alias srcz="source ~/.zshrc.local"
 
 alias rng="ranger ."
 
@@ -70,6 +70,6 @@ fi
 }
 
 #Start VNC Server
-alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/psfloyd/.vnc/passwd -rfbport 33225 -shared"
+alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/.vnc/"$USER"_passwd -rfbport 33225 -shared"
 
 #}}}
