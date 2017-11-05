@@ -64,16 +64,10 @@ alias -g pcSs="$pccomm""-Ss"
 alias -g pcSr="$pccomm""-Sr"
 alias -g pcSa="$pccomm""-Sa"
 alias -g pcSy="$pccomm""-Sy"
-<<<<<<< HEAD
 alias -g pcQ="$pccomm""-Q"
 #}}}
 
 #Misc#{{{
-=======
-alias -g pcQ="$pccomm""-Q"#}}}
-
-##Misc#{{{
->>>>>>> 1bee62e34fbdcf3b0c4a799f50dffe955038aa9d
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 
 alias srcz="source ~/.zshrc.local"
