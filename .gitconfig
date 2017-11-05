@@ -1,0 +1,5 @@
+[user]
+	email = peter.racoon@gmail.com
+	name = psfloyd
+[credential]
+	helper = cache --timeout=3600
