@@ -56,7 +56,7 @@ alias -g gb="git branch"
 alias -g gco="git checkout"
 #}}}
 
-#pacman aliases
+#pacman aliases#{{{
 pccomm='pacaur '
 alias -g pc="$pccomm"
 alias -g pcS="$pccomm""-S"
@@ -64,8 +64,7 @@ alias -g pcSs="$pccomm""-Ss"
 alias -g pcSr="$pccomm""-Sr"
 alias -g pcSa="$pccomm""-Sa"
 alias -g pcSy="$pccomm""-Sy"
-alias -g pcQ="$pccomm""-Q"
-
+alias -g pcQ="$pccomm""-Q"#}}}
 
 ##Misc#{{{
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
@@ -81,7 +80,7 @@ fi
 }
 
 #Start VNC Server
-alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/.vnc/"$USER"_passwd -rfbport 33225 -shared"
+alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/.common/vnc/"$USER"_passwd -rfbport 33225 -shared"
 
 #}}}
 
