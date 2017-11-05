@@ -67,7 +67,7 @@ alias -g pcSy="$pccomm""-Sy"
 alias -g pcQ="$pccomm""-Q"
 #}}}
 
-##Misc#{{{
+#Misc#{{{
 alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 
 alias srcz="source ~/.zshrc.local"
