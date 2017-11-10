@@ -4,7 +4,8 @@
 
 # {{{ Locations
 # Backup Cache Location
-backupLoc=/run/media/psfarch/External\ Backup/Other\ Backups/Pacman\ Cache/
+backupLoc=/run/media/$USER/External\ Backup/Other\ Backups/Pacman\ Cache/
+echo $backupLoc
 
 
 # Cache Folder
@@ -20,10 +21,10 @@ if [ ! -d "${backupLoc}" ]; then
     exit
 fi
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as sudo"
-  exit
-fi
+#if [ "$EUID" -ne 0 ]
+  #then echo "Please run as sudo"
+  #exit
+#fi
 
 rsyncCommand="rsync -r -t -v --progress -s "
 #}}}
