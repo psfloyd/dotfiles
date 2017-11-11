@@ -100,7 +100,7 @@ exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
-exec --no-startup-id feh --bg-scale ~/.config/wall
+exec_always --no-startup-id feh --bg-scale ~/.config/wall
 exec --no-startup-id bash ~/.config/i3/i3Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
 #Keyboard layout
 exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
