@@ -7,7 +7,6 @@ scshotFold=~
 case "$1" in
 
 tmux)#{{{
-
 if i3-msg -t get_tree | jq -r . | grep -q "dropdown"; then
 	i3-msg '[instance="dropdown"] scratchpad show; move position center'
 

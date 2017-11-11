@@ -57,14 +57,26 @@ alias -g gco="git checkout"
 #}}}
 
 #pacman aliases#{{{
-pccomm='pacaur '
+if [ -x "$(command -v pacaur)" ] && [ "$EUID" -ne 0 ]; then
+	pccomm='pacaur '
+else
+	pccomm='pacman '
+fi
+
+
 alias -g pc="$pccomm"
+
+#Sync
 alias -g pcS="$pccomm""-S"
-alias -g pcSs="$pccomm""-Ss"
 alias -g pcSr="$pccomm""-Sr"
 alias -g pcSa="$pccomm""-Sa"
-alias -g pcSy="$pccomm""-Sy"
+alias -g pcSs="$pccomm""-Ss"
+alias -g pcSsr="$pccomm""-Ssr"
+alias -g pcSsa="$pccomm""-Ssa"
+
+#Query
 alias -g pcQ="$pccomm""-Q"
+alias -g pcQs="$pccomm""-Qs"
 #}}}
 
 #Misc#{{{
