@@ -40,7 +40,14 @@ compton)#{{{
 	;;#}}}
 
 rofi)#{{{
-	rofi -modi "drun,run,window" -show drun
+	case "$2" in
+		gksudo)
+			rofi -modi "drun,run,window" -show drun -run-command 'gksudo {cmd}'
+			;;
+		*)
+			rofi -modi "drun,run,window" -show drun
+			;;
+	esac
 	;;#}}}
 
 i3lock)#{{{
