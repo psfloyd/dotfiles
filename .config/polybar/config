@@ -50,7 +50,7 @@ font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3 mpd 
 modules-center = 
-modules-right = pkg pkg-upd wlan eth battery volume date
+modules-right = pkg pkg-upd battery volume date
 
 tray-position = right
 tray-padding = 0
@@ -286,11 +286,11 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = "  "
+format-muted-prefix =" "
 format-muted-foreground = ${colors.foreground-alt2}
-label-muted = muted
+label-muted = mute
 
-bar-volume-width = 7
+bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
