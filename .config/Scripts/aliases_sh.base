@@ -81,7 +81,7 @@ alias -g pcQs="$pccomm""-Qs"
 
 #Misc#{{{
 alias sus="systemctl suspend"
-alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
+alias shortcutsRn="python ~/.config/Scripts/shortcuts.py && source ~/.zshrc.local"
 
 alias srcz="source ~/.zshrc.local"
 
