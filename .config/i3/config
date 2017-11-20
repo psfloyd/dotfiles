@@ -26,7 +26,7 @@ set $mod1 Mod1
 set $term termite
 set $flash --no-startup-id bash ~/.config/i3/i3Scripts/flash_win.sh
 set $browser chromium
-set $tmux ~/Misc/bin/tmuxSelect
+set $tmux ~/bin/tmuxSelect
 	set $multifuncsh bash ~/.config/i3/i3Scripts/multifunc.sh
 
 	# Use Mouse+$mod to drag floating windows to their wanted position

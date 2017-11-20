@@ -13,5 +13,5 @@ M	~/Media/Movies
 s	~/Media/Series
 c	~/.config
 S	~/.config/Scripts
-b	~/Misc/bin
+b	~/bin
 i	~/.config/i3

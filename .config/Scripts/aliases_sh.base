@@ -89,7 +89,7 @@ alias rng="ranger ."
 
 function T () {
 if [ -z "$TMUX" ];then
-   ~/Misc/bin/tmuxSelect
+   ~/bin/tmuxSelect
 fi
 }
 
