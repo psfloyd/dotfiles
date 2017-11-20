@@ -1,7 +1,7 @@
 ##PSF zshrc.local
 
 #Warnings{{{
-if [ $EUID -eq 0 ]; then
+if [ $EUID -ne 0 ]; then
 	if [ ! -f ~/.config/i3/i3Scripts/touchpad.sh ]; then
 		echo 'touchpad.sh does not exist. Copy one from the samples.'
 	fi
