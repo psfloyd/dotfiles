@@ -54,7 +54,9 @@ i3lock)#{{{
 	cp ~/Media/Pictures/i3/lock/lock_img /tmp/screen.png
 	[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
 	mpc pause
-	i3lock -e -i /tmp/screen.png
+	killall twmnd
+	i3lock -en -i /tmp/screen.png
+	twmnd & exit
 	;;#}}}
 
 #browser)#{{{
