@@ -1,5 +1,11 @@
 # vim: filetype=i3
 
+###---PC specific definitions---###{{{
+#Touchpad On/Off
+set $touchon --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 1
+set $touchoff --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
+# }}}
+
 ###---Function Buttons---###{{{
 #bindsym F1		nop
 #bindsym F2
@@ -126,7 +132,7 @@ bindsym $mod+w			exec --no-startup-id $browser
 #bindsym $mod+Shift+e
 
 bindsym $mod+r 			exec $multifuncsh ranger
-bindsym $mod+Shift+r		restart
+bindsym $mod+Shift+r		$restart
 
 bindsym $mod+t			split toggle
 #bindsym $mod+Shift+t		
@@ -252,7 +258,7 @@ bindsym XF86AudioStop		exec $stop
 #bindsym XF86Phone		exec 
 #bindsym XF86Tools		exec 
 #bindsym XF86HomePage		exec
-#bindsym XF86Reload		restart
+#bindsym XF86Reload		
 #bindsym XF86ScrollUp		exec 
 #bindsym XF86ScrollDown		exec 
 #bindsym XF86New		exec 
