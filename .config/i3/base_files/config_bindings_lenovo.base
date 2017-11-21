@@ -1,0 +1,296 @@
+# vim: filetype=i3
+
+###---Function Buttons---###{{{
+#bindsym F1		nop
+#bindsym F2
+#bindsym F3
+#bindsym F4
+#bindsym F5
+#bindsym F6
+#bindsym F7
+#bindsym F8
+#bindsym F9
+#bindsym F10
+#bindsym F11		fullscreen toggle
+#bindsym F12
+
+#bindsym $mod+F1	
+bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+bindsym $mod+F3		mode "$mode_screen"	
+bindsym $mod+Shift+F3	exec --no-startup-id arandr
+#bindsym $mod+F4
+#bindsym $mod+F5		
+bindsym $mod+F6		exec $multifuncsh compton
+bindsym $mod+F7		exec transset-df -a --dec .15
+bindsym $mod+F8		exec transset-df -a --inc .15
+#bindsym $mod+F9	
+#bindsym $mod+F10	
+#bindsym $mod+F11	
+#bindsym $mod+F12	
+# }}}
+
+###---Symbol Bindings---###{{{
+bindsym $mod+Escape		workspace prev
+bindsym $mod+Shift+Escape 	workspace next
+
+bindsym $mod+grave		exec $flash
+#bindsym $mod+Shift+grave
+
+#bindsym $mod+minus
+#bindsym $mod+Shift+minus
+
+#bindsym $mod+equal
+#bindsym $mod+Shift+equal
+
+bindsym $mod+BackSpace		exec $flash
+#bindsym $mod+Shift+BackSpace	exec sudo reboot
+
+#bindsym $mod+Delete
+bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
+
+bindsym $mod+Tab		workspace back_and_forth
+#bindsym $mod+Shift+Tab
+
+#bindsym $mod+bracketleft
+#bindsym $mod+Shift+bracketleft
+
+#bindsym $mod+bracketright
+#bindsym $mod+Shift+bracketright
+
+#bindsym $mod+backslash
+#bindsym $mod+Shift+backslash
+
+bindsym $mod+semicolon		workspace next
+#bindsym $mod+Shift+semicolon
+
+bindsym $mod+apostrophe		split horizontal ;; exec $term
+#bindsym $mod+Shift+apostrophe
+
+bindsym $mod+Return 		exec $term
+bindsym $mod+Shift+Return 	exec $term -e $tmux
+
+bindsym $mod+comma	 	focus parent
+#bindsym $mod+Shift+comma
+
+bindsym $mod+period	 	focus child
+#bindsym $mod+Shift+period
+
+bindsym $mod+slash		split vertical ;; exec $term
+#bindsym $mod+Shift+slash
+
+bindsym $mod+Shift+space 	floating toggle
+bindsym $mod+space		focus mode_toggle
+
+# }}}
+
+###---Arrow Keys---###{{{
+#bindsym $mod+Left		focus left
+#bindsym $mod+Down		focus down
+#bindsym $mod+Up			focus up
+#bindsym $mod+Right 		focus right
+#bindsym $mod+Shift+Left		move left
+#bindsym $mod+Shift+Down		move down
+#bindsym $mod+Shift+Up		move up
+#bindsym $mod+Shift+Right 	move right
+# }}}
+
+###---Misc Bindings---###{{{
+bindsym $mod+Home		workspace $ws1
+bindsym $mod+Shift+Home		move container to workspace $ws1
+
+bindsym $mod+End		workspace $ws10
+bindsym $mod+Shift+End		move container to workspace $ws10
+
+bindsym $mod+Prior		workspace prev
+bindsym $mod+Shift+Prior	move container to workspace prev
+
+bindsym $mod+Next		workspace next
+bindsym $mod+Shift+Next		move container to workspace next
+
+bindsym Print 				exec --no-startup-id $multifuncsh screenshot
+bindsym Shift+Print --release		exec --no-startup-id $multifuncsh screenshot area
+# }}}
+
+###---Letter Key Bindings---###{{{
+bindsym $mod+q			kill
+bindsym $mod+Shift+q		kill
+
+bindsym $mod+w			exec --no-startup-id $browser
+#bindsym $mod+w			exec $multifuncsh browser
+#bindsym $mod+Shift+w		
+
+#bindsym $mod+e			
+#bindsym $mod+Shift+e
+
+bindsym $mod+r 			exec $multifuncsh ranger
+bindsym $mod+Shift+r		restart
+
+bindsym $mod+t			split toggle
+#bindsym $mod+Shift+t		
+
+#bindsym $mod+y			
+bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
+
+bindsym $mod+u			exec $multifuncsh tmux
+bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
+
+bindsym $mod+i 			exec $term -e htop
+bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
+
+#bindsym $mod+o			
+bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
+
+#bindsym $mod+p			
+bindsym $mod+Shift+p		exec mypaint
+
+bindsym $mod+a			gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+a		gaps inner current set 0; gaps outer current set 0
+
+bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+Shift+s		gaps inner current minus 5
+
+bindsym $mod+d			exec $multifuncsh rofi
+bindsym $mod+Shift+d		exec $multifuncsh rofi gksudo
+
+bindsym $mod+f			fullscreen toggle
+#bindsym $mod+Shift+f
+
+bindsym $mod+g			workspace prev
+#bindsym $mod+Shift+g		
+
+bindsym $mod+h			focus left
+bindsym $mod+Shift+h		move left 30
+
+bindsym $mod+j			focus down
+bindsym $mod+Shift+j		move down 30
+
+bindsym $mod+k			focus up
+bindsym $mod+Shift+k		move up 30
+
+bindsym $mod+l			focus right
+bindsym $mod+Shift+l		move right 30
+
+bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+Shift+z		gaps outer current minus 5
+
+bindsym $mod+x	        	mode "$mode_system"
+bindsym $mod+Shift+x		exec $lock
+
+bindsym $mod+c			mode "$mode_layout"
+#bindsym $mod+Shift+c
+
+#bindsym $mod+v			
+#bindsym $mod+Shift+v
+
+#bindsym $mod+b			
+#bindsym $mod+Shift+b	
+
+#bindsym $mod+n			
+#bindsym $mod+Shift+n
+
+#bindsym $mod+m 			
+bindsym $mod+Shift+m		exec $mute
+# }}}
+
+###---Media Keys---###{{{
+#Control keys
+bindsym $mod1+z			exec $multifuncsh music
+bindsym $mod1+a			exec $prev 
+bindsym $mod1+s			exec $pause 
+bindsym $mod1+d			exec $next 
+bindsym $mod1+x			exec $stop 
+bindsym $mod1+c			exec $crop 
+
+#Volume keys
+
+bindsym $mod1+plus		exec $musinc
+bindsym $mod1+Shift+plus	exec $musbiginc
+
+bindsym $mod1+minus 		exec $musdec
+bindsym $mod1+Shift+minus	exec $musbigdec
+
+# }}}
+
+###---Extra XF86 Keys---###{{{
+#These are the extra media keys that some keyboards have.
+bindsym XF86AudioMute		exec $mute
+bindsym XF86AudioLowerVolume	exec $dec
+bindsym XF86AudioRaiseVolume	exec $inc
+#bindsym XF86PowerOff		exec $shutdown
+#bindsym XF86Copy		exec 
+#bindsym XF86Open		exec 
+#bindsym XF86Paste		exec 
+#bindsym XF86Cut		exec 
+#bindsym XF86MenuKB		exec 
+#bindsym XF86Calculator		exec
+bindsym XF86Sleep		exec $suspend
+#bindsym XF86WakeUp		exec 
+
+#bindsym XF86Explorer		exec
+#bindsym XF86Send		exec 
+#bindsym XF86Xfer		exec 
+#bindsym XF86WWW		exec
+#bindsym XF86DOS		exec 
+#bindsym XF86ScreenSaver		exec exec $lock 
+#bindsym XF86RotateWindows	exec 
+#bindsym XF86TaskPane		exec 
+#bindsym XF86Favorites		exec 
+#bindsym XF86MyComputer		exec
+#bindsym XF86Back		exec 
+#bindsym XF86Forward		exec 
+#bindsym XF86Eject		exec
+bindsym XF86AudioNext		exec $next
+bindsym XF86AudioPlay		exec $pause
+bindsym XF86AudioPrev		exec $prev
+#bindsym XF86AudioStop		exec $stop
+#bindsym XF86AudioRecord		exec $audio
+#bindsym XF86AudioRewind		exec $lilbak
+#bindsym XF86AudioForward	exec $lilfor
+#bindsym XF86Phone		exec 
+#bindsym XF86Tools		exec 
+#bindsym XF86HomePage		exec
+#bindsym XF86Reload		restart
+#bindsym XF86ScrollUp		exec 
+#bindsym XF86ScrollDown		exec 
+#bindsym XF86New		exec 
+#bindsym XF86LaunchA		exec
+#bindsym XF86LaunchB		exec 
+#bindsym XF86Launch2		exec 
+#bindsym XF86Launch3		exec 
+#bindsym XF86Launch4		exec 
+#bindsym XF86Launch5		exec 
+#bindsym XF86Launch6		exec 
+#bindsym XF86Launch7		exec 
+#bindsym XF86Launch8		exec 
+#bindsym XF86Launch9		exec 
+#bindsym XF86AudioMicMute	exec $micmute
+#bindsym XF86TouchpadToggle	exec 
+bindsym XF86TouchpadOn		exec $touchon
+bindsym XF86TouchpadOff		exec $touchoff
+#bindsym XF86Suspend		exec $lock
+#bindsym XF86Close		kill
+bindsym XF86WebCam		exec mpv /dev/video0
+#bindsym XF86Mail		exec
+#bindsym XF86Messenger		exec
+#bindsym XF86Search		exec
+#bindsym XF86Go			exec 
+#bindsym XF86Finance		exec 
+#bindsym XF86Game		exec 
+#bindsym XF86Shop		exec
+bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 5
+bindsym Shift+XF86MonBrightnessDown	exec --no-startup-id light -U 1
+bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 5
+bindsym Shift+XF86MonBrightnessUp	exec --no-startup-id light -A 1
+bindsym XF86AudioMedia		exec $music
+#bindsym XF86Display		exec --no-startup-id arandr
+#bindsym XF86KbdLightOnOff	exec 
+#bindsym XF86KbdBrightnessDown	exec
+#bindsym XF86KbdBrightnessUp	exec
+#bindsym XF86Reply		exec 
+#bindsym XF86MailForward	exec 
+#bindsym XF86Save		exec 
+#bindsym XF86Documents		exec
+#bindsym XF86Battery		exec 
+#bindsym XF86Bluetooth		exec 
+#bindsym XF86WLAN		exec 
+# }}}

@@ -1,0 +1,222 @@
+# vim: filetype=i3
+
+#Based on Luke Smith's i3-gaps configuration file.
+#Github: https://github.com/LukeSmithxyz
+
+###---Starting External Scripts---###{{{
+#Add wallpaper:
+exec_always --no-startup-id feh --bg-scale ~/.config/wall
+exec --no-startup-id bash ~/.config/i3/i3Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
+#Automount USB devices
+exec --no-startup-id udiskie -s -m smart
+#Notification daemon
+exec --no-startup-id twmnd
+#Music player daemon:
+exec --no-startup-id mpd
+#Torrent daemon:
+#exec --no-startup-id transmission-daemon
+#Wifi applet:
+exec --no-startup-id nm-applet
+#Bluetooth applet:
+exec --no-startup-id blueman-applet
+#Launch Polybar where appropriate:
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+#Composite manager:
+exec $multifuncsh compton
+#Refresh zsh/ranger shortcuts:
+exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+#Keyboard layout
+exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
+#Touchpad bindings
+exec_always --no-startup-id bash ~/.config/i3/i3Scripts/touchpad.sh
+#unclutter makes the mouse invisible after a brief period
+exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b
+#Run grive in the background to sync Google Drive
+exec --no-startup-id bash ~/.config/i3/i3Scripts/grive-loop.sh
+#Clear trash folder older than 30 days
+exec --no-startup-id trash-empty 30
+# }}}
+
+###---Basic Definitions---###{{{
+#Needed for i3-gaps
+hide_edge_borders both
+for_window [class="^.*"] border pixel 0 
+gaps inner 15
+gaps outer 15
+font pango:DejaVu Sans 9
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+
+set $mod Mod4
+set $mod1 Mod1
+set $term termite
+set $flash --no-startup-id bash ~/.config/i3/i3Scripts/flash_win.sh
+set $browser chromium
+set $tmux ~/bin/tmuxSelect
+set $multifuncsh bash ~/.config/i3/i3Scripts/multifunc.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+	# }}}
+
+###---Power/Touchpad/Screen Definitions---###{{{
+set $lock --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock
+set $logout --no-startup-id i3-msg exit
+set $suspend --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl suspend
+set $hibernate --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl hibernate
+set $reboot --no-startup-id systemctl reboot
+set $shutdown --no-startup-id systemctl poweroff
+
+#Touchpad On/Off
+set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
+set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
+
+# }}}
+
+###---Audio and Music Definitions---###{{{
+##For PULSEAUDIO/PAMIXER
+set $inc --no-startup-id pamixer --allow-boost -i 5
+set $biginc --no-startup-id pamixer --allow-boost -i 15
+set $dec --no-startup-id pamixer --allow-boost -d 5
+set $bigdec --no-startup-id pamixer --allow-boost -d 15
+set $mute --no-startup-id pamixer --allow-boost -t
+set $truemute --no-startup-id pamixer -m
+
+##For mpc:
+#set $music termite -e ncmpcpp
+set $pause --no-startup-id mpc toggle
+set $truepause --no-startup-id mpc pause
+set $stop --no-startup-id mpc stop
+set $crop --no-startup-id mpc crop
+set $next --no-startup-id mpc next
+set $prev --no-startup-id mpc prev
+set $musinc --no-startup-id mpc volume +5
+set $musbiginc --no-startup-id mpc volume +15
+set $musdec --no-startup-id mpc volume -5
+set $musbigdec --no-startup-id mpc volume -15
+#set $lilfor --no-startup-id mpc seek +10
+#set $bigfor --no-startup-id mpc seek +120
+#set $lilbak --no-startup-id mpc seek -10
+#set $bigbak --no-startup-id mpc seek -120
+#set $beg --no-startup-id mpc seek 0%
+
+# }}}
+
+##---Modes--###{{{
+set $mode_system System: (l) lock, (o) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec $lock, mode "default"
+    bindsym o exec $logout, mode "default"
+    bindsym s exec $suspend, mode "default"
+    bindsym h exec $hibernate, mode "default"
+    bindsym r exec $reboot, mode "default"
+    bindsym p exec $shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_layout Layout: (s) stacked, (t) tabbed, (v) splitv, (h) splith
+mode "$mode_layout" {
+    bindsym s layout stacking, mode "default"
+    bindsym t layout tabbed, mode "default"
+    bindsym v layout splitv, mode "default"
+    bindsym h layout splith, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_screen Screen(Uppercase->Force 1080): (l) Laptop, (e) External, (d) Dual, (n) Dual(no bar in Ext)
+mode "$mode_screen" {
+    bindsym l exec $multifuncsh screen_mode l, mode "default"
+    bindsym e exec $multifuncsh screen_mode e, mode "default"
+    bindsym d exec $multifuncsh screen_mode d, mode "default"
+    bindsym n exec $multifuncsh screen_mode d prionly, mode "default"
+
+    #Bodge for forcing 1080
+    bindsym Shift+l exec $multifuncsh screen_mode l foo 1080, mode "default"
+    bindsym Shift+e exec $multifuncsh screen_mode e foo 1080, mode "default"
+    bindsym Shift+d exec $multifuncsh screen_mode d foo 1080, mode "default"
+    bindsym Shift+n exec $multifuncsh screen_mode d onlyLap 1080, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# }}}
+
+###---Dropdown/Scratchpad Windows---###{{{
+#First I have a tmux window used for background scripts.
+#I'll later bind this to mod+u.
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 825 500
+for_window [instance="dropdown"] move position center
+for_window [instance="dropdown"] move scratchpad
+exec --no-startup-id $term --name dropdown -e 'tmux new-session -A -s Bgp'
+
+#ncmpcpp in the background for fast music
+for_window [instance="ncmpcppw"] fullscreen enable
+for_window [instance="ncmpcppw"] move scratchpad
+exec --no-startup-id $term --name ncmpcppw -e 'ncmpcpp'
+# }}}
+
+###---Workspace Setup---###{{{
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+#set $ws10 "10"
+set $ws10 "10: "
+
+# switch to workspace
+bindsym $mod+1		workspace $ws1
+bindsym $mod+2		workspace $ws2
+bindsym $mod+3		workspace $ws3
+bindsym $mod+4		workspace $ws4
+bindsym $mod+5		workspace $ws5
+bindsym $mod+6		workspace $ws6
+bindsym $mod+7		workspace $ws7
+bindsym $mod+8		workspace $ws8
+bindsym $mod+9		workspace $ws9
+bindsym $mod+0		workspace $ws10; layout tabbed
+
+# move focused container to workspace
+bindsym $mod+Shift+1	move container to workspace $ws1
+bindsym $mod+Shift+2	move container to workspace $ws2
+bindsym $mod+Shift+3	move container to workspace $ws3
+bindsym $mod+Shift+4	move container to workspace $ws4
+bindsym $mod+Shift+5	move container to workspace $ws5
+bindsym $mod+Shift+6	move container to workspace $ws6
+bindsym $mod+Shift+7	move container to workspace $ws7
+bindsym $mod+Shift+8	move container to workspace $ws8
+bindsym $mod+Shift+9	move container to workspace $ws9
+bindsym $mod+Shift+0	move container to workspace $ws10
+
+for_window [class="Chromium"] move to workspace $ws10
+#for_window [title="GIMP Startup"] move workspace $ws5
+#for_window [class="Gimp"] move workspace $ws5
+#for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
+#for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
+#for_window [window_role="tr-main"] move to workspace $ws8
+for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
+
+workspace $ws10 gaps inner 0
+workspace $ws10 gaps outer 0
+
+# }}}
