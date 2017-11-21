@@ -23,4 +23,3 @@ if [ $EUID -ne 0 ]; then
 cat ~/.config/i3/base_files/config_main.base > ~/.config/i3/config
 cat ~/.config/i3/base_files/config_bindings.base >> ~/.config/i3/config
 fi
-
