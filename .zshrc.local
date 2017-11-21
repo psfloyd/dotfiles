@@ -1,14 +1,6 @@
 ##PSF zshrc.local
 
 #Warnings{{{
-if [ $EUID -ne 0 ]; then
-	if [ ! -f ~/.config/i3/i3Scripts/touchpad.sh ]; then
-		echo 'touchpad.sh does not exist. Copy one from the samples.'
-	fi
-	if [ ! -f ~/.config/i3/i3Scripts/keyboard.sh ]; then
-		echo 'keyboard.sh does not exist. Copy one from the samples.'
-	fi
-fi
 # }}}
 
 #{{{ Options
@@ -39,5 +31,12 @@ if [ -f $HOME/.aliases_sh ]; then
 	source $HOME/.aliases_sh
 fi
 
-
+if [ $EUID -ne 0 ]; then
+	if [ ! -f ~/.config/i3/i3Scripts/touchpad.sh ] ||
+		[ ! -f ~/.config/i3/i3Scripts/keyboard.sh ] ||
+		[ ! -f ~/.config/i3/config ] ||
+		[ ! -f ~/.config/i3/base_files/config_bindings.base ]; then
+	~/bin/geni3config
+fi
+fi
 # }}}
