@@ -46,8 +46,10 @@ alias gaa="git add -A && git status -s"
 
 alias gdi="git diff"
 
-alias -g gp="git push "
-alias gpom="git push origin master"
+alias -g gps="git push "
+alias -g gpl="git pull "
+alias gpso="git push origin "
+alias gplo="git pull origin "
 
 alias -g gcm="git commit -m"
 alias gcmt="git commit -m '$( date +'%F--%R')'"
