@@ -10,14 +10,18 @@ zsh -c "source ~/.aliases_sh"
 if [ $EUID -ne 0 ]; then
 #echo "Generating i3 config..."
 
-	if [[ "$HOST" == "arch-hp" ]] && [ ! -f ~/.config/i3/base_files/config_bindings.base ]; then
-		echo "arch-hp detected"
+	if [[ "$HOST" == "arch-hp" ]]; then
+		#echo "arch-hp detected"
 		\ln ~/.config/i3/base_files/samples/config_bindings_hp.base ~/.config/i3/base_files/config_bindings.base 
+		\ln ~/.config/i3/i3Scripts/samples/touchpad_hp.sh ~/.config/i3/i3Scripts/touchpad.sh 
+		\ln ~/.config/i3/i3Scripts/samples/keyboard_hp.sh ~/.config/i3/i3Scripts/keyboard.sh 
 	fi
 
-	if [[ "$HOST" == "arch-lenovo" ]] && [ ! -f ~/.config/i3/base_files/config_bindings.base ]; then
-		echo "arch-lenovo detected"
+	if [[ "$HOST" == "arch-lenovo" ]]; then
+		#echo "arch-lenovo detected"
 		\ln ~/.config/i3/base_files/samples/config_bindings_lenovo.base ~/.config/i3/base_files/config_bindings.base 
+		\ln ~/.config/i3/i3Scripts/samples/touchpad_lenovo.sh ~/.config/i3/i3Scripts/touchpad.sh 
+		\ln ~/.config/i3/i3Scripts/samples/keyboard_lenovo.sh ~/.config/i3/i3Scripts/keyboard.sh 
 	fi
 
 cat ~/.config/i3/base_files/config_main.base > ~/.config/i3/config
