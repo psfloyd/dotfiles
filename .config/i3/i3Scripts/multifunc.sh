@@ -4,7 +4,38 @@ term=termite
 browser=chromium
 scshotFold=~
 
+# Functions{{{
+i3lockFunc(){
+	cp ~/Media/Pictures/i3/lock/lock_img /tmp/screen.png
+	[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
+	mpc pause
+	killall twmnd
+	i3lock -en -i /tmp/screen.png
+	twmnd & exit
+}
+#}}}
+
 case "$1" in
+
+screenshot)#{{{
+	case "$2" in
+	area)
+		import $scshotFold/Screenshot_$(date -Iseconds).png
+		;;
+	*)
+		mkdir /tmp/execsh_scshot.lock\
+		&& import -window root $scshotFold/Screenshot_$(date -Iseconds).png ;\
+		sleep 1s;\
+		rm -rf  /tmp/execsh_scshot.lock		
+		;;
+	esac
+	;;#}}}
+
+screen_mode)#{{{
+	~/.config/Scripts/screen.sh $2 $4
+	~/.config/polybar/launch.sh $3
+	feh --bg-scale ~/.config/wall
+	;;#}}}
 
 tmux)#{{{
 if i3-msg -t get_tree | jq -r . | grep -q "dropdown"; then
@@ -31,6 +62,18 @@ music)#{{{
 	fi
 	;;#}}}
 
+#browser)#{{{
+	#i3-msg '--'\
+	#workspace "Browser" \; \
+	#exec --no-startup-id $browser \; \
+	#layout tabbed	
+	#;;#}}}
+
+ranger)#{{{
+	export RANGER_LOAD_DEFAULT_RC=FALSE
+	$term -e ranger
+	;;#}}}
+
 compton)#{{{
 	if [ `pgrep compton` ]; then
 		killall compton
@@ -51,44 +94,17 @@ rofi)#{{{
 	;;#}}}
 
 i3lock)#{{{
-	cp ~/Media/Pictures/i3/lock/lock_img /tmp/screen.png
-	[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
-	mpc pause
-	killall twmnd
-	i3lock -en -i /tmp/screen.png
-	twmnd & exit
+	i3lockFunc
 	;;#}}}
 
-#browser)#{{{
-	#i3-msg '--'\
-	#workspace "Browser" \; \
-	#exec --no-startup-id $browser \; \
-	#layout tabbed	
-	#;;#}}}
-
-ranger)#{{{
-	export RANGER_LOAD_DEFAULT_RC=FALSE
-	$term -e ranger
+suspend)#{{{
+	systemctl suspend &
+	i3lockFunc
 	;;#}}}
 
-screenshot)#{{{
-	case "$2" in
-	area)
-		import $scshotFold/Screenshot_$(date -Iseconds).png
-		;;
-	*)
-		mkdir /tmp/execsh_scshot.lock\
-		&& import -window root $scshotFold/Screenshot_$(date -Iseconds).png ;\
-		sleep 1s;\
-		rm -rf  /tmp/execsh_scshot.lock		
-		;;
-	esac
-	;;#}}}
-
-screen_mode)#{{{
-	~/.config/Scripts/screen.sh $2 $4
-	~/.config/polybar/launch.sh $3
-	feh --bg-scale ~/.config/wall
+hibernate)#{{{
+	systemctl hibernate &
+	i3lockFunc
 	;;#}}}
 
 *)#{{{

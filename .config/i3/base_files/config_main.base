@@ -67,27 +67,24 @@ floating_modifier $mod
 
 	# }}}
 
-###---Power/Touchpad/Screen Definitions---###{{{
+###---Power Definitions---###{{{
+set $restart --no-startup-id bash ~/bin/geni3config && i3-msg restart
 set $lock --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock
 set $logout --no-startup-id i3-msg exit
-set $suspend --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl suspend
-set $hibernate --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl hibernate
+set $suspend  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh suspend
+set $hibernate  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh hibernate
 set $reboot --no-startup-id systemctl reboot
 set $shutdown --no-startup-id systemctl poweroff
-
-#Touchpad On/Off
-set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 0
-set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
 
 # }}}
 
 ###---Audio and Music Definitions---###{{{
 ##For PULSEAUDIO/PAMIXER
-set $inc --no-startup-id pamixer --allow-boost -i 5
-set $biginc --no-startup-id pamixer --allow-boost -i 15
-set $dec --no-startup-id pamixer --allow-boost -d 5
-set $bigdec --no-startup-id pamixer --allow-boost -d 15
-set $mute --no-startup-id pamixer --allow-boost -t
+set $inc --no-startup-id pamixer -i 5
+set $biginc --no-startup-id pamixer -i 15
+set $dec --no-startup-id pamixer -d 5
+set $bigdec --no-startup-id pamixer -d 15
+set $mute --no-startup-id pamixer -t
 set $truemute --no-startup-id pamixer -m
 
 ##For mpc:
