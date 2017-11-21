@@ -4,7 +4,7 @@ echo "Generating aliases..."
 python ~/.config/Scripts/shortcuts.py
 
 
-zsh -c "source ~/.zshrc.local"
+zsh -c "source ~/.aliases_sh"
 
 
 if [ $EUID -ne 0 ]; then

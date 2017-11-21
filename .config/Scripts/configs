@@ -4,7 +4,8 @@ cfz	~/.zshrc.local
 cfv	~/.vimrc
 cfvp	~/.config/Scripts/vim-plugins
 cfr	~/.config/ranger/rc.conf.base
-cfi	~/.config/i3/config
+cfi	~/.config/i3/base_files/config_main.base
+cfib	~/.config/i3/base_files/config_bindings.base
 cfim	~/.config/i3/i3Scripts/multifunc.sh
 cff	~/.config/Scripts/folders
 cfc	~/.config/Scripts/configs
