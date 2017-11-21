@@ -1,14 +1,14 @@
 #!/bin/zsh
 
-echo "Generating aliases..."
+#echo "Generating aliases..."
 python ~/.config/Scripts/shortcuts.py
 
 
-zsh -c "source ~/.zshrc.local"
+zsh -c "source ~/.aliases_sh"
 
 
 if [ $EUID -ne 0 ]; then
-echo "Generating i3 config..."
+#echo "Generating i3 config..."
 
 	if [[ "$HOST" == "arch-hp" ]] && [ ! -f ~/.config/i3/base_files/config_bindings.base ]; then
 		echo "arch-hp detected"
