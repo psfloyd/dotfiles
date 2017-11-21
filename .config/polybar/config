@@ -50,7 +50,7 @@ font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3 mpd 
 modules-center = 
-modules-right = pkg pkg-upd battery volume date
+modules-right = volume battery pkg pkg-upd date
 
 tray-position = right
 tray-padding = 0
