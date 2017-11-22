@@ -16,7 +16,7 @@ exec --no-startup-id mpd
 #Torrent daemon:
 #exec --no-startup-id transmission-daemon
 #Wifi applet:
-exec --no-startup-id nm-applet
+exec --no-startup-id exec nm-applet
 #Bluetooth applet:
 exec --no-startup-id blueman-applet
 #Launch Polybar where appropriate:

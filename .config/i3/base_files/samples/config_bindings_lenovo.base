@@ -129,7 +129,7 @@ bindsym $mod+w			exec --no-startup-id $browser
 #bindsym $mod+Shift+e
 
 bindsym $mod+r 			exec $multifuncsh ranger
-bindsym $mod+Shift+r		$restart
+bindsym $mod+Shift+r		exec $restart
 
 bindsym $mod+t			split toggle
 #bindsym $mod+Shift+t		
