@@ -20,24 +20,54 @@ set $touchoff --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Devi
 #bindsym F11		fullscreen toggle
 #bindsym F12
 
-#bindsym $mod+F1	
-bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
-#bindsym $mod+F3
-bindsym $mod+F4		mode "$mode_screen"	
-bindsym $mod+Shift+F4	exec --no-startup-id arandr
-#bindsym $mod+F5		
-bindsym $mod+F6		exec $multifuncsh compton
-bindsym $mod+F7		exec transset-df -a --dec .15
-bindsym $mod+F8		exec transset-df -a --inc .15
-#bindsym $mod+F9	
-#bindsym $mod+F10	
-#bindsym $mod+F11	
-#bindsym $mod+F12	
 # }}}
 
 ###---Symbol Bindings---###{{{
 bindsym $mod+Escape		workspace prev
-bindsym $mod+Shift+Escape 	workspace next
+#bindsym $mod+Shift+Escape 	
+
+bindsym $mod+F1			workspace next
+#bindsym $mod+Shift+F1
+
+bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+#bindsym $mod+Shift+F2
+
+
+#bindsym $mod+F3
+#bindsym $mod+Shift+F3
+
+bindsym $mod+F4		mode "$mode_screen"	
+bindsym $mod+Shift+F4	exec --no-startup-id arandr
+
+#bindsym $mod+F5		
+#bindsym $mod+Shift+F5		
+
+bindsym $mod+F6		exec $multifuncsh compton
+#bindsym $mod+Shift+F6		
+
+bindsym $mod+F7		exec transset-df -a --dec .15
+#bindsym $mod+Shift+F7		
+
+bindsym $mod+F8		exec transset-df -a --inc .15
+#bindsym $mod+Shift+F8		
+
+#bindsym $mod+F9	
+#bindsym $mod+Shift+F9		
+
+#bindsym $mod+F10	
+#bindsym $mod+Shift+F10		
+
+#bindsym $mod+F11	
+#bindsym $mod+Shift+F11		
+
+#bindsym $mod+F12	
+#bindsym $mod+Shift+F12		
+
+bindsym Print 				exec --no-startup-id $multifuncsh screenshot
+bindsym Shift+Print --release		exec --no-startup-id $multifuncsh screenshot area
+
+#bindsym $mod+Delete
+bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
 bindsym $mod+bar		exec $flash
 #bindsym $mod+Shift+bar
@@ -50,9 +80,6 @@ bindsym $mod+bar		exec $flash
 
 bindsym $mod+BackSpace		exec $flash
 #bindsym $mod+Shift+BackSpace	exec sudo reboot
-
-#bindsym $mod+Delete
-bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
 bindsym $mod+Tab		workspace back_and_forth
 #bindsym $mod+Shift+Tab
@@ -116,8 +143,6 @@ bindsym $mod+Shift+Prior	move container to workspace prev
 bindsym $mod+Next		workspace next
 bindsym $mod+Shift+Next		move container to workspace next
 
-bindsym Print 				exec --no-startup-id $multifuncsh screenshot
-bindsym Shift+Print --release		exec --no-startup-id $multifuncsh screenshot area
 # }}}
 
 ###---Letter Key Bindings---###{{{
