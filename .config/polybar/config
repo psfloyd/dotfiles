@@ -48,9 +48,9 @@ font-1 = "Wuncon Siji:size=30;1"
 ;font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 font-2 = FontAwesome:pixelsize=11;1
 
-modules-left = i3 mpd 
+modules-left = i3 
 modules-center = 
-modules-right = volume battery pkg date pkg-upd
+modules-right = mpd volume battery pkg date pkg-upd
 
 tray-position = right
 tray-padding = 0
@@ -168,7 +168,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-prev> <toggle> <icon-stop> <icon-next> <label-song>  
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next> 
 
 icon-prev = 
 icon-stop = 
