@@ -98,3 +98,12 @@ fi
 alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -rfbauth /home/.common/vnc/"$USER"_passwd -rfbport 33225 -shared"
 
 #}}}
+
+#Shortcut functions#{{{
+editConfig(){
+	cd $1 &>/dev/null
+	vim $1
+	cd $OLDPWD
+}
+
+#}}}

@@ -46,7 +46,7 @@ alsh+=("#config aliases{{{"+"\n")
 with open(".config/Scripts/configs") as conf:
     for line in csv.reader(conf, dialect="excel-tab"):
         rang+=("map "+line[0]+" shell vim "+line[1]+"\n")
-        alsh+=("alias "+line[0]+"=\"vim "+line[1]+"\"\n")
+        alsh+=("alias "+line[0]+"=\"editConfig "+line[1]+"\"\n")
 
 rang+=("#}}}"+"\n"+"\n")
 alsh+=("#}}}"+"\n"+"\n")
