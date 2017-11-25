@@ -5,11 +5,14 @@ browser=chromium
 scshotFold=~
 
 # Functions{{{
-i3lockFunc(){
+i3lockFuncPre(){
 	cp ~/Media/Pictures/i3/lock/lock_img /tmp/screen.png
 	[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
 	mpc pause
 	killall twmnd
+}
+
+i3lockFuncPost(){
 	i3lock -en -i /tmp/screen.png
 	twmnd & exit
 }
@@ -94,17 +97,20 @@ rofi)#{{{
 	;;#}}}
 
 i3lock)#{{{
-	i3lockFunc
+	i3lockFuncPre
+	i3lockFuncPost
 	;;#}}}
 
 suspend)#{{{
+	i3lockFuncPre
 	systemctl suspend &
-	i3lockFunc
+	i3lockFuncPost
 	;;#}}}
 
 hibernate)#{{{
+	i3lockFuncPre
 	systemctl hibernate &
-	i3lockFunc
+	i3lockFuncPost
 	;;#}}}
 
 *)#{{{
