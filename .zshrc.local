@@ -16,10 +16,12 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
+    chmod +x ~/bin/*
 fi
 
 if [ -d "$HOME/Misc/bin" ] ; then
     PATH="$HOME/Misc/bin:$PATH"
+    chmod +x ~/Misc/bin/*
 fi
 
 #}}}
