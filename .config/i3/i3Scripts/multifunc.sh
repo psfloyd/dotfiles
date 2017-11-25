@@ -96,6 +96,12 @@ rofi)#{{{
 	esac
 	;;#}}}
 
+touchegg)#{{{
+	if [ ! $(pgrep touchegg) ]; then
+		touchegg &>/dev/null &
+	fi
+	;;#}}}
+
 i3lock)#{{{
 	i3lockFuncPre
 	i3lockFuncPost

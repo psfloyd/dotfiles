@@ -1,9 +1,15 @@
 # vim: filetype=i3
 
-###---PC specific definitions---###{{{
+###---PC specific---###{{{
+#Scripts# {{{
+exec_always --no-startup-id $multifuncsh touchegg
+# }}}
+
+#Definitions# {{{
 #Touchpad On/Off
 set $touchon --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 1
 set $touchoff --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
+# }}}
 # }}}
 
 ###---Function Buttons---###{{{
