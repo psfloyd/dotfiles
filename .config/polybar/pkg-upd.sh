@@ -22,7 +22,7 @@ else
 	winPresent=false
 fi
 
-~/.config/i3/exec.sh tmux
+~/.config/i3/i3Scripts/multifunc.sh tmux
 
 
 if $winPresent ; then
