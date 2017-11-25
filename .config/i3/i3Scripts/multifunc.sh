@@ -99,6 +99,9 @@ rofi)#{{{
 touchegg)#{{{
 	if [ ! $(pgrep touchegg) ]; then
 		touchegg &>/dev/null &
+	else
+		killall touchegg
+		touchegg &>/dev/null &
 	fi
 	;;#}}}
 
