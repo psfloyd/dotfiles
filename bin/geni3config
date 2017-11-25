@@ -3,14 +3,14 @@
 echo "Generating i3 config..."
 
 if [[ $(cat /sys/devices/virtual/dmi/id/product_name) == 'HP Convertible x360 11-ab0XX' ]]; then
-	echo "arch-hp detected"
+	echo "HP Convertible x360 11-ab0XX detected"
 	\ln -f ~/.config/i3/base_files/samples/config_bindings_hp.base ~/.config/i3/base_files/config_bindings.base 
 	\ln -f ~/.config/i3/i3Scripts/samples/touchpad_hp.sh ~/.config/i3/i3Scripts/touchpad.sh 
 	\ln -f ~/.config/i3/i3Scripts/samples/keyboard_hp.sh ~/.config/i3/i3Scripts/keyboard.sh 
 fi
 
 if [[ $(cat /sys/devices/virtual/dmi/id/product_version) == 'Lenovo IdeaPad Y480' ]]; then
-	echo "arch-lenovo detected"
+	echo "Lenovo IdeaPad Y480 detected"
 	\ln -f ~/.config/i3/base_files/samples/config_bindings_lenovo.base ~/.config/i3/base_files/config_bindings.base 
 	\ln -f ~/.config/i3/i3Scripts/samples/touchpad_lenovo.sh ~/.config/i3/i3Scripts/touchpad.sh 
 	\ln -f ~/.config/i3/i3Scripts/samples/keyboard_lenovo.sh ~/.config/i3/i3Scripts/keyboard.sh 
