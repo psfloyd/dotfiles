@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-#echo "Generating aliases..."
-python ~/.config/Scripts/shortcuts.py
