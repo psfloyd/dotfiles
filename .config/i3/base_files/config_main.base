@@ -15,14 +15,14 @@ exec --no-startup-id twmnd
 exec --no-startup-id mpd
 #Torrent daemon:
 #exec --no-startup-id transmission-daemon
-#Wifi applet:
-exec --no-startup-id exec nm-applet
+#Wifi applet: (moved to .xprofile)
+#exec --no-startup-id exec nm-applet
 #Bluetooth applet:
 exec --no-startup-id blueman-applet
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Composite manager:
-exec $multifuncsh compton
+exec --no-startup-id $multifuncsh compton
 #Refresh zsh/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Refresh i3 cofigs
