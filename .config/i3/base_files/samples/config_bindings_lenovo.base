@@ -93,7 +93,7 @@ bindsym $mod+Tab		workspace back_and_forth
 #bindsym $mod+backslash
 #bindsym $mod+Shift+backslash
 
-bindsym $mod+semicolon		workspace next
+#bindsym $mod+semicolon		workspace next
 #bindsym $mod+Shift+semicolon
 
 bindsym $mod+apostrophe		split horizontal ;; exec $term
@@ -186,7 +186,7 @@ bindsym $mod+Shift+d		exec $multifuncsh rofi gksudo
 bindsym $mod+f			fullscreen toggle
 #bindsym $mod+Shift+f
 
-bindsym $mod+g			workspace prev
+#bindsym $mod+g			workspace prev
 #bindsym $mod+Shift+g		
 
 bindsym $mod+h			focus left
