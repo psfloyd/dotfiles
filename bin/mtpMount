@@ -1,0 +1,189 @@
+#!/bin/bash
+
+# Option selection#{{{
+
+while :; do
+	case $1 in
+		-d|--directory) dirFlag="SET"
+			if [ -d "$2" ]; then
+				mountDirBase="$2"
+				shift
+			else
+				echo "$2" "is not a valid directory."
+				[ $flagHang ] && read -p "Press Enter to exit."
+				exit 1
+			fi
+			;;
+		-n|--dry-run) flagDry=true ;;
+		-v|--verbose) flagVer=true ;;
+		-h|--hang) flagHang=true ;;
+		*) break
+	esac
+	shift
+done
+
+case "$1" in
+	mount)
+		mode="m"
+		[ $flagVer ] && echo "Mount Mode"
+		;;
+	umount)
+		mode="u"
+		[ $flagVer ] && echo "Umount Mode"
+		;;
+	*)
+		echo "Not enough arguments. Select mount or umount."
+		[ $flagHang ] && read -p "Press Enter to exit."
+		exit 1
+esac
+
+[ $flagDry ] && mode="DRY"
+
+case "$2" in
+	-a|--all)
+		flagAll=true
+		[ $flagVer ] && echo "Flag All Selected"
+		;;
+	*)
+		flagAll=false
+esac
+
+#}}}
+
+# Variables {{{
+
+## Directories{{{
+
+if [ ! "$mountDirBase" ]; then
+	if [ ! -d /run/media/$USER/MTP ]; then
+		echo "Creating Directory..."
+		sudo mkdir /run/media/$USER/MTP
+		mainGroup=$(id -g -n $USER)
+		sudo chown $USER:$mainGroup /run/media/$USER/MTP
+	fi
+
+
+	mountDirBase=/run/media/$USER/MTP
+fi
+
+	if [ ! -d "$mountDirBase" ]; then
+		echo "Mount directory does not exist."
+		[ $flagHang ] && read -p "Press Enter to exit."
+		exit 1
+	fi
+
+	#}}}
+
+	## Device Variables{{{
+
+	deviceList=$(simple-mtpfs -l 2>/dev/null)
+
+	if [ "$deviceList" == "" ]; then
+		echo "No devices detected."
+		[ $flagHang ] && read -p "Press Enter to exit."
+		exit
+	fi
+
+	totalDevices=$(echo "$deviceList" | wc -l)
+
+	for k in $(seq 1 $totalDevices); do
+		deviceName[$k]=$(simple-mtpfs -l | gawk -F ': ' '{ print $2 }' | sed -n $k'p')
+		mountDirDev[$k]=$mountDirBase\/"${deviceName[$k]}"
+	done
+
+	#}}}
+
+	#}}}
+
+	# Functions{{{
+	function mountFunc() {
+
+		grepPat=$(printf "simple-mtpfs on "${mountDirDev[$1]}"")
+		[ "$( mount | grep "$grepPat" )" ] && return
+
+		[ ! -d "${mountDirDev[$1]}" ] && mkdir "${mountDirDev[$1]}"
+
+		if [ -z "$(ls -A "${mountDirDev[$1]}")" ];then
+			echo "Mounting device $1"
+			simple-mtpfs --device $1 "${mountDirDev[$1]}"	
+
+		else
+			echo "${mountDirDev[$1]}" " is not empty. Will not mount there."
+			return
+
+		fi
+	}
+
+	function umountFunc() {
+		[ ! "$( mount | grep "${mountDirDev[$1]}" )" ] && echo "${deviceName[$1]}" "is not mounted." && return
+		echo "Unmounting device $1"
+		fusermount -u "${mountDirDev[$k]}" &>/dev/null
+		rmdir "${mountDirDev[$k]}" &>/dev/null
+
+	}
+	#}}}
+
+	# Script#{{{
+	if $flagAll ;then
+
+		## flagAll{{{
+		for k in $(seq 1 $totalDevices); do
+			case $mode in
+				m) mountFunc $k ;;
+				u) umountFunc $k ;;
+				*) break
+			esac
+		done
+#}}}
+
+	else
+# NOT flagAll
+
+		options=("${deviceName[@]}" "None")
+
+
+
+		while true; do
+			echo "Select device: "
+			for ((i=0;i<${#options[@]};i++)); do 
+				string="$(($i+1))) ${options[$i]}"
+				printf "%s\n" "$string" 
+			done
+
+
+			read -p 'Number(q to quit):' opt
+
+			case $opt in
+
+				${#options[@]}|q|quit|exit)
+					exit
+					;;
+
+				*)
+
+					if [[ $opt =~ ^-?[0-9]+$ ]] && [ "$opt" -le "${#deviceName[@]}" ];then
+						case $mode in
+							m)
+								echo "Mounting " "${deviceName[$opt]}"
+								mountFunc $opt
+								break
+								;;
+
+							u)
+								echo "Unmounting " "${deviceName[$opt]}"
+								umountFunc $opt
+								break
+								;;
+
+							*) break
+						esac
+					fi
+					;;
+
+				esac
+			done
+
+		fi
+		[ $flagHang ] && read -p "Press Enter to exit."
+
+		#}}}

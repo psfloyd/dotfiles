@@ -40,6 +40,14 @@ screen_mode)#{{{
 	feh --bg-scale ~/.config/wall
 	;;#}}}
 
+mtpMount)#{{{
+	shift
+	cmd="~/bin/mtpMount -h "$@" "
+	echo $cmd
+	termite --name mtpMount -e "zsh -c '$cmd' "
+	;;
+#}}}
+
 tmux)#{{{
 if i3-msg -t get_tree | jq -r . | grep -q "dropdown"; then
 	i3-msg '[instance="dropdown"] scratchpad show; move position center'
@@ -123,6 +131,7 @@ hibernate)#{{{
 	;;#}}}
 
 *)#{{{
-	exit#}}}
+	exit
+	#}}}
 
 esac

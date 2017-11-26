@@ -228,7 +228,7 @@ bindsym $mod+c			mode "$mode_layout"
 #bindsym $mod+n			
 #bindsym $mod+Shift+n
 
-#bindsym $mod+m 			
+bindsym $mod+m 			mode "$mode_mtp"
 bindsym $mod+Shift+m		exec $mute
 # }}}
 
