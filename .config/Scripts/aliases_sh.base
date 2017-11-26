@@ -106,4 +106,9 @@ editConfig(){
 	cd $OLDPWD
 }
 
+shortcutsRn(){
+	python ~/.config/Scripts/shortcuts.py
+	source ~/.aliases_sh
+}
+
 #}}}
