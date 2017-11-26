@@ -25,6 +25,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec $multifuncsh compton
 #Refresh zsh/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+#Refresh i3 cofigs
+exec --no-startup-id bash ~/bin/geni3config
 #Keyboard layout
 exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
 #Touchpad bindings
