@@ -7,7 +7,7 @@
 while true; do
 	for file in "$1"*;	do
 		sleep $2
-		feh --bg-scale "$file"
 		cp "$file" ~/.config/wall
+		feh --bg-scale "$file"
 	done
 done

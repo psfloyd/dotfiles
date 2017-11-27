@@ -1,0 +1,10 @@
+[Unit]
+Description=Grive Service
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=%h/bin/griveRun
+
+[Install]
+WantedBy=exit.target

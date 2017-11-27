@@ -1,0 +1,10 @@
+[Unit]
+Description=Network Manager Applet
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/nm-applet
+Restart=on-abort
+
+[Install]
+WantedBy=graphical.target

@@ -4,4 +4,4 @@
 feh --bg-scale ~/.config/wall
 
 
-exec nm-applet &
+#exec nm-applet &
