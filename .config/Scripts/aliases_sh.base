@@ -82,6 +82,9 @@ alias -g pcQs="$pccomm""-Qs"
 #}}}
 
 #Misc#{{{
+alias -g syc='systemctl'
+alias -g sycu='systemctl --user'
+
 alias sus="systemctl suspend"
 
 alias srcz="source ~/.zshrc.local"

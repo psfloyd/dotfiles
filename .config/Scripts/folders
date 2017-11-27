@@ -12,7 +12,8 @@ mm	~/Media/Music
 ml	~/Media/Music/Music Library
 M	~/Media/Movies
 s	~/Media/Series
-c	~/.config
-S	~/.config/Scripts
 b	~/bin
+c	~/.config
+Ss	~/.config/Scripts
 i	~/.config/i3
+Sd	~/.config/systemd/user
