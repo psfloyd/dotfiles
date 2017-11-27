@@ -5,7 +5,7 @@
 
 #{{{ Options
 setopt auto_cd
-cdpath=($HOME /run/media/psfarch)
+cdpath=($HOME /run/media/$USER)
 
 #}}}
 
