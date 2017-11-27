@@ -6,3 +6,4 @@ After=graphical.target
 ExecStart=%h/bin/systemd-bin/wall_looper.sh %h/Media/Pictures/i3/bg/ 600
 
 [Install]
+WantedBy=graphical.target

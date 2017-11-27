@@ -6,17 +6,12 @@
 ###---Starting External Scripts---###{{{
 #Add wallpaper:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall
-exec --no-startup-id bash ~/.config/i3/i3Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
 #Automount USB devices
 exec --no-startup-id udiskie -s -m smart
 #Notification daemon
 exec --no-startup-id twmnd
-#Music player daemon:
-exec --no-startup-id mpd
 #Torrent daemon:
 #exec --no-startup-id transmission-daemon
-#Wifi applet: (moved to .xprofile)
-#exec --no-startup-id exec nm-applet
 #Bluetooth applet:
 exec --no-startup-id blueman-applet
 #Launch Polybar where appropriate:
@@ -33,8 +28,6 @@ exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
 exec_always --no-startup-id bash ~/.config/i3/i3Scripts/touchpad.sh
 #unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b
-#Run grive in the background to sync Google Drive
-exec --no-startup-id bash ~/.config/i3/i3Scripts/grive-loop.sh
 #Clear trash folder older than 30 days
 exec --no-startup-id trash-empty 30
 # }}}

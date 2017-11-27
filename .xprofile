@@ -2,6 +2,3 @@
 
 # Set background
 feh --bg-scale ~/.config/wall
-
-
-#exec nm-applet &

@@ -2,7 +2,8 @@
 Description= Grive Loop(15m)
 
 [Timer]
-OnActiveSec=15m
+OnBootSec=5m
+OnUnitActiveSec=15m
 
 [Install]
 WantedBy=default.target

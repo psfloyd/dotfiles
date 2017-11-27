@@ -1,7 +1,7 @@
 [Unit]
 Description=Grive Service
-Requires=network-online.target
-After=network-online.target
+Requires=internet-check.service
+After=internet-check.service
 
 [Service]
 ExecStart=%h/bin/griveRun
