@@ -7,4 +7,3 @@ After=internet-check.service
 ExecStart=%h/bin/griveRun
 
 [Install]
-WantedBy=exit.target
