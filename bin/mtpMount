@@ -10,13 +10,13 @@ while :; do
 				shift
 			else
 				echo "$2" "is not a valid directory."
-				[ $flagHang ] && read -p "Press Enter to exit."
+				[ $flagWait ] && read -p "Press Enter to exit."
 				exit 1
 			fi
 			;;
 		-n|--dry-run) flagDry=true ;;
 		-v|--verbose) flagVer=true ;;
-		-h|--hang) flagHang=true ;;
+		-w|--wait) flagWait=true ;;
 		*) break
 	esac
 	shift
@@ -33,7 +33,7 @@ case "$1" in
 		;;
 	*)
 		echo "Not enough arguments. Select mount or umount."
-		[ $flagHang ] && read -p "Press Enter to exit."
+		[ $flagWait ] && read -p "Press Enter to exit."
 		exit 1
 esac
 
@@ -68,7 +68,7 @@ fi
 
 	if [ ! -d "$mountDirBase" ]; then
 		echo "Mount directory does not exist."
-		[ $flagHang ] && read -p "Press Enter to exit."
+		[ $flagWait ] && read -p "Press Enter to exit."
 		exit 1
 	fi
 
@@ -80,7 +80,7 @@ fi
 
 	if [ "$deviceList" == "" ]; then
 		echo "No devices detected."
-		[ $flagHang ] && read -p "Press Enter to exit."
+		[ $flagWait ] && read -p "Press Enter to exit."
 		exit
 	fi
 
@@ -184,6 +184,6 @@ fi
 			done
 
 		fi
-		[ $flagHang ] && read -p "Press Enter to exit."
+		[ $flagWait ] && read -p "Press Enter to exit."
 
 		#}}}

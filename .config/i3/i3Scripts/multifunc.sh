@@ -42,7 +42,7 @@ screen_mode)#{{{
 
 mtpMount)#{{{
 	shift
-	cmd="~/bin/mtpMount -h "$@" "
+	cmd="~/bin/mtpMount -w "$@" "
 	echo $cmd
 	termite --name mtpMount -e "zsh -c '$cmd' "
 	;;
