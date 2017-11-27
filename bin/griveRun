@@ -18,7 +18,7 @@ logsToKeep=15
 cd "$targetDir"
 targetName=$(echo "$targetDir" | awk -F / '{ print $NF }')
 
-grive -l "$logPath"/"$targetName"'_'"$dateVar"'_'"$timeVar"".log"
+grive -P -l "$logPath"/"$targetName"'_'"$dateVar"'_'"$timeVar"".log"
         
 if [ $(ls $logPath/ | wc -l) -gt $logsToKeep ]; then 
     rm $logPath$(ls $logPath -t | tail -1) # Borro el archivo mas viejo
