@@ -38,6 +38,13 @@ Plug 'tpope/vim-surround'
 "Plug 'godlygeek/tabular'
 
 
+" Tabular, line up text
+Plug 'godlygeek/tabular'
+
+" Markdown folding and etc
+Plug 'plasticboy/vim-markdown'
+
+
 """"""""" Latex """"""""
  let g:tex_flavor='latex' "Fix indentation
 
