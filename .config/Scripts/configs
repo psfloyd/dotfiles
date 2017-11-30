@@ -14,3 +14,4 @@ cfT	~/.tmux.conf
 cfp	~/.config/polybar/config
 cfR	~/.config/rofi/config
 cfnm	~/.config/ncmpcpp/config
+cfx	~/.xprofile
