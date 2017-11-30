@@ -2,3 +2,9 @@
 
 # Set background
 feh --bg-scale ~/.config/wall
+
+# Services 
+blueman-applet &
+#nm-applet &
+
+systemctl --user start x-ready.service
