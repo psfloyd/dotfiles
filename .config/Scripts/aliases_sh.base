@@ -84,6 +84,8 @@ alias -g pcQs="$pccomm""-Qs"
 #Misc#{{{
 alias -g syc='systemctl'
 alias -g sycu='systemctl --user'
+alias -g jnc='journalctl'
+alias -g jncu='journalctl --user'
 
 alias sus="systemctl suspend"
 
