@@ -1,9 +1,9 @@
 [Unit]
 Description=Wallpaper Looper
-After=graphical.target
+PartOf=graphical-session.target
 
 [Service]
-ExecStart=%h/bin/systemd-bin/wall_looper.sh %h/Media/Pictures/i3/bg/ 600
+ExecStart=/bin/bash -c '%h/bin/systemd-bin/wall_looper.sh %h/Media/Pictures/i3/bg/ 600'
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target

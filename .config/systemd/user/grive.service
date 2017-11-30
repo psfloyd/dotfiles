@@ -1,9 +1,16 @@
 [Unit]
 Description=Grive Service
-Requires=internet-check.service
-After=internet-check.service
+;Requires=internet-check.service
+;After=internet-check.services
+;StartLimitBurst=1
+;StartLimitIntervalSec=200
 
 [Service]
+Type=oneshot
 ExecStart=%h/bin/griveRun
+Restart=no
+;TimeoutStartSec=2s
+;TimeoutStartSec=2m
+
 
 [Install]
