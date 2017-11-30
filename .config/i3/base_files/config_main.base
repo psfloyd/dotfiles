@@ -13,7 +13,7 @@ exec --no-startup-id twmnd
 #Torrent daemon:
 #exec --no-startup-id transmission-daemon
 #Bluetooth applet:
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Composite manager:
