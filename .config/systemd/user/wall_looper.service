@@ -1,9 +1,9 @@
 [Unit]
 Description=Wallpaper Looper
-PartOf=graphical-session.target
+Requires=wm.target
 
 [Service]
 ExecStart=/bin/bash -c '%h/bin/systemd-bin/wall_looper.sh %h/Media/Pictures/i3/bg/ 600'
 
 [Install]
-WantedBy=default.target
+WantedBy=wm.target

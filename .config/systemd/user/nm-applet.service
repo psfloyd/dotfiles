@@ -1,9 +1,10 @@
 [Unit]
 Description=Network Manager Applet
+Requires=wm.target
 
 [Service]
 ExecStart=/usr/bin/nm-applet
 Restart=on-abort
 
 [Install]
-WantedBy=graphical.target
+WantedBy=wm.target

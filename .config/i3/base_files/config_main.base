@@ -4,20 +4,12 @@
 #Github: https://github.com/LukeSmithxyz
 
 ###---Starting External Scripts---###{{{
-#Add wallpaper:
-exec_always --no-startup-id feh --bg-scale ~/.config/wall
-#Automount USB devices
-exec --no-startup-id udiskie -s -m smart
-#Notification daemon
-exec --no-startup-id twmnd
-#Torrent daemon:
-#exec --no-startup-id transmission-daemon
-#Bluetooth applet:
-#exec --no-startup-id blueman-applet
+#Reach WM Systemd Target
+exec --no-startup-id systemctl --user start wm.target
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#Composite manager:
-exec --no-startup-id $multifuncsh compton
+#Add wallpaper:
+exec_always --no-startup-id feh --bg-scale ~/.config/wall
 #Refresh zsh/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Refresh i3 cofigs
@@ -26,8 +18,6 @@ exec --no-startup-id bash ~/bin/geni3config
 exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
 #Touchpad bindings
 exec_always --no-startup-id bash ~/.config/i3/i3Scripts/touchpad.sh
-#unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b
 #Clear trash folder older than 30 days
 exec --no-startup-id trash-empty 30
 # }}}

@@ -4,7 +4,7 @@
 feh --bg-scale ~/.config/wall
 
 # Services 
-blueman-applet &
+#blueman-applet &
 #nm-applet &
 
-systemctl --user start x-ready.service
+#systemctl --user start wm.target
