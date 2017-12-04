@@ -4,10 +4,8 @@
 #Github: https://github.com/LukeSmithxyz
 
 ###---Starting External Scripts---###{{{
-#Reach WM Systemd Target
-exec --no-startup-id systemctl --user start wm.target
-#Launch Polybar where appropriate:
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+#Launch Polybar where appropriate and Reach WM Systemd Target
+exec_always --no-startup-id ~/.config/polybar/launch.sh && systemctl --user start wm.target
 #Add wallpaper:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall
 #Refresh zsh/ranger shortcuts:
