@@ -7,4 +7,4 @@ feh --bg-scale ~/.config/wall
 #blueman-applet &
 #nm-applet &
 
-#systemctl --user start wm.target
+systemctl --user import-environment XDG_SESSION_PATH
