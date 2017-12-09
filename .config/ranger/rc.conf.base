@@ -243,6 +243,7 @@ map <A-Left>  tab_move -1
 #map gn        tab_new ~
 #map gc        tab_close
 #map tt tab_close
+map tt tab_new .
 map uq        tab_restore
 map <a-1>     tab_open 1
 map <a-2>     tab_open 2
