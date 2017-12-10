@@ -57,7 +57,7 @@ esac
 if [ ! "$mountDirBase" ]; then
 	if [ ! -d /run/media/$USER/MTP ]; then
 		echo "Creating Directory..."
-		sudo mkdir /run/media/$USER/MTP
+		sudo mkdir -p /run/media/$USER/MTP
 		mainGroup=$(id -g -n $USER)
 		sudo chown $USER:$mainGroup /run/media/$USER/MTP
 	fi
