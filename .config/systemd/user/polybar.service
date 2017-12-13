@@ -1,0 +1,11 @@
+[Unit]
+Description=Polybar
+Before=wm.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/polybar/launch.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=wm.target
