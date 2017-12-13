@@ -38,9 +38,6 @@
 .config/rofi/config;644;psfloyd;psfloyd
 .config/systemd/user/blueman-applet.service;644;psfloyd;psfloyd
 .config/systemd/user/compton.service;644;psfloyd;psfloyd
-.config/systemd/user/grive.service;644;psfloyd;psfloyd
-.config/systemd/user/grive.timer;644;psfloyd;psfloyd
-.config/systemd/user/internet-check.service;644;psfloyd;psfloyd
 .config/systemd/user/light-locker.service;644;psfloyd;psfloyd
 .config/systemd/user/mpd.service;644;psfloyd;psfloyd
 .config/systemd/user/nm-applet.service;644;psfloyd;psfloyd
