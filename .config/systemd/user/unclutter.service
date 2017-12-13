@@ -1,0 +1,10 @@
+[Unit]
+Description=Unclutter
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/unclutter --exclude-root --ignore-scrolling
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

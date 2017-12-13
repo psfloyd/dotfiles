@@ -1,0 +1,10 @@
+[Unit]
+Description=Light Locker
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/light-locker
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

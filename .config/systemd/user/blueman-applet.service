@@ -1,0 +1,10 @@
+[Unit]
+Description=Blueman Applet
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/blueman-applet
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

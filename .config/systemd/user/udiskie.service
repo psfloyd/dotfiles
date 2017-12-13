@@ -1,0 +1,10 @@
+[Unit]
+Description=Udiskie Automount
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/udiskie -s
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

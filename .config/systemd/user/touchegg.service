@@ -1,0 +1,10 @@
+[Unit]
+Description=Touchegg
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/touchegg
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

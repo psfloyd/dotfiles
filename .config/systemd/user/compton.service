@@ -1,0 +1,10 @@
+[Unit]
+Description=Compton
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/compton --config %h/.config/compton/compton.conf
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target

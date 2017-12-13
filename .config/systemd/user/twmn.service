@@ -1,0 +1,10 @@
+[Unit]
+Description=Notification Daemon
+Requires=wm.target
+
+[Service]
+ExecStart=/usr/bin/twmnd
+Restart=on-abort
+
+[Install]
+WantedBy=wm.target
