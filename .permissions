@@ -11,6 +11,7 @@
 .config/Scripts/i3/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd
 .config/Scripts/i3/samples/touchpad_hp.sh;755;psfloyd;psfloyd
 .config/Scripts/i3/samples/touchpad_lenovo.sh;644;psfloyd;psfloyd
+.config/Scripts/polybar/launch.sh;755;psfloyd;psfloyd
 .config/Scripts/ranger/extract.sh;755;psfloyd;psfloyd
 .config/Scripts/screen.sh;755;psfloyd;psfloyd
 .config/Scripts/shortcuts/aliases_sh.base;644;psfloyd;psfloyd
@@ -29,7 +30,6 @@
 .config/ncmpcpp/bindings;644;psfloyd;psfloyd
 .config/ncmpcpp/config;644;psfloyd;psfloyd
 .config/polybar/config;755;psfloyd;psfloyd
-.config/polybar/launch.sh;755;psfloyd;psfloyd
 .config/polybar/pkg-upd.sh;755;psfloyd;psfloyd
 .config/polybar/pkg.sh;755;psfloyd;psfloyd
 .config/ranger/commands.py;644;psfloyd;psfloyd
