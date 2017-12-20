@@ -5,17 +5,16 @@
 
 ###---Starting External Scripts---###{{{
 #Launch Polybar where appropriate and Reach WM Systemd Target
-exec_always --no-startup-id ~/.config/polybar/launch.sh && systemctl --user start wm.target
-#Add wallpaper:
-exec_always --no-startup-id feh --bg-scale ~/.config/wall
+#exec_always --no-startup-id systemctl --user restart polybar.service
+exec --no-startup-id systemctl --user start wm.target
 #Refresh zsh/ranger shortcuts:
-exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+exec --no-startup-id python ~/.config/Scprits/shortcuts/shortcuts.py
 #Refresh i3 cofigs
-exec --no-startup-id bash ~/bin/geni3config
+exec --no-startup-id bash ~/.config/Scripts/i3/geni3config
 #Keyboard layout
-exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
+exec_always --no-startup-id bash ~/.config/Scripts/i3/keyboard.sh
 #Touchpad bindings
-exec_always --no-startup-id bash ~/.config/i3/i3Scripts/touchpad.sh
+exec_always --no-startup-id bash ~/.config/Scripts/i3/touchpad.sh
 #Clear trash folder older than 30 days
 exec --no-startup-id trash-empty 30
 # }}}
@@ -40,10 +39,10 @@ client.background       #ffffff
 set $mod Mod4
 set $mod1 Mod1
 set $term termite
-set $flash --no-startup-id bash ~/.config/i3/i3Scripts/flash_win.sh
+set $flash --no-startup-id bash ~/.config/Scripts/i3/flash_win.sh
 set $browser chromium
 set $tmux ~/bin/tmuxSelect
-set $multifuncsh bash ~/.config/i3/i3Scripts/multifunc.sh
+set $multifuncsh bash ~/.config/Scripts/i3/multifunc.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -51,11 +50,11 @@ floating_modifier $mod
 	# }}}
 
 ###---Power Definitions---###{{{
-set $restart --no-startup-id bash ~/bin/geni3config && i3-msg restart
-set $lock --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock
-set $logout --no-startup-id i3-msg exit
-set $suspend  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh suspend
-set $hibernate  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh hibernate
+set $restart --no-startup-id bash ~/.config/Scripts/i3/geni3config && i3-msg restart
+set $lock --no-startup-id bash ~/.config/Scripts/i3/i3exit.sh lock
+set $logout --no-startup-id bash ~/.config/Scripts/i3/i3exit.sh logout
+set $suspend  --no-startup-id bash ~/.config/Scripts/i3/i3exit.sh suspend
+set $hibernate  --no-startup-id bash ~/.config/Scripts/i3/i3exit.sh hibernate
 set $reboot --no-startup-id systemctl reboot
 set $shutdown --no-startup-id systemctl poweroff
 

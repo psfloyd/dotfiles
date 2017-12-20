@@ -29,7 +29,7 @@ bindsym $mod+Shift+Escape 	move container to workspace prev
 bindsym $mod+F1			workspace next
 bindsym $mod+Shift+F1		move container to workspace next
 
-bindsym $mod+F2		exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+bindsym $mod+F2		exec --no-startup-id python ~/.config/Scprits/shortcuts/shortcuts.py
 #bindsym $mod+Shift+F2
 
 

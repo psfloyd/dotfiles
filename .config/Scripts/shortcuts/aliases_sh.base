@@ -104,7 +104,7 @@ alias vncStart="/usr/bin/x11vnc -auth guess -forever -loop -noxdamage -repeat -r
 
 #}}}
 
-#Shortcut functions#{{{
+#Script functions#{{{
 editConfig(){
 	cd $1 &>/dev/null
 	vim $1
@@ -112,8 +112,10 @@ editConfig(){
 }
 
 shortcutsRn(){
-	python ~/.config/Scripts/shortcuts.py
+	python ~/.config/Scripts/shortcuts/shortcuts.py
 	source ~/.aliases_sh
 }
+
+alias geni3config='bash ~/.config/Scripts/i3/geni3config'
 
 #}}}

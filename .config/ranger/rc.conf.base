@@ -513,7 +513,7 @@ map Tmn console shell taffy %%s -n%space"
 map Tmy console shell taffy %%s -y%space"
 
 #ETC
-map X shell ~/.config/Scripts/extract.sh %f
+map X shell ~/.config/Scripts/ranger/extract.sh %f
 map Z shell tar -cvzf %f.tar.gz %f
 map V console shell vim%space
 

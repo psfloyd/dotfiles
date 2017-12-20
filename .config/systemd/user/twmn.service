@@ -1,10 +1,10 @@
 [Unit]
-Description=Network Manager Applet
+Description=Notification Daemon
 Requires=wm.target
 After=wm.target
 
 [Service]
-ExecStart=/usr/bin/nm-applet
+ExecStart=/usr/bin/twmnd
 Restart=on-abort
 
 [Install]
