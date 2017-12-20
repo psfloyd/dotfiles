@@ -112,7 +112,7 @@ editConfig(){
 }
 
 shortcutsRn(){
-	python ~/.config/Scripts/shortcuts.py
+	python ~/.config/Scripts/shortcuts/shortcuts.py
 	source ~/.aliases_sh
 }
 
