@@ -44,6 +44,7 @@
 .config/systemd/user/mpd.service;644;psfloyd;psfloyd
 .config/systemd/user/nm-applet.service;644;psfloyd;psfloyd
 .config/systemd/user/polybar.service;644;psfloyd;psfloyd
+.config/systemd/user/tmux@.service;644;psfloyd;psfloyd
 .config/systemd/user/touchegg.service;644;psfloyd;psfloyd
 .config/systemd/user/twmn.service;644;psfloyd;psfloyd
 .config/systemd/user/udiskie.service;644;psfloyd;psfloyd

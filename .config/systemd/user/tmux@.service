@@ -1,0 +1,12 @@
+[Unit]
+Description=Tmux background session
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/tmux new-session -A -d -s %I
+ExecStop=/usr/bin/tmux kill-session-t %I
+;Restart=always
+
+[Install]
+WantedBy=default.target
