@@ -7,7 +7,7 @@
 while true; do
 	for file in "$1"*;	do
 		cp "$file" ~/.config/wall
-		feh --bg-scale "$file"
+		nitrogen --set-scaled "$file"
 		sleep $2
 	done
 done

@@ -1,3 +1,7 @@
 #!/bin/bash
 
+# Set background
+nitrogen --set-scaled ~/.config/wall
+
+# Pass var needed for light-lock
 systemctl --user import-environment XDG_SESSION_PATH

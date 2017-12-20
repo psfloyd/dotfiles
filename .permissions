@@ -2,12 +2,13 @@
 .bash_logout;644;psfloyd;psfloyd
 .bash_profile;644;psfloyd;psfloyd
 .bashrc;644;psfloyd;psfloyd
-.config/Scripts/aliases_sh.base;644;psfloyd;psfloyd
-.config/Scripts/configs;644;psfloyd;psfloyd
+.config/Scripts/aliases_sh.base;
+.config/Scripts/configs;
 .config/Scripts/extract.sh;755;psfloyd;psfloyd
-.config/Scripts/folders;755;psfloyd;psfloyd
+.config/Scripts/folders;
 .config/Scripts/screen.sh;755;psfloyd;psfloyd
-.config/Scripts/shortcuts.py;644;psfloyd;psfloyd
+.config/Scripts/shortcuts.py;
+.config/Scripts/systemd/wall_looper.sh;755;psfloyd;psfloyd
 .config/Scripts/vim-plugins;644;psfloyd;psfloyd
 .config/compton/compton.conf;644;psfloyd;psfloyd
 .config/i3/base_files/config_main.base;644;psfloyd;psfloyd
@@ -75,5 +76,4 @@ bin/geni3config;755;psfloyd;psfloyd
 bin/grive-loop;755;psfloyd;psfloyd
 bin/griveRun;755;psfloyd;psfloyd
 bin/mtpMount;755;psfloyd;psfloyd
-bin/systemd-bin/wall_looper.sh;755;psfloyd;psfloyd
 bin/tmuxSelect;755;psfloyd;psfloyd

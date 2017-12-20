@@ -4,7 +4,7 @@ Requires=wm.target
 After=wm.target
 
 [Service]
-ExecStart=/bin/bash -c "%h/bin/systemd-bin/wall_looper.sh %h/Media/Pictures/i3/bg/ 600"
+ExecStart=/bin/bash -c "%h/.config/Scripts/systemd/wall_looper.sh %h/Media/Pictures/i3/bg/ 600"
 
 [Install]
 WantedBy=wm.target
