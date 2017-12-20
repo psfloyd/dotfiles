@@ -4,7 +4,7 @@ Requires=wm.target
 After=wm.target
 
 [Service]
-ExecStart=/usr/bin/touchegg
+ExecStart=/usr/bin/bash -c '/usr/bin/touchegg 2>/dev/null'
 Restart=on-abort
 
 [Install]
