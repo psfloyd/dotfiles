@@ -1,3 +1,2 @@
 [Unit]
 Description=Window Manager
-After=default.target
