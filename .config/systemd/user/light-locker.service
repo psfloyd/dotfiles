@@ -1,6 +1,7 @@
 [Unit]
 Description=Light Locker
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/light-locker

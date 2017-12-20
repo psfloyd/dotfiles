@@ -1,6 +1,7 @@
 [Unit]
 Description=Compton
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/compton --config %h/.config/compton/compton.conf

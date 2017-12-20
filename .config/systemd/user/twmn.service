@@ -1,6 +1,7 @@
 [Unit]
 Description=Notification Daemon
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/twmnd

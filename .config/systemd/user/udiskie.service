@@ -1,6 +1,7 @@
 [Unit]
 Description=Udiskie Automount
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/udiskie -s

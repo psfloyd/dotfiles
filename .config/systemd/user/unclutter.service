@@ -1,6 +1,7 @@
 [Unit]
 Description=Unclutter
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/unclutter --exclude-root --ignore-scrolling

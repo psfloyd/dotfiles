@@ -5,8 +5,7 @@
 
 ###---Starting External Scripts---###{{{
 #Launch Polybar where appropriate and Reach WM Systemd Target
-exec_always --no-startup-id systemctl --user show-environment >> ~/sysd_env
-exec_always --no-startup-id systemctl --user restart polybar.service
+#exec_always --no-startup-id systemctl --user restart polybar.service
 exec --no-startup-id systemctl --user start wm.target
 #Add wallpaper:
 #exec_always --no-startup-id feh --bg-scale ~/.config/wall
@@ -54,10 +53,10 @@ floating_modifier $mod
 
 ###---Power Definitions---###{{{
 set $restart --no-startup-id bash ~/bin/geni3config && i3-msg restart
-set $lock --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock
-set $logout --no-startup-id i3-msg exit
-set $suspend  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh suspend
-set $hibernate  --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh hibernate
+set $lock --no-startup-id bash ~/.config/i3/i3Scripts/i3exit.sh lock
+set $logout --no-startup-id bash ~/.config/i3/i3Scripts/i3exit.sh logout
+set $suspend  --no-startup-id bash ~/.config/i3/i3Scripts/i3exit.sh suspend
+set $hibernate  --no-startup-id bash ~/.config/i3/i3Scripts/i3exit.sh hibernate
 set $reboot --no-startup-id systemctl reboot
 set $shutdown --no-startup-id systemctl poweroff
 

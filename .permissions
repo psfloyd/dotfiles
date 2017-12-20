@@ -15,6 +15,7 @@
 .config/i3/base_files/samples/config_bindings_lenovo.base;644;psfloyd;psfloyd
 .config/i3/i3Scripts/flash_win.sh;755;psfloyd;psfloyd
 .config/i3/i3Scripts/grive-loop.sh;755;psfloyd;psfloyd
+.config/i3/i3Scripts/i3exit.sh;644;psfloyd;psfloyd
 .config/i3/i3Scripts/multifunc.sh;755;psfloyd;psfloyd
 .config/i3/i3Scripts/samples/keyboard_hp.sh;644;psfloyd;psfloyd
 .config/i3/i3Scripts/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd

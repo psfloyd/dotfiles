@@ -1,6 +1,7 @@
 [Unit]
 Description=Touchegg
 Requires=wm.target
+After=wm.target
 
 [Service]
 ExecStart=/usr/bin/touchegg

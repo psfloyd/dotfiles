@@ -1,6 +1,7 @@
 [Unit]
 Description=Polybar
-Before=wm.target
+Requires=wm.target
+After=wm.target
 
 [Service]
 Type=oneshot
