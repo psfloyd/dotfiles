@@ -25,7 +25,7 @@ screenshot)#{{{
 	;;#}}}
 
 screen_mode)#{{{
-	~/.config/Scripts/screen.sh $2 $4
+	~/.config/Scripts/i3/screen.sh $2 $4
 	~/.config/polybar/launch.sh $3
 	feh --bg-scale ~/.config/wall
 	;;#}}}
