@@ -9,7 +9,6 @@
 .config/Scripts/shortcuts/folders;644;psfloyd;psfloyd
 .config/Scripts/shortcuts/shortcuts.py;755;psfloyd;psfloyd
 .config/Scripts/systemd/wall_looper.sh;755;psfloyd;psfloyd
-.config/Scripts/vim-plugins;
 .config/compton/compton.conf;644;psfloyd;psfloyd
 .config/i3/base_files/config_main.base;644;psfloyd;psfloyd
 .config/i3/base_files/samples/config_bindings_hp.base;644;psfloyd;psfloyd
@@ -56,6 +55,7 @@
 .config/twmn/twmn.conf;644;psfloyd;psfloyd
 .config/user-dirs.dirs;644;psfloyd;psfloyd
 .config/user-dirs.locale;644;psfloyd;psfloyd
+.config/vim/vim-plugins;644;psfloyd;psfloyd
 .gitconfig;644;psfloyd;psfloyd
 .gitignore;644;psfloyd;psfloyd
 .permissions;644;psfloyd;psfloyd

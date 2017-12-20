@@ -19,7 +19,7 @@ syntax enable
 set mouse=a
 
 " source vim-plug for plugins
-source ~/.config/Scripts/vim-plugins
+source ~/.config/vim/vim-plugins
 
 " Some from github.com/LukeSmithxyz
 " My mappings
