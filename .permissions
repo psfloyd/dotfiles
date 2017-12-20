@@ -2,7 +2,7 @@
 .bash_logout;644;psfloyd;psfloyd
 .bash_profile;644;psfloyd;psfloyd
 .bashrc;644;psfloyd;psfloyd
-.config/Scripts/extract.sh;
+.config/Scripts/ranger/extract.sh;755;psfloyd;psfloyd
 .config/Scripts/screen.sh;755;psfloyd;psfloyd
 .config/Scripts/shortcuts/aliases_sh.base;644;psfloyd;psfloyd
 .config/Scripts/shortcuts/configs;644;psfloyd;psfloyd
