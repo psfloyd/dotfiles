@@ -8,7 +8,7 @@
 #exec_always --no-startup-id systemctl --user restart polybar.service
 exec --no-startup-id systemctl --user start wm.target
 #Refresh zsh/ranger shortcuts:
-exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+exec --no-startup-id python ~/.config/Scprits/shortcuts/shortcuts.py
 #Refresh i3 cofigs
 exec --no-startup-id bash ~/bin/geni3config
 #Keyboard layout
