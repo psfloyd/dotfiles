@@ -2,11 +2,11 @@
 .bash_logout;644;psfloyd;psfloyd
 .bash_profile;644;psfloyd;psfloyd
 .bashrc;644;psfloyd;psfloyd
-.config/Scripts/i3/flash_win.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/geni3config;644;psfloyd;psfloyd
-.config/Scripts/i3/grive-loop.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/i3exit.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/multifunc.sh;644;psfloyd;psfloyd
+.config/Scripts/i3/flash_win.sh;755;psfloyd;psfloyd
+.config/Scripts/i3/geni3config;755;psfloyd;psfloyd
+.config/Scripts/i3/grive-loop.sh;755;psfloyd;psfloyd
+.config/Scripts/i3/i3exit.sh;755;psfloyd;psfloyd
+.config/Scripts/i3/multifunc.sh;755;psfloyd;psfloyd
 .config/Scripts/input/keyboard.sh;755;psfloyd;psfloyd
 .config/Scripts/input/samples/keyboard_hp.sh;755;psfloyd;psfloyd
 .config/Scripts/input/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd

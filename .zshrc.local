@@ -36,8 +36,8 @@ if [ -f $HOME/.aliases_sh ]; then
 fi
 
 if [ $EUID -ne 0 ]; then
-	if [ ! -f ~/.config/Scripts/i3/touchpad.sh ] ||
-		[ ! -f ~/.config/Scripts/i3/keyboard.sh ] ||
+	if [ ! -f ~/.config/Scripts/input/touchpad.sh ] ||
+		[ ! -f ~/.config/Scripts/input/keyboard.sh ] ||
 		[ ! -f ~/.config/i3/config ] ||
 		[ ! -f ~/.config/i3/base_files/config_bindings.base ]; then
 	~/.config/Scripts/i3/geni3config
