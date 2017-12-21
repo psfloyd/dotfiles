@@ -5,19 +5,19 @@ echo "Generating i3 config..."
 if [[ $(cat /sys/devices/virtual/dmi/id/product_name) == 'HP Convertible x360 11-ab0XX' ]]; then
 	echo "HP Convertible x360 11-ab0XX detected"
 	\ln -f ~/.config/i3/base_files/samples/config_bindings_hp.base ~/.config/i3/base_files/config_bindings.base 
-	\ln -f ~/.config/Scripts/i3/samples/touchpad_hp.sh ~/.config/Scripts/i3/touchpad.sh 
-	chmod +x ~/.config/Scripts/i3/touchpad.sh  
-	\ln -f ~/.config/Scripts/i3/samples/keyboard_hp.sh ~/.config/Scripts/i3/keyboard.sh 
-	chmod +x ~/.config/Scripts/i3/keyboard.sh  
+	\ln -f ~/.config/Scripts/input/samples/touchpad_hp.sh ~/.config/Scripts/input/touchpad.sh 
+	chmod +x ~/.config/Scripts/input/touchpad.sh  
+	\ln -f ~/.config/Scripts/input/samples/keyboard_hp.sh ~/.config/Scripts/input/keyboard.sh 
+	chmod +x ~/.config/Scripts/input/keyboard.sh  
 fi
 
 if [[ $(cat /sys/devices/virtual/dmi/id/product_version) == 'Lenovo IdeaPad Y480' ]]; then
 	echo "Lenovo IdeaPad Y480 detected"
 	\ln -f ~/.config/i3/base_files/samples/config_bindings_lenovo.base ~/.config/i3/base_files/config_bindings.base 
-	\ln -f ~/.config/Scripts/i3/samples/touchpad_lenovo.sh ~/.config/Scripts/i3/touchpad.sh 
-	chmod +x ~/.config/Scripts/i3/touchpad.sh  
-	\ln -f ~/.config/Scripts/i3/samples/keyboard_lenovo.sh ~/.config/Scripts/i3/keyboard.sh 
-	chmod +x ~/.config/Scripts/i3/keyboard.sh  
+	\ln -f ~/.config/Scripts/input/samples/touchpad_lenovo.sh ~/.config/Scripts/input/touchpad.sh 
+	chmod +x ~/.config/Scripts/input/touchpad.sh  
+	\ln -f ~/.config/Scripts/input/samples/keyboard_lenovo.sh ~/.config/Scripts/input/keyboard.sh 
+	chmod +x ~/.config/Scripts/input/keyboard.sh  
 fi
 
 if [ -f  ~/.config/i3/base_files/config_bindings.base ]; then

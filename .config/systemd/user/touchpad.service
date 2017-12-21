@@ -4,7 +4,7 @@ Requires=wm.target
 After=wm.target
 
 [Service]
-ExecStart=%h/.config/Scripts/i3/touchpad.sh
+ExecStart=%h/.config/Scripts/input/touchpad.sh
 Restart=always
 
 [Install]

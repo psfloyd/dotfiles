@@ -7,10 +7,12 @@
 .config/Scripts/i3/grive-loop.sh;644;psfloyd;psfloyd
 .config/Scripts/i3/i3exit.sh;644;psfloyd;psfloyd
 .config/Scripts/i3/multifunc.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/samples/keyboard_hp.sh;755;psfloyd;psfloyd
-.config/Scripts/i3/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/samples/touchpad_hp.sh;755;psfloyd;psfloyd
-.config/Scripts/i3/samples/touchpad_lenovo.sh;644;psfloyd;psfloyd
+.config/Scripts/input/keyboard.sh;755;psfloyd;psfloyd
+.config/Scripts/input/samples/keyboard_hp.sh;755;psfloyd;psfloyd
+.config/Scripts/input/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd
+.config/Scripts/input/samples/touchpad_hp.sh;755;psfloyd;psfloyd
+.config/Scripts/input/samples/touchpad_lenovo.sh;644;psfloyd;psfloyd
+.config/Scripts/input/touchpad.sh;755;psfloyd;psfloyd
 .config/Scripts/polybar/launch.sh;644;psfloyd;psfloyd
 .config/Scripts/ranger/extract.sh;644;psfloyd;psfloyd
 .config/Scripts/screen.sh;755;psfloyd;psfloyd
