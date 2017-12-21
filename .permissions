@@ -7,9 +7,9 @@
 .config/Scripts/i3/grive-loop.sh;644;psfloyd;psfloyd
 .config/Scripts/i3/i3exit.sh;644;psfloyd;psfloyd
 .config/Scripts/i3/multifunc.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/samples/keyboard_hp.sh;644;psfloyd;psfloyd
+.config/Scripts/i3/samples/keyboard_hp.sh;755;psfloyd;psfloyd
 .config/Scripts/i3/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd
-.config/Scripts/i3/samples/touchpad_hp.sh;644;psfloyd;psfloyd
+.config/Scripts/i3/samples/touchpad_hp.sh;755;psfloyd;psfloyd
 .config/Scripts/i3/samples/touchpad_lenovo.sh;644;psfloyd;psfloyd
 .config/Scripts/polybar/launch.sh;644;psfloyd;psfloyd
 .config/Scripts/ranger/extract.sh;644;psfloyd;psfloyd
@@ -76,5 +76,5 @@ bin/backupPacCache;755;psfloyd;psfloyd
 bin/checksum;755;psfloyd;psfloyd
 bin/grive-loop;755;psfloyd;psfloyd
 bin/griveRun;755;psfloyd;psfloyd
-bin/mtpMount;644;psfloyd;psfloyd
+bin/mtpMount;755;psfloyd;psfloyd
 bin/tmuxSelect;755;psfloyd;psfloyd
