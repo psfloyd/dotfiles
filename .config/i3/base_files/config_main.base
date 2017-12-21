@@ -11,10 +11,6 @@ exec --no-startup-id systemctl --user start wm.target
 exec --no-startup-id python ~/.config/Scprits/shortcuts/shortcuts.py
 #Refresh i3 cofigs
 exec --no-startup-id bash ~/.config/Scripts/i3/geni3config
-#Keyboard layout
-exec_always --no-startup-id bash ~/.config/Scripts/i3/keyboard.sh
-#Touchpad bindings
-exec_always --no-startup-id bash ~/.config/Scripts/i3/touchpad.sh
 #Clear trash folder older than 30 days
 exec --no-startup-id trash-empty 30
 # }}}

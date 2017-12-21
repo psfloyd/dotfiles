@@ -46,11 +46,13 @@
 .config/systemd/user/polybar.service;644;psfloyd;psfloyd
 .config/systemd/user/tmux@.service;644;psfloyd;psfloyd
 .config/systemd/user/touchegg.service;644;psfloyd;psfloyd
+.config/systemd/user/touchpad.service;644;psfloyd;psfloyd
 .config/systemd/user/twmn.service;644;psfloyd;psfloyd
 .config/systemd/user/udiskie.service;644;psfloyd;psfloyd
 .config/systemd/user/unclutter.service;644;psfloyd;psfloyd
 .config/systemd/user/wall_looper.service;644;psfloyd;psfloyd
 .config/systemd/user/wm.target;644;psfloyd;psfloyd
+.config/systemd/user/xkeyboard.service;644;psfloyd;psfloyd
 .config/termite/config;644;psfloyd;psfloyd
 .config/touchegg/touchegg.conf;644;psfloyd;psfloyd
 .config/touchegg/touchegg.conf.bkp;644;psfloyd;psfloyd
@@ -76,5 +78,5 @@ bin/backupPacCache;755;psfloyd;psfloyd
 bin/checksum;755;psfloyd;psfloyd
 bin/grive-loop;755;psfloyd;psfloyd
 bin/griveRun;755;psfloyd;psfloyd
-bin/mtpMount;644;psfloyd;psfloyd
+bin/mtpMount;755;psfloyd;psfloyd
 bin/tmuxSelect;755;psfloyd;psfloyd
