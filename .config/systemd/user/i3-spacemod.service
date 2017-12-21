@@ -1,0 +1,11 @@
+[Unit]
+Description=Space as mod for i3
+Requires=wm.target
+After=wm.target
+
+[Service]
+ExecStart=%h/.config/Scripts/i3/spacemod.sh
+Restart=always
+
+[Install]
+WantedBy=wm.target
