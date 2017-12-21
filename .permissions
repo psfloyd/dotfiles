@@ -76,5 +76,5 @@ bin/backupPacCache;755;psfloyd;psfloyd
 bin/checksum;755;psfloyd;psfloyd
 bin/grive-loop;755;psfloyd;psfloyd
 bin/griveRun;755;psfloyd;psfloyd
-bin/mtpMount;755;psfloyd;psfloyd
+bin/mtpMount;644;psfloyd;psfloyd
 bin/tmuxSelect;755;psfloyd;psfloyd
