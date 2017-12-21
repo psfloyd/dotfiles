@@ -32,7 +32,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 
-set $mod Mod4
+#set $mod Mod4
+set $mod Mod3
 set $mod1 Mod1
 set $term termite
 set $flash --no-startup-id bash ~/.config/Scripts/i3/flash_win.sh

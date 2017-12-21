@@ -117,8 +117,9 @@ bindsym $mod+period	 	focus child
 bindsym $mod+minus		split vertical ;; exec $term
 #bindsym $mod+Shift+minus
 
-bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+space		focus mode_toggle
+# This is $mod, dont use
+#bindsym $mod+space
+#bindsym $mod+Shift+space
 
 #bindsym $mod+less
 #bindsym $mod+Shift+less
@@ -181,8 +182,8 @@ bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
 #bindsym $mod+o			
 bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
 
-#bindsym $mod+p			
-bindsym $mod+Shift+p		exec mypaint
+bindsym $mod+p			focus mode_toggle
+bindsym $mod+Shift+p	 	floating toggle
 
 bindsym $mod+a		gaps inner current set 0; gaps outer current set 0
 bindsym $mod+Shift+a			gaps inner current set 15; gaps outer current set 15
