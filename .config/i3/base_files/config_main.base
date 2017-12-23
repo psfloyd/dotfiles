@@ -32,9 +32,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 
-#set $mod Mod4
-set $mod Mod3
-set $mod1 Mod1
+set $modSpace Mod3
+set $modSuper Mod4
 set $term termite
 set $flash --no-startup-id bash ~/.config/Scripts/i3/flash_win.sh
 set $browser chromium
@@ -42,7 +41,7 @@ set $tmux ~/bin/tmuxSelect
 set $multifuncsh bash ~/.config/Scripts/i3/multifunc.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $modSpace
 
 	# }}}
 

@@ -6,6 +6,12 @@ set $touchon --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Syn
 set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Off" 1
 # }}}
 
+###---Fallback---###{{{
+bindsym $modSuper+Return 		exec $term
+bindsym $modSuper+Shift+Return 	exec $term -e $tmux
+
+# }}}
+
 ###---Function Buttons---###{{{
 #bindsym F1		nop
 #bindsym F2
@@ -23,249 +29,249 @@ set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Sy
 # }}}
 
 ###---Symbol Bindings---###{{{
-#bindsym $mod+Escape
-#bindsym $mod+Shift+Escape
+#bindsym $modSpace+Escape
+#bindsym $modSpace+Shift+Escape
 
-bindsym $mod+F1			workspace prev
-bindsym $mod+Shift+F1		move container to workspace prev
+bindsym $modSpace+F1			workspace prev
+bindsym $modSpace+Shift+F1		move container to workspace prev
 
-bindsym $mod+F2			workspace next
-bindsym $mod+Shift+F2		move container to workspace next
+bindsym $modSpace+F2			workspace next
+bindsym $modSpace+Shift+F2		move container to workspace next
 
-#bindsym $mod+F3
-#bindsym $mod+Shift+F3
+#bindsym $modSpace+F3
+#bindsym $modSpace+Shift+F3
 
-bindsym $mod+F4		mode "$mode_screen"	
-bindsym $mod+Shift+F4	exec --no-startup-id arandr
+bindsym $modSpace+F4		mode "$mode_screen"	
+bindsym $modSpace+Shift+F4	exec --no-startup-id arandr
 
-#bindsym $mod+F5		
-#bindsym $mod+Shift+F5		
+#bindsym $modSpace+F5		
+#bindsym $modSpace+Shift+F5		
 
-bindsym $mod+F6		exec $multifuncsh compton
-#bindsym $mod+Shift+F6		
+bindsym $modSpace+F6		exec $multifuncsh compton
+#bindsym $modSpace+Shift+F6		
 
-bindsym $mod+F7		exec transset-df -a --dec .15
-#bindsym $mod+Shift+F7		
+bindsym $modSpace+F7		exec transset-df -a --dec .15
+#bindsym $modSpace+Shift+F7		
 
-bindsym $mod+F8		exec transset-df -a --inc .15
-#bindsym $mod+Shift+F8		
+bindsym $modSpace+F8		exec transset-df -a --inc .15
+#bindsym $modSpace+Shift+F8		
 
-#bindsym $mod+F9	
-#bindsym $mod+Shift+F9		
+#bindsym $modSpace+F9	
+#bindsym $modSpace+Shift+F9		
 
-#bindsym $mod+F10	
-#bindsym $mod+Shift+F10		
+#bindsym $modSpace+F10	
+#bindsym $modSpace+Shift+F10		
 
-#bindsym $mod+F11	
-#bindsym $mod+Shift+F11		
+#bindsym $modSpace+F11	
+#bindsym $modSpace+Shift+F11		
 
-#bindsym $mod+F12	
-#bindsym $mod+Shift+F12		
+#bindsym $modSpace+F12	
+#bindsym $modSpace+Shift+F12		
 
 bindsym Print 				exec --no-startup-id $multifuncsh screenshot
 bindsym Shift+Print --release		exec --no-startup-id $multifuncsh screenshot area
 
-#bindsym $mod+Delete
-bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
+#bindsym $modSpace+Delete
+bindsym $modSpace+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
-bindsym $mod+grave		exec $flash
-#bindsym $mod+Shift+grave
+bindsym $modSpace+grave		exec $flash
+#bindsym $modSpace+Shift+grave
 
-#bindsym $mod+minus
-#bindsym $mod+Shift+minus
+#bindsym $modSpace+minus
+#bindsym $modSpace+Shift+minus
 
-#bindsym $mod+equal
-#bindsym $mod+Shift+equal
+#bindsym $modSpace+equal
+#bindsym $modSpace+Shift+equal
 
-bindsym $mod+BackSpace		exec $flash
-#bindsym $mod+Shift+BackSpace	exec sudo reboot
+bindsym $modSpace+BackSpace		exec $flash
+#bindsym $modSpace+Shift+BackSpace	exec sudo reboot
 
-bindsym $mod+Tab		workspace back_and_forth
-#bindsym $mod+Shift+Tab
+bindsym $modSpace+Tab		workspace back_and_forth
+#bindsym $modSpace+Shift+Tab
 
-#bindsym $mod+bracketleft
-#bindsym $mod+Shift+bracketleft
+#bindsym $modSpace+bracketleft
+#bindsym $modSpace+Shift+bracketleft
 
-#bindsym $mod+bracketright
-#bindsym $mod+Shift+bracketright
+#bindsym $modSpace+bracketright
+#bindsym $modSpace+Shift+bracketright
 
-#bindsym $mod+backslash
-#bindsym $mod+Shift+backslash
+#bindsym $modSpace+backslash
+#bindsym $modSpace+Shift+backslash
 
-#bindsym $mod+semicolon		workspace next
-#bindsym $mod+Shift+semicolon
+#bindsym $modSpace+semicolon		workspace next
+#bindsym $modSpace+Shift+semicolon
 
-bindsym $mod+apostrophe		split horizontal ;; exec $term
-#bindsym $mod+Shift+apostrophe
+bindsym $modSpace+apostrophe		split horizontal ;; exec $term
+#bindsym $modSpace+Shift+apostrophe
 
-bindsym $mod+Return 		exec $term
-bindsym $mod+Shift+Return 	exec $term -e $tmux
+bindsym $modSpace+Return 		exec $term
+bindsym $modSpace+Shift+Return 	exec $term -e $tmux
 
-bindsym $mod+comma	 	focus parent
-#bindsym $mod+Shift+comma
+bindsym $modSpace+comma	 	focus parent
+#bindsym $modSpace+Shift+comma
 
-bindsym $mod+period	 	focus child
-#bindsym $mod+Shift+period
+bindsym $modSpace+period	 	focus child
+#bindsym $modSpace+Shift+period
 
-bindsym $mod+slash		split vertical ;; exec $term
-#bindsym $mod+Shift+slash
+bindsym $modSpace+slash		split vertical ;; exec $term
+#bindsym $modSpace+Shift+slash
 
-# This is $mod, dont use
-#bindsym $mod+space
-#bindsym $mod+Shift+space
+# This is $modSpace, dont use
+#bindsym $modSpace+space
+#bindsym $modSpace+Shift+space
 
 # }}}
 
 ###---Number Bindings---###{{{
 
 # switch to workspace
-bindsym $mod+1		workspace $ws1
-bindsym $mod+2		workspace $ws2
-bindsym $mod+3		workspace $ws3
-bindsym $mod+4		workspace $ws4
-bindsym $mod+5		workspace $ws5
-bindsym $mod+6		workspace $ws6
-bindsym $mod+7		workspace $ws7
-bindsym $mod+8		workspace $ws8
-bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10; layout tabbed
+bindsym $modSpace+1		workspace $ws1
+bindsym $modSpace+2		workspace $ws2
+bindsym $modSpace+3		workspace $ws3
+bindsym $modSpace+4		workspace $ws4
+bindsym $modSpace+5		workspace $ws5
+bindsym $modSpace+6		workspace $ws6
+bindsym $modSpace+7		workspace $ws7
+bindsym $modSpace+8		workspace $ws8
+bindsym $modSpace+9		workspace $ws9
+bindsym $modSpace+0		workspace $ws10; layout tabbed
 
 # move focused container to workspace
-bindsym $mod+Shift+1	move container to workspace $ws1
-bindsym $mod+Shift+2	move container to workspace $ws2
-bindsym $mod+Shift+3	move container to workspace $ws3
-bindsym $mod+Shift+4	move container to workspace $ws4
-bindsym $mod+Shift+5	move container to workspace $ws5
-bindsym $mod+Shift+6	move container to workspace $ws6
-bindsym $mod+Shift+7	move container to workspace $ws7
-bindsym $mod+Shift+8	move container to workspace $ws8
-bindsym $mod+Shift+9	move container to workspace $ws9
-bindsym $mod+Shift+0	move container to workspace $ws10
+bindsym $modSpace+Shift+1	move container to workspace $ws1
+bindsym $modSpace+Shift+2	move container to workspace $ws2
+bindsym $modSpace+Shift+3	move container to workspace $ws3
+bindsym $modSpace+Shift+4	move container to workspace $ws4
+bindsym $modSpace+Shift+5	move container to workspace $ws5
+bindsym $modSpace+Shift+6	move container to workspace $ws6
+bindsym $modSpace+Shift+7	move container to workspace $ws7
+bindsym $modSpace+Shift+8	move container to workspace $ws8
+bindsym $modSpace+Shift+9	move container to workspace $ws9
+bindsym $modSpace+Shift+0	move container to workspace $ws10
 # }}}
 
 ###---Letter Key Bindings---###{{{
-bindsym $mod+q			kill
-#bindsym $mod+Shift+q		kill
+bindsym $modSpace+q			kill
+#bindsym $modSpace+Shift+q		kill
 
-bindsym $mod+w			exec --no-startup-id $browser
-#bindsym $mod+w			exec $multifuncsh browser
-#bindsym $mod+Shift+w		
+bindsym $modSpace+w			exec --no-startup-id $browser
+#bindsym $modSpace+w			exec $multifuncsh browser
+#bindsym $modSpace+Shift+w		
 
-#bindsym $mod+e			
-#bindsym $mod+Shift+e
+#bindsym $modSpace+e			
+#bindsym $modSpace+Shift+e
 
-bindsym $mod+r 			exec $multifuncsh ranger
-bindsym $mod+Shift+r		exec $restart
+bindsym $modSpace+r 			exec $multifuncsh ranger
+bindsym $modSpace+Shift+r		exec $restart
 
-bindsym $mod+t			split toggle
-#bindsym $mod+Shift+t		
+bindsym $modSpace+t			split toggle
+#bindsym $modSpace+Shift+t		
 
-#bindsym $mod+y			
-bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
+#bindsym $modSpace+y			
+bindsym $modSpace+Shift+y		resize shrink width 10 px or 10ppt
 
-bindsym $mod+u			exec $multifuncsh tmux
-bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
+bindsym $modSpace+u			exec $multifuncsh tmux
+bindsym $modSpace+Shift+u		resize shrink height 10 px or 10 ppt
 
-bindsym $mod+i 			exec $term -e htop
-bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
+bindsym $modSpace+i 			exec $term -e htop
+bindsym $modSpace+Shift+i		resize grow height 10 px or 10 ppt
 
-#bindsym $mod+o			
-bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
+#bindsym $modSpace+o			
+bindsym $modSpace+Shift+o		resize grow width 10 px or 10 ppt
 
-bindsym $mod+p			focus mode_toggle
-bindsym $mod+Shift+p	 	floating toggle
+bindsym $modSpace+p			focus mode_toggle
+bindsym $modSpace+Shift+p	 	floating toggle
 
-bindsym $mod+a		gaps inner current set 0; gaps outer current set 0
-bindsym $mod+Shift+a			gaps inner current set 15; gaps outer current set 15
+bindsym $modSpace+a		gaps inner current set 0; gaps outer current set 0
+bindsym $modSpace+Shift+a			gaps inner current set 15; gaps outer current set 15
 
-bindsym $mod+s			gaps inner current plus 5
-bindsym $mod+Shift+s		gaps inner current minus 5
+bindsym $modSpace+s			gaps inner current plus 5
+bindsym $modSpace+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec $multifuncsh rofi
-bindsym $mod+Shift+d		exec $multifuncsh rofi gksudo
+bindsym $modSpace+d			exec $multifuncsh rofi
+bindsym $modSpace+Shift+d		exec $multifuncsh rofi gksudo
 
-bindsym $mod+f			fullscreen toggle
-#bindsym $mod+Shift+f
+bindsym $modSpace+f			fullscreen toggle
+#bindsym $modSpace+Shift+f
 
-#bindsym $mod+g			workspace prev
-#bindsym $mod+Shift+g		
+#bindsym $modSpace+g			workspace prev
+#bindsym $modSpace+Shift+g		
 
-bindsym $mod+h			focus left
-bindsym $mod+Shift+h		move left 30
+bindsym $modSpace+h			focus left
+bindsym $modSpace+Shift+h		move left 30
 
-bindsym $mod+j			focus down
-bindsym $mod+Shift+j		move down 30
+bindsym $modSpace+j			focus down
+bindsym $modSpace+Shift+j		move down 30
 
-bindsym $mod+k			focus up
-bindsym $mod+Shift+k		move up 30
+bindsym $modSpace+k			focus up
+bindsym $modSpace+Shift+k		move up 30
 
-bindsym $mod+l			focus right
-bindsym $mod+Shift+l		move right 30
+bindsym $modSpace+l			focus right
+bindsym $modSpace+Shift+l		move right 30
 
-bindsym $mod+z			gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $modSpace+z			gaps outer current plus 5
+bindsym $modSpace+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x	        	mode "$mode_system"
-bindsym $mod+Shift+x		exec $lock
+bindsym $modSpace+x	        	mode "$mode_system"
+bindsym $modSpace+Shift+x		exec $lock
 
-bindsym $mod+c			mode "$mode_layout"
-#bindsym $mod+Shift+c
+bindsym $modSpace+c			mode "$mode_layout"
+#bindsym $modSpace+Shift+c
 
-#bindsym $mod+v			
-#bindsym $mod+Shift+v
+#bindsym $modSpace+v			
+#bindsym $modSpace+Shift+v
 
-#bindsym $mod+b			
-#bindsym $mod+Shift+b	
+#bindsym $modSpace+b			
+#bindsym $modSpace+Shift+b	
 
-#bindsym $mod+n			
-#bindsym $mod+Shift+n
+#bindsym $modSpace+n			
+#bindsym $modSpace+Shift+n
 
-bindsym $mod+m 			mode "$mode_mtp"
-bindsym $mod+Shift+m		exec $mute
+bindsym $modSpace+m 			mode "$mode_mtp"
+bindsym $modSpace+Shift+m		exec $mute
 # }}}
 
 ###---Arrow Keys---###{{{
-#bindsym $mod+Left		focus left
-#bindsym $mod+Down		focus down
-#bindsym $mod+Up			focus up
-#bindsym $mod+Right 		focus right
-#bindsym $mod+Shift+Left		move left
-#bindsym $mod+Shift+Down		move down
-#bindsym $mod+Shift+Up		move up
-#bindsym $mod+Shift+Right 	move right
+#bindsym $modSpace+Left		focus left
+#bindsym $modSpace+Down		focus down
+#bindsym $modSpace+Up			focus up
+#bindsym $modSpace+Right 		focus right
+#bindsym $modSpace+Shift+Left		move left
+#bindsym $modSpace+Shift+Down		move down
+#bindsym $modSpace+Shift+Up		move up
+#bindsym $modSpace+Shift+Right 	move right
 # }}}
 
 ###---Misc Bindings---###{{{
-bindsym $mod+Home		workspace $ws1
-bindsym $mod+Shift+Home		move container to workspace $ws1
+bindsym $modSpace+Home		workspace $ws1
+bindsym $modSpace+Shift+Home		move container to workspace $ws1
 
-bindsym $mod+End		workspace $ws10
-bindsym $mod+Shift+End		move container to workspace $ws10
+bindsym $modSpace+End		workspace $ws10
+bindsym $modSpace+Shift+End		move container to workspace $ws10
 
-bindsym $mod+Prior		workspace prev
-bindsym $mod+Shift+Prior	move container to workspace prev
+bindsym $modSpace+Prior		workspace prev
+bindsym $modSpace+Shift+Prior	move container to workspace prev
 
-bindsym $mod+Next		workspace next
-bindsym $mod+Shift+Next		move container to workspace next
+bindsym $modSpace+Next		workspace next
+bindsym $modSpace+Shift+Next		move container to workspace next
 
 # }}}
 
 ###---Media Keys---###{{{
 #Control keys
-bindsym $mod1+z			exec $multifuncsh music
-bindsym $mod1+a			exec $prev 
-bindsym $mod1+s			exec $pause 
-bindsym $mod1+d			exec $next 
-bindsym $mod1+x			exec $stop 
-bindsym $mod1+c			exec $crop 
+bindsym $modSuper+z			exec $multifuncsh music
+bindsym $modSuper+a			exec $prev 
+bindsym $modSuper+s			exec $pause 
+bindsym $modSuper+d			exec $next 
+bindsym $modSuper+x			exec $stop 
+bindsym $modSuper+c			exec $crop 
 
 #Volume keys
 
-bindsym $mod1+plus		exec $musinc
-bindsym $mod1+Shift+plus	exec $musbiginc
+bindsym $modSuper+plus		exec $musinc
+bindsym $modSuper+Shift+plus	exec $musbiginc
 
-bindsym $mod1+minus 		exec $musdec
-bindsym $mod1+Shift+minus	exec $musbigdec
+bindsym $modSuper+minus 		exec $musdec
+bindsym $modSuper+Shift+minus	exec $musbigdec
 
 # }}}
 
