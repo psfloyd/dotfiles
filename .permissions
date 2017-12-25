@@ -19,7 +19,7 @@
 .config/Scripts/shortcuts/configs;644;psfloyd;psfloyd
 .config/Scripts/shortcuts/folders;644;psfloyd;psfloyd
 .config/Scripts/shortcuts/shortcuts.py;644;psfloyd;psfloyd
-.config/Scripts/systemd/wall_looper.sh;644;psfloyd;psfloyd
+.config/Scripts/systemd/wall_looper.sh;755;psfloyd;psfloyd
 .config/compton/compton.conf;644;psfloyd;psfloyd
 .config/i3/base_files/config_main.base;644;psfloyd;psfloyd
 .config/i3/base_files/samples/config_bindings_hp.base;644;psfloyd;psfloyd

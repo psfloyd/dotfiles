@@ -4,8 +4,9 @@ Requires=wm.target
 After=wm.target
 
 [Service]
+type=oneshot
 ExecStart=%h/.config/Scripts/input/touchpad.sh
-Restart=always
+RemainAfterExit=yes
 
 [Install]
 WantedBy=wm.target
