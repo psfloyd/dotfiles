@@ -14,7 +14,10 @@ set $touchoff --no-startup-id xinput --set-prop "ETPS/2 Elantech Touchpad" "Devi
 
 ###---Fallback---###{{{
 bindsym $modSuper+Return 		exec $term
-bindsym $modSuper+Shift+Return 	exec $term -e $tmux
+
+bindsym $modSuper+Shift+r		exec $restart
+
+bindsym $modSuper+Delete        	mode "$mode_system"
 
 # }}}
 

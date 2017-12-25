@@ -8,7 +8,10 @@ set $touchoff --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Sy
 
 ###---Fallback---###{{{
 bindsym $modSuper+Return 		exec $term
-bindsym $modSuper+Shift+Return 	exec $term -e $tmux
+
+bindsym $modSuper+Shift+r		exec $restart
+
+bindsym $modSuper+Delete        	mode "$mode_system"
 
 # }}}
 

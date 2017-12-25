@@ -4,8 +4,10 @@ Requires=wm.target
 After=wm.target xkeyboard.service
 
 [Service]
-ExecStart=%h/.config/Scripts/i3/spacemod.sh
-Restart=always
+Type=oneshot
+ExecStart=%h/.config/Scripts/input/i3-spacemod.sh
+RemainAfterExit=yes
 
 [Install]
-WantedBy=wm.target
+WantedBy=xkeyboard.service
+RequiredBy=xcape.target
