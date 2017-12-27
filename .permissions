@@ -7,7 +7,7 @@
 .config/Scripts/i3/grive-loop.sh;755;psfloyd;psfloyd
 .config/Scripts/i3/i3exit.sh;755;psfloyd;psfloyd
 .config/Scripts/i3/multifunc.sh;755;psfloyd;psfloyd
-.config/Scripts/input/i3-spacemod.sh;755;psfloyd;psfloyd
+.config/Scripts/input/Xmodmap;644;psfloyd;psfloyd
 .config/Scripts/input/samples/keyboard_hp.sh;755;psfloyd;psfloyd
 .config/Scripts/input/samples/keyboard_lenovo.sh;644;psfloyd;psfloyd
 .config/Scripts/input/samples/touchpad_hp.sh;755;psfloyd;psfloyd
@@ -41,7 +41,6 @@
 .config/rofi/config;644;psfloyd;psfloyd
 .config/systemd/user/blueman-applet.service;644;psfloyd;psfloyd
 .config/systemd/user/compton.service;644;psfloyd;psfloyd
-.config/systemd/user/i3-spacemod.service;644;psfloyd;psfloyd
 .config/systemd/user/light-locker.service;644;psfloyd;psfloyd
 .config/systemd/user/mpd.service;644;psfloyd;psfloyd
 .config/systemd/user/nm-applet.service;644;psfloyd;psfloyd

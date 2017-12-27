@@ -4,10 +4,8 @@ Requires=wm.target
 After=wm.target
 
 [Service]
-Type=oneshot
 ExecStart=%h/.config/Scripts/input/keyboard.sh
-RemainAfterExit=yes
+Restart=always
 
 [Install]
 WantedBy=wm.target
-RequiredBy=xcape.target

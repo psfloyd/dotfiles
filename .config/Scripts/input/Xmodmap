@@ -1,0 +1,15 @@
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
+
+!Save Escape
+keycode any = Escape
+
+!Set space as Hyper_R and save space for later
+keycode 65 = Hyper_R
+keycode any = space
+
+!Add Hyper_R as Mod3
+clear Mod3
+add Mod3 = Hyper_R

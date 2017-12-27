@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # Set layout
-setxkbmap -layout us -variant altgr-intl -option caps:ctrl_modifier -option shift:both_capslock_cancel 
+setxkbmap -layout us -variant altgr-intl -option ctrl:nocaps -option shift:both_capslock_cancel 
 
-# Preserve Escape
-xmodmap -e 'keycode 255 = Escape'
+# Load Xmodmap
+xmodmap ~/.config/Scripts/input/Xmodmap
 
-# Caps press as escape and space press as space
-# Run as another service
-#xcape -e "#66=Escape" -d 1>/dev/null
+# Xcape, Caps as escape, space(Hyper_R) as space
+xcape -e "#66=Escape;Hyper_R=space" -d 1>/dev/null
