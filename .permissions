@@ -13,15 +13,12 @@ Xorg/.config/user-dirs.dirs;644;psfloyd;psfloyd
 Xorg/.config/user-dirs.locale;644;psfloyd;psfloyd
 Xorg/.xinitrc;644;psfloyd;psfloyd
 Xorg/.xprofile;644;psfloyd;psfloyd
+backupScript/bin/backupHome;755;psfloyd;psfloyd
+backupScript/bin/backupPacCache;755;psfloyd;psfloyd
 bash/.bash_aliases;644;psfloyd;psfloyd
 bash/.bash_logout;644;psfloyd;psfloyd
 bash/.bash_profile;644;psfloyd;psfloyd
 bash/.bashrc;644;psfloyd;psfloyd
-bin/bin/backupHome;755;psfloyd;psfloyd
-bin/bin/backupPacCache;755;psfloyd;psfloyd
-bin/bin/checksum;755;psfloyd;psfloyd
-bin/bin/grive-loop;755;psfloyd;psfloyd
-bin/bin/griveRun;755;psfloyd;psfloyd
 blueman/.config/systemd/user/blueman-applet.service;644;psfloyd;psfloyd
 compton/.config/compton/compton.conf;644;psfloyd;psfloyd
 compton/.config/systemd/user/compton.service;644;psfloyd;psfloyd
