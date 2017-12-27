@@ -28,7 +28,6 @@ compton/.config/systemd/user/compton.service;644;psfloyd;psfloyd
 git/.gitconfig;644;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/flash_win.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/geni3config;755;psfloyd;psfloyd
-i3-base/.config/Scripts/i3/grive-loop.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/i3exit.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/multifunc.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/screen.sh;755;psfloyd;psfloyd
