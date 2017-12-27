@@ -1,0 +1,12 @@
+[Unit]
+Description=Touchpad Mappings
+Requires=wm.target
+After=wm.target
+
+[Service]
+type=oneshot
+ExecStart=%h/.config/Scripts/input/touchpad.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=wm.target

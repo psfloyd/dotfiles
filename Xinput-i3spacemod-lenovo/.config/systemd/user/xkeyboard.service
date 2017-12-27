@@ -1,0 +1,11 @@
+[Unit]
+Description=Keyboard Mappings
+Requires=wm.target
+After=wm.target
+
+[Service]
+ExecStart=%h/.config/Scripts/input/keyboard.sh
+Restart=always
+
+[Install]
+WantedBy=wm.target
