@@ -1,14 +1,12 @@
 .permissions;644;psfloyd;psfloyd
+Xinput-base/.config/systemd/user/touchpad.service;644;psfloyd;psfloyd
+Xinput-base/.config/systemd/user/xkeyboard.service;644;psfloyd;psfloyd
 Xinput-i3spacemod-hp/.config/Scripts/input/Xmodmap;644;psfloyd;psfloyd
 Xinput-i3spacemod-hp/.config/Scripts/input/keyboard.sh;755;psfloyd;psfloyd
 Xinput-i3spacemod-hp/.config/Scripts/input/touchpad.sh;755;psfloyd;psfloyd
-Xinput-i3spacemod-hp/.config/systemd/user/touchpad.service;644;psfloyd;psfloyd
-Xinput-i3spacemod-hp/.config/systemd/user/xkeyboard.service;644;psfloyd;psfloyd
 Xinput-i3spacemod-lenovo/.config/Scripts/input/Xmodmap;644;psfloyd;psfloyd
 Xinput-i3spacemod-lenovo/.config/Scripts/input/keyboard.sh;755;psfloyd;psfloyd
 Xinput-i3spacemod-lenovo/.config/Scripts/input/touchpad.sh;755;psfloyd;psfloyd
-Xinput-i3spacemod-lenovo/.config/systemd/user/touchpad.service;644;psfloyd;psfloyd
-Xinput-i3spacemod-lenovo/.config/systemd/user/xkeyboard.service;644;psfloyd;psfloyd
 Xorg/.config/user-dirs.dirs;644;psfloyd;psfloyd
 Xorg/.config/user-dirs.locale;644;psfloyd;psfloyd
 Xorg/.xinitrc;644;psfloyd;psfloyd
