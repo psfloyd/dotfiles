@@ -31,7 +31,7 @@ i3-base/.config/Scripts/i3/geni3config;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/grive-loop.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/i3exit.sh;755;psfloyd;psfloyd
 i3-base/.config/Scripts/i3/multifunc.sh;755;psfloyd;psfloyd
-i3-base/.config/Scripts/screen.sh;755;psfloyd;psfloyd
+i3-base/.config/Scripts/i3/screen.sh;755;psfloyd;psfloyd
 i3-base/.config/i3/base_files/config_main.base;644;psfloyd;psfloyd
 i3-base/.config/systemd/user/wm.target;644;psfloyd;psfloyd
 i3-base/bin/mtpMount;755;psfloyd;psfloyd
