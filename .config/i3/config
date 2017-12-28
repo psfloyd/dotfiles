@@ -24,21 +24,21 @@ client.background       #ffffff
 set $mod Mod4
 set $mod1 Mod1
 set $term termite
-set $flash --no-startup-id bash ~/.config/i3/i3Scripts/flash_win.sh
+set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 set $browser chromium
-set $tmux ~/bin/tmuxSelect
-	set $multifuncsh bash ~/.config/i3/i3Scripts/multifunc.sh
+set $tmux ~/Misc/bin/tmuxSelect
+set $execsh bash ~/.config/i3/exec.sh
 
-	# Use Mouse+$mod to drag floating windows to their wanted position
-	floating_modifier $mod
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-	# }}}
+# }}}
 
 ###---Power/Touchpad/Screen Definitions---###{{{
-set $lock --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock
+set $lock --no-startup-id bash ~/.config/i3/exec.sh i3lock
 set $logout --no-startup-id i3-msg exit
-set $suspend --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl suspend
-set $hibernate --no-startup-id bash ~/.config/i3/i3Scripts/multifunc.sh i3lock && systemctl hibernate
+set $suspend --no-startup-id bash ~/.config/i3/exec.sh i3lock && systemctl suspend
+set $hibernate --no-startup-id bash ~/.config/i3/exec.sh i3lock && systemctl hibernate
 set $reboot --no-startup-id systemctl reboot
 set $shutdown --no-startup-id systemctl poweroff
 
@@ -64,20 +64,21 @@ set $bigbak --no-startup-id mpc seek -120
 set $beg --no-startup-id mpc seek 0%
 
 #FOR ALSA/AMIXER
-#set $inc --no-startup-id amixer sset Master 2%+
-#set $biginc --no-startup-id amixer sset Master 5%+
-#set $dec --no-startup-id amixer sset Master 2%-
-#set $bigdec --no-startup-id amixer sset Master 5%-
-#set $mute --no-startup-id amixer sset Master toggle
-#set $truemute --no-startup-id amixer sset Master mute
+set $inc --no-startup-id amixer sset Master 2%+
+set $biginc --no-startup-id amixer sset Master 5%+
+set $dec --no-startup-id amixer sset Master 2%-
+set $bigdec --no-startup-id amixer sset Master 5%-
+set $mute --no-startup-id amixer sset Master toggle
+set $truemute --no-startup-id amixer sset Master mute
 
 ##For PULSEAUDIO/PAMIXER
-set $inc --no-startup-id pamixer --allow-boost -i 5
-set $biginc --no-startup-id pamixer --allow-boost -i 15
-set $dec --no-startup-id pamixer --allow-boost -d 5
-set $bigdec --no-startup-id pamixer --allow-boost -d 15
-set $mute --no-startup-id pamixer --allow-boost -t
-set $truemute --no-startup-id pamixer -m
+#set $inc --no-startup-id pamixer --allow-boost -i 5
+#set $biginc --no-startup-id pamixer --allow-boost -i 15
+#set $dec --no-startup-id pamixer --allow-boost -d 5
+#set $bigdec --no-startup-id pamixer --allow-boost -d 15
+#set $mute --no-startup-id pamixer --allow-boost -t
+#set $micmute --no-startup-id pamixer --allow-boost -t
+#set $truemute --no-startup-id pamixer -m
 # }}}
 
 ###---Starting External Scripts---###{{{
@@ -94,22 +95,25 @@ exec --no-startup-id nm-applet
 #Bluetooth applet:
 exec --no-startup-id blueman-applet
 #Composite manager:
-exec $multifuncsh compton
+exec $execsh compton
 #Refresh zsh/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Add wallpaper:
-exec_always --no-startup-id feh --bg-scale ~/.config/wall
-exec --no-startup-id bash ~/.config/i3/i3Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
-#Keyboard layout
-exec_always --no-startup-id bash ~/.config/i3/i3Scripts/keyboard.sh
-#Touchpad bindings
-exec_always --no-startup-id bash ~/.config/i3/i3Scripts/touchpad.sh
+exec --no-startup-id feh --bg-scale ~/.config/wall
+exec --no-startup-id bash ~/.config/Scripts/wall_looper.sh ~/Media/Pictures/i3/bg/ 600
+#remaps the caps lock button to escape and uses the us international keyboard with dead keys
+exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
+#remap menu button to super:
+exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
+bindsym Menu exec --no-startup-id xmodmap -e 'keycode 135 = Super_R'
 #unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter --exclude-root --ignore-scrolling -b
+#Touchpad bindings
+exec_always --no-startup-id bash ~/.config/Scripts/touchpad.sh
 #Run grive in the background to sync Google Drive
-exec --no-startup-id bash ~/.config/i3/i3Scripts/grive-loop.sh
+exec --no-startup-id bash ~/.config/Scripts/grive-loop.sh
 #Clear trash folder older than 30 days
 exec --no-startup-id trash-empty 30
 # }}}
@@ -158,16 +162,16 @@ mode "$mode_layout" {
 
 set $mode_screen Screen(Uppercase->Force 1080): (l) Laptop, (e) External, (d) Dual, (n) Dual(no bar in Ext)
 mode "$mode_screen" {
-    bindsym l exec $multifuncsh screen_mode l, mode "default"
-    bindsym e exec $multifuncsh screen_mode e, mode "default"
-    bindsym d exec $multifuncsh screen_mode d, mode "default"
-    bindsym n exec $multifuncsh screen_mode d prionly, mode "default"
+    bindsym l exec $execsh screen_mode l, mode "default"
+    bindsym e exec $execsh screen_mode e, mode "default"
+    bindsym d exec $execsh screen_mode d, mode "default"
+    bindsym n exec $execsh screen_mode d prionly, mode "default"
 
     #Bodge for forcing 1080
-    bindsym Shift+l exec $multifuncsh screen_mode l foo 1080, mode "default"
-    bindsym Shift+e exec $multifuncsh screen_mode e foo 1080, mode "default"
-    bindsym Shift+d exec $multifuncsh screen_mode d foo 1080, mode "default"
-    bindsym Shift+n exec $multifuncsh screen_mode d onlyLap 1080, mode "default"
+    bindsym Shift+l exec $execsh screen_mode l foo 1080, mode "default"
+    bindsym Shift+e exec $execsh screen_mode e foo 1080, mode "default"
+    bindsym Shift+d exec $execsh screen_mode d foo 1080, mode "default"
+    bindsym Shift+n exec $execsh screen_mode d onlyLap 1080, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -203,13 +207,13 @@ bindsym $mod+q			kill
 bindsym $mod+Shift+q		kill
 
 bindsym $mod+w			exec --no-startup-id $browser
-#bindsym $mod+w			exec $multifuncsh browser
+#bindsym $mod+w			exec $execsh browser
 #bindsym $mod+Shift+w		
 
 #bindsym $mod+e			
 #bindsym $mod+Shift+e
 
-bindsym $mod+r 			exec $multifuncsh ranger
+bindsym $mod+r 			exec $execsh ranger
 bindsym $mod+Shift+r		restart
 
 bindsym $mod+t			split toggle
@@ -218,7 +222,7 @@ bindsym $mod+t			split toggle
 #bindsym $mod+y			
 bindsym $mod+Shift+y		resize shrink width 10 px or 10ppt
 
-bindsym $mod+u			exec $multifuncsh tmux
+bindsym $mod+u			exec $execsh tmux
 bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
 
 bindsym $mod+i 			exec $term -e htop
@@ -236,8 +240,8 @@ bindsym $mod+Shift+a		gaps inner current set 0; gaps outer current set 0
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec $multifuncsh rofi
-bindsym $mod+Shift+d		exec $multifuncsh rofi gksudo
+bindsym $mod+d			exec $execsh rofi
+#bindsym $mod+Shift+d		
 
 bindsym $mod+f			fullscreen toggle
 #bindsym $mod+Shift+f
@@ -368,7 +372,7 @@ bindsym $mod+F3		mode "$mode_screen"
 bindsym $mod+Shift+F3	exec --no-startup-id arandr
 #bindsym $mod+F4
 #bindsym $mod+F5		
-bindsym $mod+F6		exec $multifuncsh compton
+bindsym $mod+F6		exec $execsh compton
 bindsym $mod+F7		exec transset-df -a --dec .15
 bindsym $mod+F8		exec transset-df -a --inc .15
 #bindsym $mod+F9	
@@ -390,7 +394,7 @@ bindsym $mod+F8		exec transset-df -a --inc .15
 
 ###---Media Keys---###{{{
 #Control keys
-bindsym $mod1+z			exec $multifuncsh music
+bindsym $mod1+z			exec $execsh music
 bindsym $mod1+a			exec $prev 
 bindsym $mod1+s			exec $pause 
 bindsym $mod1+d			exec $next 
@@ -416,8 +420,8 @@ bindsym $mod1+Shift+bracketright exec $bigfor
 
 #Print screen takes a screenshot.
 #With shift, it takes one only of the given window.
-bindsym Print 				exec --no-startup-id $multifuncsh screenshot
-bindsym Shift+Print --release		exec --no-startup-id $multifuncsh screenshot area
+bindsym Print 				exec --no-startup-id $execsh screenshot
+bindsym Shift+Print --release		exec --no-startup-id $execsh screenshot area
 # }}}
 
 ###---Extra XF86 Keys---###{{{
@@ -472,7 +476,7 @@ bindsym XF86AudioForward	exec $lilfor
 #bindsym XF86Launch7		exec 
 #bindsym XF86Launch8		exec 
 #bindsym XF86Launch9		exec 
-#bindsym XF86AudioMicMute	exec $micmute
+bindsym XF86AudioMicMute	exec $micmute
 #bindsym XF86TouchpadToggle	exec 
 bindsym XF86TouchpadOn		exec $touchon
 bindsym XF86TouchpadOff		exec $touchoff

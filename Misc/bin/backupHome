@@ -28,7 +28,7 @@ if [ ! -d "${backupLoc}" ]; then
     exit
 fi
 
-rsyncCommand="rsync -PSauvs "
+rsyncCommand="rsync -r -t -v --progress -s "
 bkpPacCache=~/Misc/bin/backupPacCache
 useMediaFol=true
 

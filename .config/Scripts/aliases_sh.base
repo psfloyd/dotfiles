@@ -46,10 +46,8 @@ alias gaa="git add -A && git status -s"
 
 alias gdi="git diff"
 
-alias -g gps="git push "
-alias -g gpl="git pull "
-alias gpso="git push origin "
-alias gplo="git pull origin "
+alias -g gp="git push "
+alias gpom="git push origin master"
 
 alias -g gcm="git commit -m"
 alias gcmt="git commit -m '$( date +'%F--%R')'"
@@ -59,31 +57,19 @@ alias -g gco="git checkout"
 #}}}
 
 #pacman aliases#{{{
-if [ -x "$(command -v pacaur)" ] && [ "$EUID" -ne 0 ]; then
-	pccomm='pacaur '
-else
-	pccomm='pacman '
-fi
-
-
+pccomm='pacaur '
 alias -g pc="$pccomm"
-
-#Sync
 alias -g pcS="$pccomm""-S"
+alias -g pcSs="$pccomm""-Ss"
 alias -g pcSr="$pccomm""-Sr"
 alias -g pcSa="$pccomm""-Sa"
-alias -g pcSs="$pccomm""-Ss"
-alias -g pcSsr="$pccomm""-Ssr"
-alias -g pcSsa="$pccomm""-Ssa"
-
-#Query
+alias -g pcSy="$pccomm""-Sy"
 alias -g pcQ="$pccomm""-Q"
-alias -g pcQs="$pccomm""-Qs"
 #}}}
 
 #Misc#{{{
 alias sus="systemctl suspend"
-alias shortcutsRn="python ~/.config/Scripts/shortcuts.py && source ~/.zshrc.local"
+alias shortcutsRn="python ~/.config/Scripts/shortcuts.py"
 
 alias srcz="source ~/.zshrc.local"
 
@@ -91,7 +77,7 @@ alias rng="ranger ."
 
 function T () {
 if [ -z "$TMUX" ];then
-   ~/bin/tmuxSelect
+   ~/Misc/bin/tmuxSelect
 fi
 }
 

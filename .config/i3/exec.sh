@@ -7,6 +7,7 @@ scshotFold=~
 case "$1" in
 
 tmux)#{{{
+
 if i3-msg -t get_tree | jq -r . | grep -q "dropdown"; then
 	i3-msg '[instance="dropdown"] scratchpad show; move position center'
 
@@ -40,23 +41,14 @@ compton)#{{{
 	;;#}}}
 
 rofi)#{{{
-	case "$2" in
-		gksudo)
-			rofi -modi "drun,run,window" -show drun -run-command 'gksudo {cmd}'
-			;;
-		*)
-			rofi -modi "drun,run,window" -show drun
-			;;
-	esac
+	rofi -modi "drun,run,window" -show drun
 	;;#}}}
 
 i3lock)#{{{
 	cp ~/Media/Pictures/i3/lock/lock_img /tmp/screen.png
 	[[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
 	mpc pause
-	killall twmnd
-	i3lock -en -i /tmp/screen.png
-	twmnd & exit
+	i3lock -e -i /tmp/screen.png
 	;;#}}}
 
 #browser)#{{{

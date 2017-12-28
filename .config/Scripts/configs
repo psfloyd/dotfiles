@@ -5,7 +5,7 @@ cfv	~/.vimrc
 cfvp	~/.config/Scripts/vim-plugins
 cfr	~/.config/ranger/rc.conf.base
 cfi	~/.config/i3/config
-cfim	~/.config/i3/i3Scripts/multifunc.sh
+cfie	~/.config/i3/exec.sh
 cff	~/.config/Scripts/folders
 cfc	~/.config/Scripts/configs
 cft	~/.config/termite/config

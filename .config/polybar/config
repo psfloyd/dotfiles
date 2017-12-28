@@ -50,7 +50,7 @@ font-2 = FontAwesome:pixelsize=11;1
 
 modules-left = i3 mpd 
 modules-center = 
-modules-right = volume battery pkg pkg-upd date
+modules-right = pkg pkg-upd wlan eth battery volume date
 
 tray-position = right
 tray-padding = 0
@@ -286,11 +286,11 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix =" "
+format-muted-prefix = "  "
 format-muted-foreground = ${colors.foreground-alt2}
-label-muted = mute
+label-muted = muted
 
-bar-volume-width = 5
+bar-volume-width = 7
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -388,7 +388,7 @@ interval = 1200
 format = <label>
 ;format-underline = #dc322f
 label = "%output:0:30%"
-exec = ~/.config/polybar/pkg.sh
+exec = .config/polybar/pkg.sh
 click-left = echo left %counter%
 exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
 
