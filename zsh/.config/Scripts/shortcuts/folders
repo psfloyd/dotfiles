@@ -1,5 +1,6 @@
 u	/run/media/$USER
 h	~
+.	~/.dotfiles
 d	~/Documents
 n	~/Documents/Notes
 Uu	~/Documents/Google Drive/UNI
