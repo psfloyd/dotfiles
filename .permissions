@@ -51,7 +51,6 @@ ranger/.config/ranger/rc.conf.base;644;psfloyd;psfloyd
 ranger/.config/ranger/rifle.conf;644;psfloyd;psfloyd
 ranger/.config/ranger/scope.sh;755;psfloyd;psfloyd
 rofi/.config/rofi/config;644;psfloyd;psfloyd
-setup-scripts/hp-setup.sh;644;psfloyd;psfloyd
 termite/.config/termite/config;644;psfloyd;psfloyd
 tmux/.config/systemd/user/tmux@.service;644;psfloyd;psfloyd
 tmux/.tmux.conf;644;psfloyd;psfloyd
